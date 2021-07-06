@@ -9745,7 +9745,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Pressure"
     type: "sensor"
     description: "Tire pressure in kilo-Pascal"
-    datatype: uint8
+    datatype: uint16
     uuid: 9fa3f176fd975d28a68f70c7d72e370f
     unit: kPa
 }
@@ -9804,7 +9804,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Pressure"
     type: "sensor"
     description: "Tire pressure in kilo-Pascal"
-    datatype: uint8
+    datatype: uint16
     uuid: ea8038b63e6650ffb1a20539e915064a
     unit: kPa
 }
@@ -9916,7 +9916,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Pressure"
     type: "sensor"
     description: "Tire pressure in kilo-Pascal"
-    datatype: uint8
+    datatype: uint16
     uuid: ea414012c36e54fc84ec1d421f370ddd
     unit: kPa
 }
@@ -9975,7 +9975,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Pressure"
     type: "sensor"
     description: "Tire pressure in kilo-Pascal"
-    datatype: uint8
+    datatype: uint16
     uuid: 0cd3dd4be36c5fcda49d6360556ba7c8
     unit: kPa
 }

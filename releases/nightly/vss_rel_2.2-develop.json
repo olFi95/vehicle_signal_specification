@@ -9565,7 +9565,7 @@
                           "Tire": {
                             "children": {
                               "Pressure": {
-                                "datatype": "uint8",
+                                "datatype": "uint16",
                                 "description": "Tire pressure in kilo-Pascal",
                                 "type": "sensor",
                                 "unit": "kPa",
@@ -9631,7 +9631,7 @@
                           "Tire": {
                             "children": {
                               "Pressure": {
-                                "datatype": "uint8",
+                                "datatype": "uint16",
                                 "description": "Tire pressure in kilo-Pascal",
                                 "type": "sensor",
                                 "unit": "kPa",
@@ -9752,7 +9752,7 @@
                           "Tire": {
                             "children": {
                               "Pressure": {
-                                "datatype": "uint8",
+                                "datatype": "uint16",
                                 "description": "Tire pressure in kilo-Pascal",
                                 "type": "sensor",
                                 "unit": "kPa",
@@ -9818,7 +9818,7 @@
                           "Tire": {
                             "children": {
                               "Pressure": {
-                                "datatype": "uint8",
+                                "datatype": "uint16",
                                 "description": "Tire pressure in kilo-Pascal",
                                 "type": "sensor",
                                 "unit": "kPa",
