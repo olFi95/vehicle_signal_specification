@@ -11907,7 +11907,7 @@
                     "uuid": "630a478781b95ad8b012ce52f745f3e8"
                   },
                   "Rpm": {
-                    "datatype": "uint32",
+                    "datatype": "int32",
                     "description": "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.",
                     "max": 100000,
                     "min": -100000,
