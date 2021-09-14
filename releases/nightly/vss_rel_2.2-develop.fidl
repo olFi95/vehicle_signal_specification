@@ -5515,75 +5515,171 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank1.Sensor1.Voltage"
+    name: "Vehicle.OBD.OxygenSensorsIn2Banks"
     type: "sensor"
-    description: "PID 14 - Sensor voltage"
+    description: "PID 13 - Presence of oxygen sensors in 2 banks. [A0..A3] == Bank 1, Sensors 1-4. [A4..A7] == Bank 2, Sensors 1-4"
+    datatype: uint8
+    uuid: 0a9ba3f0a9b256d78bafd62ee8ce73cd
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor1.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
     datatype: float
-    uuid: 3d9d4bfdf5bb506891612b7dbc044b81
+    uuid: e95f4ea667265ee3a68ab57b86ecbf66
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank1.Sensor2.Voltage"
+    name: "Vehicle.OBD.O2.Sensor1.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 15 - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: 2bb19dbdf64d5d438e19d220606565cf
+    uuid: ee366d40132456c0bce8cac3a837f16a
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor2.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: 5f1781bde96b53ce9b810a5a56b7c8ed
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank1.Sensor3.Voltage"
+    name: "Vehicle.OBD.O2.Sensor2.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 16 - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: 7749913f77ec5f84942e5d4bad97b398
+    uuid: 92e6e172777457a9866ca045d0d79853
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor3.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: a86a1986f0fe5d25b6c438a00438ff60
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank1.Sensor4.Voltage"
+    name: "Vehicle.OBD.O2.Sensor3.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 17 - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: 3ddcc11605bd57958a6ab7040980388b
+    uuid: 66c300d35eb85e7387dc42528cca48d9
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor4.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: 772cbfab91be59f7bbf3ec4140ffbcc4
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank2.Sensor1.Voltage"
+    name: "Vehicle.OBD.O2.Sensor4.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 18 - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: ff69ddba35d9527b91ee1f02f8e547e7
+    uuid: b71dcf9d850c5d5686f14ad46cd2cae3
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor5.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: 155a0816093b5aee8012ed2a8d532b7f
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank2.Sensor2.Voltage"
+    name: "Vehicle.OBD.O2.Sensor5.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 19 - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: 8b621b72cff35ece97b9b0b1918f4c82
+    uuid: 7604de26198b51e28a441f79b1d84242
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor6.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: 85430592fb795e848d7bb91e6b9f1e00
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank2.Sensor3.Voltage"
+    name: "Vehicle.OBD.O2.Sensor6.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 1A - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: 5b2ccfaf65265ce6a81dcd9d76e42224
+    uuid: 2fb034769cab5089986d90bf7f9000ca
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor7.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: 23984a68e63f532bab18679e1174130d
     unit: V
 }
 ,
 {
-    name: "Vehicle.OBD.O2.Bank2.Sensor4.Voltage"
+    name: "Vehicle.OBD.O2.Sensor7.ShortTermFuelTrim"
     type: "sensor"
-    description: "PID 1B - Sensor voltage"
+    description: "PID 1x (byte B) - Short term fuel trim"
     datatype: float
-    uuid: 3ec914477d23598f9f5915d14db5852e
+    uuid: 81f34b16b5e05d1ab159de9474eaf5bc
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor8.Voltage"
+    type: "sensor"
+    description: "PID 1x (byte A) - Sensor voltage"
+    datatype: float
+    uuid: 23e057b3629a5136bb585638725fe0a2
     unit: V
+}
+,
+{
+    name: "Vehicle.OBD.O2.Sensor8.ShortTermFuelTrim"
+    type: "sensor"
+    description: "PID 1x (byte B) - Short term fuel trim"
+    datatype: float
+    uuid: 1699eb2267615e258259e480be0fa606
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.OBDStandards"
+    type: "attribute"
+    description: "PID 1C - OBD standards this vehicle conforms to"
+    datatype: uint8
+    uuid: 1aa8d7d055cf5a29a31b04a12124f673
+}
+,
+{
+    name: "Vehicle.OBD.OxygenSensorsIn4Banks"
+    type: "sensor"
+    description: "PID 1D - Presence of oxygen sensors in 4 banks. Similar to PID 13, but [A0..A7] == [B1S1, B1S2, B2S1, B2S2, B3S1, B3S2, B4S1, B4S2]"
+    datatype: uint8
+    uuid: 41d3377813d651aa9b9344ba9fd2f880
 }
 ,
 {
@@ -5639,9 +5735,17 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor1.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: b809083454a5516f995477c59bf4d3c6
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor1.Voltage"
     type: "sensor"
-    description: "PID 24 - Lambda voltage for wide range/band oxygen sensor 1"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: 396251cbfa5a57ffb1dd743298dfcdf9
     unit: V
@@ -5650,16 +5754,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor1.Current"
     type: "sensor"
-    description: "PID 34 - Lambda current for wide range/band oxygen sensor 1"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: bb4c70d9d2ae56c8a9a3be446db6f54c
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor2.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: ce55aed0e8705a49970566db71ebcf90
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor2.Voltage"
     type: "sensor"
-    description: "PID 25 - Lambda voltage for wide range/band oxygen sensor 2"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: a784675c3b765d42ad023d8ee412be26
     unit: V
@@ -5668,16 +5780,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor2.Current"
     type: "sensor"
-    description: "PID 35 - Lambda current for wide range/band oxygen sensor 2"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: 442ab33180ca5028a37a487056ba4a51
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor3.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: f2ae7c781b0a5dcf8db91558e3cf4c13
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor3.Voltage"
     type: "sensor"
-    description: "PID 26 - Lambda voltage for wide range/band oxygen sensor 3"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: a78f7621a3f75df2adc1dc940219834a
     unit: V
@@ -5686,16 +5806,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor3.Current"
     type: "sensor"
-    description: "PID 36 - Lambda current for wide range/band oxygen sensor 4"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: c942468e349e5aaebde4d90ee0bc3814
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor4.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: be09013f423c588eae9c06da9ddf290f
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor4.Voltage"
     type: "sensor"
-    description: "PID 27 - Lambda voltage for wide range/band oxygen sensor 4"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: abeca90ba22d5c32a34ee907cedf3192
     unit: V
@@ -5704,16 +5832,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor4.Current"
     type: "sensor"
-    description: "PID 37 - Lambda current for wide range/band oxygen sensor 4"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: f16b31fde63a516db04cb44feaa7c27b
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor5.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: 16a957200f5c51f89824bbb76a23b9c0
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor5.Voltage"
     type: "sensor"
-    description: "PID 28 - Lambda voltage for wide range/band oxygen sensor 5"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: 699c4db2439f51af8465e823687018b8
     unit: V
@@ -5722,16 +5858,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor5.Current"
     type: "sensor"
-    description: "PID 38 - Lambda current for wide range/band oxygen sensor 5"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: 40494cb5826554929f5ecadd5b9173fd
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor6.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: fdae9bb9a3a45b4680450f0347cf6d66
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor6.Voltage"
     type: "sensor"
-    description: "PID 29 - Lambda voltage for wide range/band oxygen sensor 6"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: 304c181c76d55c3abe75382a935c7bde
     unit: V
@@ -5740,16 +5884,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor6.Current"
     type: "sensor"
-    description: "PID 39 - Lambda current for wide range/band oxygen sensor 6"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: 06a38b6b4784545bb637279e96d48eb5
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor7.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: 9221a5289157538b9dcaa0d961c335fa
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor7.Voltage"
     type: "sensor"
-    description: "PID 2A - Lambda voltage for wide range/band oxygen sensor 7"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: 0ad1d79dcce65c00ac48421b5b54ca0e
     unit: V
@@ -5758,16 +5910,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor7.Current"
     type: "sensor"
-    description: "PID 3A - Lambda current for wide range/band oxygen sensor 7"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: 6ed46315325d540eb95c86ec61eef8e4
     unit: A
 }
 ,
 {
+    name: "Vehicle.OBD.O2WR.Sensor8.Lambda"
+    type: "sensor"
+    description: "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor"
+    datatype: float
+    uuid: c56db1195fa3519ab6718ab57d2cd543
+}
+,
+{
     name: "Vehicle.OBD.O2WR.Sensor8.Voltage"
     type: "sensor"
-    description: "PID 2B - Lambda voltage for wide range/band oxygen sensor 8"
+    description: "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor"
     datatype: float
     uuid: ab7d6c739f025782bba640e58123f0c8
     unit: V
@@ -5776,7 +5936,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.O2WR.Sensor8.Current"
     type: "sensor"
-    description: "PID 3B - Lambda current for wide range/band oxygen sensor 8"
+    description: "PID 3x (byte CD) - Current for wide range/band oxygen sensor"
     datatype: float
     uuid: 96de3c3b036c50c2978ab2aa490d4d9e
     unit: A
@@ -6086,36 +6246,72 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.OBD.ShortTermO2Trim1"
     type: "sensor"
-    description: "PID 55 - Short term secondary O2 trim - Bank 1"
+    description: "PID 55 (byte A) - Short term secondary O2 trim - Bank 1"
     datatype: float
     uuid: be7ed33a854557ba802da0c51f9f4564
     unit: percent
 }
 ,
 {
+    name: "Vehicle.OBD.ShortTermO2Trim3"
+    type: "sensor"
+    description: "PID 55 (byte B) - Short term secondary O2 trim - Bank 3"
+    datatype: float
+    uuid: af58212df970568b9edcc5e58fa36f8d
+    unit: percent
+}
+,
+{
     name: "Vehicle.OBD.LongTermO2Trim1"
     type: "sensor"
-    description: "PID 56 - Long term secondary O2 trim - Bank 1"
+    description: "PID 56 (byte A) - Long term secondary O2 trim - Bank 1"
     datatype: float
     uuid: 9a9586e29a02567e9920cb9b0aa2e3f5
     unit: percent
 }
 ,
 {
+    name: "Vehicle.OBD.LongTermO2Trim3"
+    type: "sensor"
+    description: "PID 56 (byte B) - Long term secondary O2 trim - Bank 3"
+    datatype: float
+    uuid: 50ea51ad343a5e59b1d214053e522a45
+    unit: percent
+}
+,
+{
     name: "Vehicle.OBD.ShortTermO2Trim2"
     type: "sensor"
-    description: "PID 57 - Short term secondary O2 trim - Bank 2"
+    description: "PID 57 (byte A) - Short term secondary O2 trim - Bank 2"
     datatype: float
     uuid: c8b962f8990e51d294621408ceaa21d9
     unit: percent
 }
 ,
 {
+    name: "Vehicle.OBD.ShortTermO2Trim4"
+    type: "sensor"
+    description: "PID 57 (byte B) - Short term secondary O2 trim - Bank 4"
+    datatype: float
+    uuid: 8ef0516c0c965fd6aecbacd6b9120a5b
+    unit: percent
+}
+,
+{
     name: "Vehicle.OBD.LongTermO2Trim2"
     type: "sensor"
-    description: "PID 58 - Long term secondary O2 trim - Bank 2"
+    description: "PID 58 (byte A) - Long term secondary O2 trim - Bank 2"
     datatype: float
     uuid: e579f6c930605b389e8ce2d7edd92999
+    unit: percent
+}
+,
+{
+    name: "Vehicle.OBD.LongTermO2Trim4"
+    type: "sensor"
+    description: "PID 58 (byte B) - Long term secondary O2 trim - Bank 4"
+    datatype: float
+    uuid: f9c20edd12f456e5ace21581cea484bd
     unit: percent
 }
 ,

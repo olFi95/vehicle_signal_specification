@@ -5287,17 +5287,31 @@
           },
           "LongTermO2Trim1": {
             "datatype": "float",
-            "description": "PID 56 - Long term secondary O2 trim - Bank 1",
+            "description": "PID 56 (byte A) - Long term secondary O2 trim - Bank 1",
             "type": "sensor",
             "unit": "percent",
             "uuid": "9a9586e29a02567e9920cb9b0aa2e3f5"
           },
           "LongTermO2Trim2": {
             "datatype": "float",
-            "description": "PID 58 - Long term secondary O2 trim - Bank 2",
+            "description": "PID 58 (byte A) - Long term secondary O2 trim - Bank 2",
             "type": "sensor",
             "unit": "percent",
             "uuid": "e579f6c930605b389e8ce2d7edd92999"
+          },
+          "LongTermO2Trim3": {
+            "datatype": "float",
+            "description": "PID 56 (byte B) - Long term secondary O2 trim - Bank 3",
+            "type": "sensor",
+            "unit": "percent",
+            "uuid": "50ea51ad343a5e59b1d214053e522a45"
+          },
+          "LongTermO2Trim4": {
+            "datatype": "float",
+            "description": "PID 58 (byte B) - Long term secondary O2 trim - Bank 4",
+            "type": "sensor",
+            "unit": "percent",
+            "uuid": "f9c20edd12f456e5ace21581cea484bd"
           },
           "MAF": {
             "datatype": "float",
@@ -5322,205 +5336,178 @@
           },
           "O2": {
             "children": {
-              "Bank1": {
+              "Sensor1": {
                 "children": {
-                  "Sensor1": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 14 - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "3d9d4bfdf5bb506891612b7dbc044b81"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "40e2cdba61b15e1e99405857e4d32b6e"
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "ee366d40132456c0bce8cac3a837f16a"
                   },
-                  "Sensor2": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 15 - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "2bb19dbdf64d5d438e19d220606565cf"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "32311bd7b77158a2b3622ca3075ce34a"
-                  },
-                  "Sensor3": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 16 - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "7749913f77ec5f84942e5d4bad97b398"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "4640f8cb80de54bab3036cf51af9a8f8"
-                  },
-                  "Sensor4": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 17 - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "3ddcc11605bd57958a6ab7040980388b"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "0596ec385da658578217391e0ecaa5af"
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "e95f4ea667265ee3a68ab57b86ecbf66"
                   }
                 },
-                "description": "Oxygen sensors on bank 1, at most 4 sensors per bank",
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
                 "type": "branch",
-                "uuid": "6371b791e2905d57ad4591c1d542cefd"
+                "uuid": "3aa8859203d4545083196a9690d72627"
               },
-              "Bank2": {
+              "Sensor2": {
                 "children": {
-                  "Sensor1": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 18 - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "ff69ddba35d9527b91ee1f02f8e547e7"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "22a8aa72fd70503f82bd0c14a35770fc"
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "92e6e172777457a9866ca045d0d79853"
                   },
-                  "Sensor2": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 19 - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "8b621b72cff35ece97b9b0b1918f4c82"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "75bb1896ea305fc89d9b05021c3cadbd"
-                  },
-                  "Sensor3": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 1A - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "5b2ccfaf65265ce6a81dcd9d76e42224"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "e6839701a84c59a3ae377abee2890567"
-                  },
-                  "Sensor4": {
-                    "children": {
-                      "Voltage": {
-                        "datatype": "float",
-                        "description": "PID 1B - Sensor voltage",
-                        "type": "sensor",
-                        "unit": "V",
-                        "uuid": "3ec914477d23598f9f5915d14db5852e"
-                      }
-                    },
-                    "description": "Oxygen sensor",
-                    "type": "branch",
-                    "uuid": "a09790dbb4485a6e8ed737b1357878a8"
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "5f1781bde96b53ce9b810a5a56b7c8ed"
                   }
                 },
-                "description": "Oxygen sensors on bank 2, at most 4 sensors per bank",
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
                 "type": "branch",
-                "uuid": "9bfda6c2db5b59a0930a8685c74c29ba"
+                "uuid": "efcb337cf94056c8a724e76bcfee6765"
+              },
+              "Sensor3": {
+                "children": {
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "66c300d35eb85e7387dc42528cca48d9"
+                  },
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "a86a1986f0fe5d25b6c438a00438ff60"
+                  }
+                },
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
+                "type": "branch",
+                "uuid": "b8c145402b7a5cffaa2699ed61b056fa"
+              },
+              "Sensor4": {
+                "children": {
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "b71dcf9d850c5d5686f14ad46cd2cae3"
+                  },
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "772cbfab91be59f7bbf3ec4140ffbcc4"
+                  }
+                },
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
+                "type": "branch",
+                "uuid": "853945bce86c5c4f95081075ae32261c"
+              },
+              "Sensor5": {
+                "children": {
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "7604de26198b51e28a441f79b1d84242"
+                  },
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "155a0816093b5aee8012ed2a8d532b7f"
+                  }
+                },
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
+                "type": "branch",
+                "uuid": "f48c76c9c7ec5ddcb6838ced0bd7517b"
+              },
+              "Sensor6": {
+                "children": {
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "2fb034769cab5089986d90bf7f9000ca"
+                  },
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "85430592fb795e848d7bb91e6b9f1e00"
+                  }
+                },
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
+                "type": "branch",
+                "uuid": "5269c1877ded507b87d7d1d7bec10605"
+              },
+              "Sensor7": {
+                "children": {
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "81f34b16b5e05d1ab159de9474eaf5bc"
+                  },
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "23984a68e63f532bab18679e1174130d"
+                  }
+                },
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
+                "type": "branch",
+                "uuid": "4b565102e4a052aa8aa64f27dc678ce3"
+              },
+              "Sensor8": {
+                "children": {
+                  "ShortTermFuelTrim": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte B) - Short term fuel trim",
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "1699eb2267615e258259e480be0fa606"
+                  },
+                  "Voltage": {
+                    "datatype": "float",
+                    "description": "PID 1x (byte A) - Sensor voltage",
+                    "type": "sensor",
+                    "unit": "V",
+                    "uuid": "23e057b3629a5136bb585638725fe0a2"
+                  }
+                },
+                "description": "Oxygen sensors (PID 14 - PID 1B)",
+                "type": "branch",
+                "uuid": "d5eef24c35f1561982127404b50ece11"
               }
             },
-            "description": "PID 13 - Presence of oxygen sensors for the banks",
+            "description": "Oxygen sensors (PID 14 - PID 1B)",
             "type": "branch",
             "uuid": "31f007df72af50f0925d2b4647682a4d"
-          },
-          "O2Alt": {
-            "children": {
-              "Bank1": {
-                "children": {
-                  "Sensor1": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "340eb17fd0445c8486f9b3bc20bb0946"
-                  },
-                  "Sensor2": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "d80aedb9fbdb538aa3dddce56258c960"
-                  },
-                  "Sensor3": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "e13e1993d48c5d6e8897b1c27311ae7f"
-                  },
-                  "Sensor4": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "cf55906c0eb9588fa33298e10ca1ca9b"
-                  }
-                },
-                "description": "Alternate oxygen sensors on bank 1, at most 4 sensors per bank",
-                "type": "branch",
-                "uuid": "788b4a8ac02457eab7beb1036eedc388"
-              },
-              "Bank2": {
-                "children": {
-                  "Sensor1": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "58d80358757859bda05da760c28a1706"
-                  },
-                  "Sensor2": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "6b4b0c27cf9e5c999ef973578175cc25"
-                  },
-                  "Sensor3": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "0e8d6a2dd18554e89cfa73fb4c302c9d"
-                  },
-                  "Sensor4": {
-                    "children": {},
-                    "description": "Alternate oxygen sensor",
-                    "type": "branch",
-                    "uuid": "513c442582515c2d85b1f7e33d891d41"
-                  }
-                },
-                "description": "Alternate oxygen sensors on bank 2, at most 4 sensors per bank",
-                "type": "branch",
-                "uuid": "63ebe2202700525a926f5a1457b4fdb8"
-              }
-            },
-            "description": "PID 1D - Presence of alternate oxygen sensors for the banks",
-            "type": "branch",
-            "uuid": "f8c067bfefd65a5fbb0cd7c7525eb430"
           },
           "O2WR": {
             "children": {
@@ -5528,20 +5515,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 34 - Lambda current for wide range/band oxygen sensor 1",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "bb4c70d9d2ae56c8a9a3be446db6f54c"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "b809083454a5516f995477c59bf4d3c6"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 24 - Lambda voltage for wide range/band oxygen sensor 1",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "396251cbfa5a57ffb1dd743298dfcdf9"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 1",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "496074cec04a5260b60fd39bb7ed1479"
               },
@@ -5549,20 +5542,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 35 - Lambda current for wide range/band oxygen sensor 2",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "442ab33180ca5028a37a487056ba4a51"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "ce55aed0e8705a49970566db71ebcf90"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 25 - Lambda voltage for wide range/band oxygen sensor 2",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "a784675c3b765d42ad023d8ee412be26"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 2",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "079f9960f75d5f399df7ff86fcea8f0c"
               },
@@ -5570,20 +5569,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 36 - Lambda current for wide range/band oxygen sensor 4",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "c942468e349e5aaebde4d90ee0bc3814"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "f2ae7c781b0a5dcf8db91558e3cf4c13"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 26 - Lambda voltage for wide range/band oxygen sensor 3",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "a78f7621a3f75df2adc1dc940219834a"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 3",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "a8a83d3e33f9584b824088e830bcbaec"
               },
@@ -5591,20 +5596,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 37 - Lambda current for wide range/band oxygen sensor 4",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "f16b31fde63a516db04cb44feaa7c27b"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "be09013f423c588eae9c06da9ddf290f"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 27 - Lambda voltage for wide range/band oxygen sensor 4",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "abeca90ba22d5c32a34ee907cedf3192"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 4",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "bb67047ddad158ba98876a6a87d02e97"
               },
@@ -5612,20 +5623,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 38 - Lambda current for wide range/band oxygen sensor 5",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "40494cb5826554929f5ecadd5b9173fd"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "16a957200f5c51f89824bbb76a23b9c0"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 28 - Lambda voltage for wide range/band oxygen sensor 5",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "699c4db2439f51af8465e823687018b8"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 5",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "01c4160d39af5db59c66db844646195e"
               },
@@ -5633,20 +5650,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 39 - Lambda current for wide range/band oxygen sensor 6",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "06a38b6b4784545bb637279e96d48eb5"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "fdae9bb9a3a45b4680450f0347cf6d66"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 29 - Lambda voltage for wide range/band oxygen sensor 6",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "304c181c76d55c3abe75382a935c7bde"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 6",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "cff12c30bde957798daaa3a91758b48b"
               },
@@ -5654,20 +5677,26 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 3A - Lambda current for wide range/band oxygen sensor 7",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "6ed46315325d540eb95c86ec61eef8e4"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "9221a5289157538b9dcaa0d961c335fa"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 2A - Lambda voltage for wide range/band oxygen sensor 7",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "0ad1d79dcce65c00ac48421b5b54ca0e"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 7",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "44459df1f25f5d43a07b00f2bad65ef5"
               },
@@ -5675,27 +5704,39 @@
                 "children": {
                   "Current": {
                     "datatype": "float",
-                    "description": "PID 3B - Lambda current for wide range/band oxygen sensor 8",
+                    "description": "PID 3x (byte CD) - Current for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "A",
                     "uuid": "96de3c3b036c50c2978ab2aa490d4d9e"
                   },
+                  "Lambda": {
+                    "datatype": "float",
+                    "description": "PID 2x (byte AB) and PID 3x (byte AB) - Lambda for wide range/band oxygen sensor",
+                    "type": "sensor",
+                    "uuid": "c56db1195fa3519ab6718ab57d2cd543"
+                  },
                   "Voltage": {
                     "datatype": "float",
-                    "description": "PID 2B - Lambda voltage for wide range/band oxygen sensor 8",
+                    "description": "PID 2x (byte CD) - Voltage for wide range/band oxygen sensor",
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "ab7d6c739f025782bba640e58123f0c8"
                   }
                 },
-                "description": "Wide range/band oxygen sensor 8",
+                "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
                 "type": "branch",
                 "uuid": "b8865e72055d52a086f6935d5c188cc1"
               }
             },
-            "description": "Wide range/band oxygen sensors",
+            "description": "Wide range/band oxygen sensors (PID 24 - 2B and PID 34 - 3B)",
             "type": "branch",
             "uuid": "a439f2bc16575318afe20d0bc6a8cacf"
+          },
+          "OBDStandards": {
+            "datatype": "uint8",
+            "description": "PID 1C - OBD standards this vehicle conforms to",
+            "type": "attribute",
+            "uuid": "1aa8d7d055cf5a29a31b04a12124f673"
           },
           "OilTemperature": {
             "datatype": "float",
@@ -5703,6 +5744,18 @@
             "type": "sensor",
             "unit": "celsius",
             "uuid": "ef3dfc11085d5077b363b1a4e8e4a84e"
+          },
+          "OxygenSensorsIn2Banks": {
+            "datatype": "uint8",
+            "description": "PID 13 - Presence of oxygen sensors in 2 banks. [A0..A3] == Bank 1, Sensors 1-4. [A4..A7] == Bank 2, Sensors 1-4",
+            "type": "sensor",
+            "uuid": "0a9ba3f0a9b256d78bafd62ee8ce73cd"
+          },
+          "OxygenSensorsIn4Banks": {
+            "datatype": "uint8",
+            "description": "PID 1D - Presence of oxygen sensors in 4 banks. Similar to PID 13, but [A0..A7] == [B1S1, B1S2, B2S1, B2S2, B3S1, B3S2, B4S1, B4S2]",
+            "type": "sensor",
+            "uuid": "41d3377813d651aa9b9344ba9fd2f880"
           },
           "PidsA": {
             "datatype": "uint32",
@@ -5766,17 +5819,31 @@
           },
           "ShortTermO2Trim1": {
             "datatype": "float",
-            "description": "PID 55 - Short term secondary O2 trim - Bank 1",
+            "description": "PID 55 (byte A) - Short term secondary O2 trim - Bank 1",
             "type": "sensor",
             "unit": "percent",
             "uuid": "be7ed33a854557ba802da0c51f9f4564"
           },
           "ShortTermO2Trim2": {
             "datatype": "float",
-            "description": "PID 57 - Short term secondary O2 trim - Bank 2",
+            "description": "PID 57 (byte A) - Short term secondary O2 trim - Bank 2",
             "type": "sensor",
             "unit": "percent",
             "uuid": "c8b962f8990e51d294621408ceaa21d9"
+          },
+          "ShortTermO2Trim3": {
+            "datatype": "float",
+            "description": "PID 55 (byte B) - Short term secondary O2 trim - Bank 3",
+            "type": "sensor",
+            "unit": "percent",
+            "uuid": "af58212df970568b9edcc5e58fa36f8d"
+          },
+          "ShortTermO2Trim4": {
+            "datatype": "float",
+            "description": "PID 57 (byte B) - Short term secondary O2 trim - Bank 4",
+            "type": "sensor",
+            "unit": "percent",
+            "uuid": "8ef0516c0c965fd6aecbacd6b9120a5b"
           },
           "Speed": {
             "datatype": "float",
