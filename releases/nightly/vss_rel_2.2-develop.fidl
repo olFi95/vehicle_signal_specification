@@ -840,6 +840,22 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Powertrain.Transmission.CurrentGear"
+    type: "sensor"
+    description: "The current gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse"
+    datatype: int8
+    uuid: cd0ba1d772565e16bff46cbd5c9361da
+}
+,
+{
+    name: "Vehicle.Powertrain.Transmission.SelectedGear"
+    type: "actuator"
+    description: "The selected gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse, 126=Park, 127=Drive"
+    datatype: int8
+    uuid: 490fd99b9d5f562eb180c19e8cef5e12
+}
+,
+{
     name: "Vehicle.Powertrain.Transmission.PerformanceMode"
     type: "actuator"
     description: "Current gearbox performance mode."
