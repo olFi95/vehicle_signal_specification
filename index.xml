@@ -89,26 +89,6 @@ To learn more check
     </item>
     
     <item>
-      <title>News</title>
-      <link>https://genivi.github.io/vehicle_signal_specification/news/</link>
-      <pubDate>Wed, 31 Jul 2019 12:11:31 +0200</pubDate>
-      
-      <guid>https://genivi.github.io/vehicle_signal_specification/news/</guid>
-      <description>VSS Version 2.0 released A new version of VSS has been released. The most important changes since Version 1.0 are:
-Vehicle as new root node Before, the tree of the specification started with an empty node, followed by an Attribute and a Signal branch. Now the root node is called Vehicle and every following branch is attached to it.
-Attribute and signal now elements of Data Entries Attributes and Signals were branches before.</description>
-    </item>
-    
-    <item>
-      <title>RELEASES</title>
-      <link>https://genivi.github.io/vehicle_signal_specification/releases/</link>
-      <pubDate>Wed, 31 Jul 2019 12:11:31 +0200</pubDate>
-      
-      <guid>https://genivi.github.io/vehicle_signal_specification/releases/</guid>
-      <description>Nightly  Name  .gitkeep   vss_rel_2.2-develop.binary   vss_rel_2.2-develop.csv   vss_rel_2.2-develop.fidl   vss_rel_2.2-develop.json   vss_rel_2.2-develop.yaml   Version 2.1  Name  vss_release_2.1.csv   vss_release_2.1.fidl   vss_release_2.1.json   Version 2.0  Name  vss_release_2.0.csv   vss_release_2.0.fidl   vss_release_2.0.json   Version 1.0  Name  vss_rel_1.0.csv   vss_rel_1.0.fidl   vss_rel_1.0.json   vss_rel_1.0.vsi   </description>
-    </item>
-    
-    <item>
       <title>Taxonomies</title>
       <link>https://genivi.github.io/vehicle_signal_specification/introduction/taxonomy/</link>
       <pubDate>Wed, 31 Jul 2019 12:11:31 +0200</pubDate>
@@ -141,17 +121,6 @@ Speed: type: sensor description: The vehicle speed, as measured by the drivetrai
 Defines the dot-notated name of the data entry. Please note that all parental branches included in the name must be defined as well.
 type
 Defines the type of the node. This can be branch, sensor, actuator, stream or attribute.</description>
-    </item>
-    
-    <item>
-      <title>Quickstart</title>
-      <link>https://genivi.github.io/vehicle_signal_specification/introduction/quickstart/</link>
-      <pubDate>Wed, 31 Jul 2019 15:22:34 +0200</pubDate>
-      
-      <guid>https://genivi.github.io/vehicle_signal_specification/introduction/quickstart/</guid>
-      <description>A serialization of the data definition of the vehicle signal specification is checked in as vss_$VERSION.json, where $VERSION is the content of the VERSION file.
-A web-based JSON viewer can be used to view the spec.
- View VSS version 2.1 View VSS version 2.0 View VSS version 1.0  </description>
     </item>
     
     <item>
