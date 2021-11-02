@@ -4905,6 +4905,7 @@
       },
       "IgnitionOn": {
         "datatype": "boolean",
+        "deprecation": "V2.2 replaced by LowVoltageSystemState",
         "description": "Indicates whether the vehicle ignition is on or off.",
         "type": "sensor",
         "uuid": "6de19e6839af5f62acab3fbbd8077a98"
@@ -4929,6 +4930,20 @@
         "type": "attribute",
         "unit": "mm",
         "uuid": "885f1be6842a513582e52a42edb3176f"
+      },
+      "LowVoltageSystemState": {
+        "datatype": "string",
+        "description": "State of the supply voltage of the control units (usually 12V).",
+        "enum": [
+          "UNDEFINED",
+          "LOCK",
+          "OFF",
+          "ACC",
+          "ON",
+          "START"
+        ],
+        "type": "sensor",
+        "uuid": "d7391ceb132e5519b02d4c13d5513d99"
       },
       "MaxTowBallWeight": {
         "datatype": "uint16",

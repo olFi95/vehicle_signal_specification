@@ -189,6 +189,15 @@ const SignalSpec[] signal_spec = [
     uuid: 60f32d73afff58d0ac80c1c09b98dfb9
 }
 {
+    name: "Vehicle.LowVoltageSystemState"
+    type: "sensor"
+    description: "State of the supply voltage of the control units (usually 12V)."
+    datatype: string
+    uuid: d7391ceb132e5519b02d4c13d5513d99
+    enum: ['UNDEFINED', 'LOCK', 'OFF', 'ACC', 'ON', 'START']
+}
+,
+{
     name: "Vehicle.IgnitionOn"
     type: "sensor"
     description: "Indicates whether the vehicle ignition is on or off."
