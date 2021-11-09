@@ -994,6 +994,22 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Powertrain.Battery.PowerConnected"
+    type: "sensor"
+    description: "Indicating if the power (positive terminator) of the traction battery is connected to the powertrain."
+    datatype: boolean
+    uuid: ed491318bbf05d96a6e69e371c1697f0
+}
+,
+{
+    name: "Vehicle.Powertrain.Battery.GroundConnected"
+    type: "sensor"
+    description: "Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain."
+    datatype: boolean
+    uuid: 6a98571fda81562ab895e22ff7afc5d0
+}
+,
+{
     name: "Vehicle.Powertrain.Battery.Temperature"
     type: "sensor"
     description: "Temperature of the battery pack"

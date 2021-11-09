@@ -6113,6 +6113,12 @@
                 "unit": "kWh",
                 "uuid": "7b5402cc647454b49ee019e8689d3737"
               },
+              "GroundConnected": {
+                "datatype": "boolean",
+                "description": "Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain.",
+                "type": "sensor",
+                "uuid": "6a98571fda81562ab895e22ff7afc5d0"
+              },
               "NetCapacity": {
                 "datatype": "uint16",
                 "description": "Net capacity of the battery",
@@ -6126,6 +6132,12 @@
                 "type": "attribute",
                 "unit": "V",
                 "uuid": "77d38e4890ea55cca3798616968384ed"
+              },
+              "PowerConnected": {
+                "datatype": "boolean",
+                "description": "Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.",
+                "type": "sensor",
+                "uuid": "ed491318bbf05d96a6e69e371c1697f0"
               },
               "Range": {
                 "datatype": "uint32",

@@ -920,6 +920,18 @@ Vehicle.Powertrain.Battery:
   description: Battery Management data.
   uuid: 3e92d75e0cbc5765a459308f71873ae0
 
+Vehicle.Powertrain.Battery.PowerConnected:
+  type: sensor
+  datatype: boolean
+  description: Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.
+  uuid: ed491318bbf05d96a6e69e371c1697f0
+
+Vehicle.Powertrain.Battery.GroundConnected:
+  type: sensor
+  datatype: boolean
+  description: Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain.
+  uuid: 6a98571fda81562ab895e22ff7afc5d0
+
 Vehicle.Powertrain.Battery.Temperature:
   type: sensor
   datatype: float

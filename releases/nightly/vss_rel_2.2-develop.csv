@@ -124,6 +124,8 @@
 "Vehicle.Powertrain.ElectricMotor.Motor.Power","sensor","int16","","false","kW","-2000","2000","Current motor power output. Negative values indicate regen mode.","","630a478781b95ad8b012ce52f745f3e8"
 "Vehicle.Powertrain.ElectricMotor.Motor.Torque","sensor","int16","","false","Nm","-5000","5000","Current motor torque. Negative values indicate regen mode.","","0d07c1c502a1557a91b4ed564e024a19"
 "Vehicle.Powertrain.Battery","branch","","","false","","","","Battery Management data.","","3e92d75e0cbc5765a459308f71873ae0"
+"Vehicle.Powertrain.Battery.PowerConnected","sensor","boolean","","false","","","","Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.","","ed491318bbf05d96a6e69e371c1697f0"
+"Vehicle.Powertrain.Battery.GroundConnected","sensor","boolean","","false","","","","Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain.","","6a98571fda81562ab895e22ff7afc5d0"
 "Vehicle.Powertrain.Battery.Temperature","sensor","float","","false","celsius","","","Temperature of the battery pack","","2b9d90f1d87c57dcbbd6a72807f8d412"
 "Vehicle.Powertrain.Battery.StateOfCharge","branch","","","false","","","","Information on the state of charge of the vehicle's high voltage battery.","","74249091cd7653078b6c1e87ac6fbe5b"
 "Vehicle.Powertrain.Battery.StateOfCharge.Current","sensor","float","","false","percent","0","100.0","Physical state of charge of the high voltage battery. This is not necessarily the state of charge being displayed to the customer.","","e0628947864a5c14986b2ae1487f550f"
