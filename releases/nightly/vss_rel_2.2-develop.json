@@ -6990,18 +6990,21 @@
           },
           "Major": {
             "datatype": "uint32",
+            "default": 2,
             "description": "Supported Version of VSS - Major version",
             "type": "attribute",
             "uuid": "5edf1a338c975cbb84d4ce3cfe1aa4b4"
           },
           "Minor": {
             "datatype": "uint32",
+            "default": 1,
             "description": "Supported Version of VSS - Minor version",
             "type": "attribute",
             "uuid": "6e70a598dbc7534c96c58c18e9888cfd"
           },
           "Patch": {
             "datatype": "uint32",
+            "default": 0,
             "description": "Supported Version of VSS - Patch version",
             "type": "attribute",
             "uuid": "69858f224af459338b9bfbff436dda45"
