@@ -6985,7 +6985,7 @@
           },
           "Minor": {
             "datatype": "uint32",
-            "default": 1,
+            "default": 2,
             "description": "Supported Version of VSS - Minor version",
             "type": "attribute",
             "uuid": "6e70a598dbc7534c96c58c18e9888cfd"
