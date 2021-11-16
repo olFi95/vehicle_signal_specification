@@ -667,99 +667,107 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.Speed"
+    name: "Vehicle.Powertrain.CombustionEngine.Running"
+    type: "sensor"
+    description: "Engine Running. True if engine is rotating (Engine.Speed > 0)."
+    datatype: boolean
+    uuid: b293ae50dceb5adfaa7a7e2ad752b8a1
+}
+,
+{
+    name: "Vehicle.Powertrain.CombustionEngine.Speed"
     type: "sensor"
     description: "Engine speed measured as rotations per minute."
     datatype: uint16
-    uuid: c145005246125d1eb6531052f46eec94
+    uuid: 557ce24c5a4d51cc825059c948ac9e29
     min: 0
     max: 20000
     unit: rpm
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.ECT"
+    name: "Vehicle.Powertrain.CombustionEngine.ECT"
     type: "sensor"
     description: "Engine coolant temperature."
     datatype: int16
-    uuid: de032ac3cc2858f2a1ef0a4b6f945098
+    uuid: fff3cad23cac5b189a1a075c3ab562cd
     min: -50
     max: 200
     unit: celsius
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.EOT"
+    name: "Vehicle.Powertrain.CombustionEngine.EOT"
     type: "sensor"
     description: "Engine oil temperature."
     datatype: int16
-    uuid: 7fcbd0abd829530ca022e69a224f1845
+    uuid: eae6f5eae04f530e80f6b024f95b767d
     min: -50
     max: 300
     unit: celsius
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.MAP"
+    name: "Vehicle.Powertrain.CombustionEngine.MAP"
     type: "sensor"
     description: "Manifold air pressure possibly boosted using forced induction."
     datatype: int16
-    uuid: 6269b87f545f5466a0c5ba13432810da
+    uuid: 28d4354fa34056369acb857aa7cc76ac
     min: 0
     max: 1000
     unit: kPa
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.MAF"
+    name: "Vehicle.Powertrain.CombustionEngine.MAF"
     type: "sensor"
     description: "Grams of air drawn into engine per second."
     datatype: int16
-    uuid: 944823218c565afa86adc3ebdf8b77c5
+    uuid: 1e222ed8c48b5dcea60e43ac8af7d6df
     min: 0
     max: 3000
     unit: g/s
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.TPS"
+    name: "Vehicle.Powertrain.CombustionEngine.TPS"
     type: "sensor"
     description: "Current throttle position."
     datatype: int8
-    uuid: 5ab79d75e2af52dda3d61f3a2bf41462
+    uuid: 1ddb77860de558b4876ffb399a442bda
     min: 0
     max: 100
     unit: percent
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.EOP"
+    name: "Vehicle.Powertrain.CombustionEngine.EOP"
     type: "sensor"
     description: "Engine oil pressure."
     datatype: int16
-    uuid: 054dacf5e59a5688981834690c5d449e
+    uuid: 76c7039dc7975ec3a003f0f4a04895ec
     min: 0
     max: 1000
     unit: kPa
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.Power"
+    name: "Vehicle.Powertrain.CombustionEngine.Power"
     type: "sensor"
     description: "Current engine power output."
     datatype: int16
-    uuid: 6de515320e3257c7842923c88d11a09f
+    uuid: 20e8b5d2187758c2848ed421248c180d
     min: 0
     max: 2000
     unit: kW
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Engine.Torque"
+    name: "Vehicle.Powertrain.CombustionEngine.Torque"
     type: "sensor"
     description: "Current engine torque."
     datatype: int16
-    uuid: b0295cd26bfc586ca3a42f9296a26ceb
+    uuid: b81f504bdb57513299ae6e9402ec7bcd
     min: 0
     max: 3000
     unit: Nm
@@ -939,55 +947,55 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.ElectricMotor.Motor.Rpm"
+    name: "Vehicle.Powertrain.ElectricMotor.Rpm"
     type: "sensor"
     description: "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode."
     datatype: int32
-    uuid: 96259c99dc105266bbe7aba70e16f1ef
+    uuid: b31746b142de52fea3f84d860a0b717e
     min: -100000
     max: 100000
     unit: rpm
 }
 ,
 {
-    name: "Vehicle.Powertrain.ElectricMotor.Motor.Temperature"
+    name: "Vehicle.Powertrain.ElectricMotor.Temperature"
     type: "sensor"
     description: "Motor temperature."
     datatype: int16
-    uuid: 6ae826db62d552c5b9fe2701f5655455
+    uuid: 1b7c15e5341052139995bfacea2c05b2
     min: -50
     max: 200
     unit: celsius
 }
 ,
 {
-    name: "Vehicle.Powertrain.ElectricMotor.Motor.CoolantTemperature"
+    name: "Vehicle.Powertrain.ElectricMotor.CoolantTemperature"
     type: "sensor"
     description: "Motor coolant temperature (if applicable)."
     datatype: int16
-    uuid: ff978ffe8e615fada4b6423d5ba25e25
+    uuid: 3c5ea8c7700956518f2ae7a2a0f34f1c
     min: -50
     max: 200
     unit: celsius
 }
 ,
 {
-    name: "Vehicle.Powertrain.ElectricMotor.Motor.Power"
+    name: "Vehicle.Powertrain.ElectricMotor.Power"
     type: "sensor"
     description: "Current motor power output. Negative values indicate regen mode."
     datatype: int16
-    uuid: 630a478781b95ad8b012ce52f745f3e8
+    uuid: 46b86286fba059349a733fed9a0e3232
     min: -2000
     max: 2000
     unit: kW
 }
 ,
 {
-    name: "Vehicle.Powertrain.ElectricMotor.Motor.Torque"
+    name: "Vehicle.Powertrain.ElectricMotor.Torque"
     type: "sensor"
     description: "Current motor torque. Negative values indicate regen mode."
     datatype: int16
-    uuid: 0d07c1c502a1557a91b4ed564e024a19
+    uuid: aceffe768ddf5b828fff0975349d2433
     min: -5000
     max: 5000
     unit: Nm

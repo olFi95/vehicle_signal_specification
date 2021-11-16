@@ -6277,93 +6277,32 @@
                 "unit": "cm^3",
                 "uuid": "94dbd928847150ab842c00fa5caaf272"
               },
-              "Engine": {
-                "children": {
-                  "ECT": {
-                    "datatype": "int16",
-                    "description": "Engine coolant temperature.",
-                    "max": 200,
-                    "min": -50,
-                    "type": "sensor",
-                    "unit": "celsius",
-                    "uuid": "de032ac3cc2858f2a1ef0a4b6f945098"
-                  },
-                  "EOP": {
-                    "datatype": "int16",
-                    "description": "Engine oil pressure.",
-                    "max": 1000,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "kPa",
-                    "uuid": "054dacf5e59a5688981834690c5d449e"
-                  },
-                  "EOT": {
-                    "datatype": "int16",
-                    "description": "Engine oil temperature.",
-                    "max": 300,
-                    "min": -50,
-                    "type": "sensor",
-                    "unit": "celsius",
-                    "uuid": "7fcbd0abd829530ca022e69a224f1845"
-                  },
-                  "MAF": {
-                    "datatype": "int16",
-                    "description": "Grams of air drawn into engine per second.",
-                    "max": 3000,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "g/s",
-                    "uuid": "944823218c565afa86adc3ebdf8b77c5"
-                  },
-                  "MAP": {
-                    "datatype": "int16",
-                    "description": "Manifold air pressure possibly boosted using forced induction.",
-                    "max": 1000,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "kPa",
-                    "uuid": "6269b87f545f5466a0c5ba13432810da"
-                  },
-                  "Power": {
-                    "datatype": "int16",
-                    "description": "Current engine power output.",
-                    "max": 2000,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "kW",
-                    "uuid": "6de515320e3257c7842923c88d11a09f"
-                  },
-                  "Speed": {
-                    "datatype": "uint16",
-                    "description": "Engine speed measured as rotations per minute.",
-                    "max": 20000,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "rpm",
-                    "uuid": "c145005246125d1eb6531052f46eec94"
-                  },
-                  "TPS": {
-                    "datatype": "int8",
-                    "description": "Current throttle position.",
-                    "max": 100,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "percent",
-                    "uuid": "5ab79d75e2af52dda3d61f3a2bf41462"
-                  },
-                  "Torque": {
-                    "datatype": "int16",
-                    "description": "Current engine torque.",
-                    "max": 3000,
-                    "min": 0,
-                    "type": "sensor",
-                    "unit": "Nm",
-                    "uuid": "b0295cd26bfc586ca3a42f9296a26ceb"
-                  }
-                },
-                "description": "Engine signals",
-                "type": "branch",
-                "uuid": "96a96cd4f18b519eb4b00566b4e6308f"
+              "ECT": {
+                "datatype": "int16",
+                "description": "Engine coolant temperature.",
+                "max": 200,
+                "min": -50,
+                "type": "sensor",
+                "unit": "celsius",
+                "uuid": "fff3cad23cac5b189a1a075c3ab562cd"
+              },
+              "EOP": {
+                "datatype": "int16",
+                "description": "Engine oil pressure.",
+                "max": 1000,
+                "min": 0,
+                "type": "sensor",
+                "unit": "kPa",
+                "uuid": "76c7039dc7975ec3a003f0f4a04895ec"
+              },
+              "EOT": {
+                "datatype": "int16",
+                "description": "Engine oil temperature.",
+                "max": 300,
+                "min": -50,
+                "type": "sensor",
+                "unit": "celsius",
+                "uuid": "eae6f5eae04f530e80f6b024f95b767d"
               },
               "EngineCoolantCapacity": {
                 "datatype": "float",
@@ -6406,6 +6345,24 @@
                 "type": "attribute",
                 "uuid": "d0f8c79131c850bab8159eaefc7e23e5"
               },
+              "MAF": {
+                "datatype": "int16",
+                "description": "Grams of air drawn into engine per second.",
+                "max": 3000,
+                "min": 0,
+                "type": "sensor",
+                "unit": "g/s",
+                "uuid": "1e222ed8c48b5dcea60e43ac8af7d6df"
+              },
+              "MAP": {
+                "datatype": "int16",
+                "description": "Manifold air pressure possibly boosted using forced induction.",
+                "max": 1000,
+                "min": 0,
+                "type": "sensor",
+                "unit": "kPa",
+                "uuid": "28d4354fa34056369acb857aa7cc76ac"
+              },
               "MaxPower": {
                 "datatype": "uint16",
                 "default": 0,
@@ -6441,12 +6398,54 @@
                 "unit": "s",
                 "uuid": "94303734c68c5353a02625f652103918"
               },
+              "Power": {
+                "datatype": "int16",
+                "description": "Current engine power output.",
+                "max": 2000,
+                "min": 0,
+                "type": "sensor",
+                "unit": "kW",
+                "uuid": "20e8b5d2187758c2848ed421248c180d"
+              },
+              "Running": {
+                "datatype": "boolean",
+                "description": "Engine Running. True if engine is rotating (Engine.Speed > 0).",
+                "type": "sensor",
+                "uuid": "b293ae50dceb5adfaa7a7e2ad752b8a1"
+              },
+              "Speed": {
+                "datatype": "uint16",
+                "description": "Engine speed measured as rotations per minute.",
+                "max": 20000,
+                "min": 0,
+                "type": "sensor",
+                "unit": "rpm",
+                "uuid": "557ce24c5a4d51cc825059c948ac9e29"
+              },
               "StrokeLength": {
                 "datatype": "float",
                 "description": "Stroke length in millimetres.",
                 "type": "attribute",
                 "unit": "mm",
                 "uuid": "1bdfdab7904d51ed93e101b84ea54ddf"
+              },
+              "TPS": {
+                "datatype": "int8",
+                "description": "Current throttle position.",
+                "max": 100,
+                "min": 0,
+                "type": "sensor",
+                "unit": "percent",
+                "uuid": "1ddb77860de558b4876ffb399a442bda"
+              },
+              "Torque": {
+                "datatype": "int16",
+                "description": "Current engine torque.",
+                "max": 3000,
+                "min": 0,
+                "type": "sensor",
+                "unit": "Nm",
+                "uuid": "b81f504bdb57513299ae6e9402ec7bcd"
               }
             },
             "description": "Engine-specific data, stopping at the bell housing.",
@@ -6455,6 +6454,15 @@
           },
           "ElectricMotor": {
             "children": {
+              "CoolantTemperature": {
+                "datatype": "int16",
+                "description": "Motor coolant temperature (if applicable).",
+                "max": 200,
+                "min": -50,
+                "type": "sensor",
+                "unit": "celsius",
+                "uuid": "3c5ea8c7700956518f2ae7a2a0f34f1c"
+              },
               "MaxPower": {
                 "datatype": "uint16",
                 "default": 0,
@@ -6487,57 +6495,41 @@
                 "unit": "Nm",
                 "uuid": "cf31eabcde5151f589e9b0f7a6090512"
               },
-              "Motor": {
-                "children": {
-                  "CoolantTemperature": {
-                    "datatype": "int16",
-                    "description": "Motor coolant temperature (if applicable).",
-                    "max": 200,
-                    "min": -50,
-                    "type": "sensor",
-                    "unit": "celsius",
-                    "uuid": "ff978ffe8e615fada4b6423d5ba25e25"
-                  },
-                  "Power": {
-                    "datatype": "int16",
-                    "description": "Current motor power output. Negative values indicate regen mode.",
-                    "max": 2000,
-                    "min": -2000,
-                    "type": "sensor",
-                    "unit": "kW",
-                    "uuid": "630a478781b95ad8b012ce52f745f3e8"
-                  },
-                  "Rpm": {
-                    "datatype": "int32",
-                    "description": "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.",
-                    "max": 100000,
-                    "min": -100000,
-                    "type": "sensor",
-                    "unit": "rpm",
-                    "uuid": "96259c99dc105266bbe7aba70e16f1ef"
-                  },
-                  "Temperature": {
-                    "datatype": "int16",
-                    "description": "Motor temperature.",
-                    "max": 200,
-                    "min": -50,
-                    "type": "sensor",
-                    "unit": "celsius",
-                    "uuid": "6ae826db62d552c5b9fe2701f5655455"
-                  },
-                  "Torque": {
-                    "datatype": "int16",
-                    "description": "Current motor torque. Negative values indicate regen mode.",
-                    "max": 5000,
-                    "min": -5000,
-                    "type": "sensor",
-                    "unit": "Nm",
-                    "uuid": "0d07c1c502a1557a91b4ed564e024a19"
-                  }
-                },
-                "description": "motor signals",
-                "type": "branch",
-                "uuid": "af1521cbe56b599fa9fff8c6171e645c"
+              "Power": {
+                "datatype": "int16",
+                "description": "Current motor power output. Negative values indicate regen mode.",
+                "max": 2000,
+                "min": -2000,
+                "type": "sensor",
+                "unit": "kW",
+                "uuid": "46b86286fba059349a733fed9a0e3232"
+              },
+              "Rpm": {
+                "datatype": "int32",
+                "description": "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.",
+                "max": 100000,
+                "min": -100000,
+                "type": "sensor",
+                "unit": "rpm",
+                "uuid": "b31746b142de52fea3f84d860a0b717e"
+              },
+              "Temperature": {
+                "datatype": "int16",
+                "description": "Motor temperature.",
+                "max": 200,
+                "min": -50,
+                "type": "sensor",
+                "unit": "celsius",
+                "uuid": "1b7c15e5341052139995bfacea2c05b2"
+              },
+              "Torque": {
+                "datatype": "int16",
+                "description": "Current motor torque. Negative values indicate regen mode.",
+                "max": 5000,
+                "min": -5000,
+                "type": "sensor",
+                "unit": "Nm",
+                "uuid": "aceffe768ddf5b828fff0975349d2433"
               }
             },
             "description": "Electric Motor specific data.",

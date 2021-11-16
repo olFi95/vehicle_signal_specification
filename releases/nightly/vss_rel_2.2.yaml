@@ -601,91 +601,92 @@ Vehicle.Powertrain.CombustionEngine.FuelType:
   description: Type of fuel that the engine runs on.
   uuid: d0f8c79131c850bab8159eaefc7e23e5
 
-Vehicle.Powertrain.CombustionEngine.Engine:
-  type: branch
-  description: Engine signals
-  uuid: 96a96cd4f18b519eb4b00566b4e6308f
+Vehicle.Powertrain.CombustionEngine.Running:
+  type: sensor
+  datatype: boolean
+  description: Engine Running. True if engine is rotating (Engine.Speed > 0).
+  uuid: b293ae50dceb5adfaa7a7e2ad752b8a1
 
-Vehicle.Powertrain.CombustionEngine.Engine.Speed:
+Vehicle.Powertrain.CombustionEngine.Speed:
   type: sensor
   datatype: uint16
   min: 0
   max: 20000
   unit: rpm
   description: Engine speed measured as rotations per minute.
-  uuid: c145005246125d1eb6531052f46eec94
+  uuid: 557ce24c5a4d51cc825059c948ac9e29
 
-Vehicle.Powertrain.CombustionEngine.Engine.ECT:
+Vehicle.Powertrain.CombustionEngine.ECT:
   type: sensor
   datatype: int16
   min: -50
   max: 200
   unit: celsius
   description: Engine coolant temperature.
-  uuid: de032ac3cc2858f2a1ef0a4b6f945098
+  uuid: fff3cad23cac5b189a1a075c3ab562cd
 
-Vehicle.Powertrain.CombustionEngine.Engine.EOT:
+Vehicle.Powertrain.CombustionEngine.EOT:
   type: sensor
   datatype: int16
   min: -50
   max: 300
   unit: celsius
   description: Engine oil temperature.
-  uuid: 7fcbd0abd829530ca022e69a224f1845
+  uuid: eae6f5eae04f530e80f6b024f95b767d
 
-Vehicle.Powertrain.CombustionEngine.Engine.MAP:
+Vehicle.Powertrain.CombustionEngine.MAP:
   type: sensor
   datatype: int16
   min: 0
   max: 1000
   unit: kPa
   description: Manifold air pressure possibly boosted using forced induction.
-  uuid: 6269b87f545f5466a0c5ba13432810da
+  uuid: 28d4354fa34056369acb857aa7cc76ac
 
-Vehicle.Powertrain.CombustionEngine.Engine.MAF:
+Vehicle.Powertrain.CombustionEngine.MAF:
   type: sensor
   datatype: int16
   min: 0
   max: 3000
   unit: g/s
   description: Grams of air drawn into engine per second.
-  uuid: 944823218c565afa86adc3ebdf8b77c5
+  uuid: 1e222ed8c48b5dcea60e43ac8af7d6df
 
-Vehicle.Powertrain.CombustionEngine.Engine.TPS:
+Vehicle.Powertrain.CombustionEngine.TPS:
   type: sensor
   datatype: int8
   min: 0
   max: 100
   unit: percent
   description: Current throttle position.
-  uuid: 5ab79d75e2af52dda3d61f3a2bf41462
+  uuid: 1ddb77860de558b4876ffb399a442bda
 
-Vehicle.Powertrain.CombustionEngine.Engine.EOP:
+Vehicle.Powertrain.CombustionEngine.EOP:
   type: sensor
   datatype: int16
   min: 0
   max: 1000
   unit: kPa
   description: Engine oil pressure.
-  uuid: 054dacf5e59a5688981834690c5d449e
+  uuid: 76c7039dc7975ec3a003f0f4a04895ec
 
-Vehicle.Powertrain.CombustionEngine.Engine.Power:
+Vehicle.Powertrain.CombustionEngine.Power:
   type: sensor
   datatype: int16
   min: 0
   max: 2000
   unit: kW
   description: Current engine power output.
-  uuid: 6de515320e3257c7842923c88d11a09f
+  uuid: 20e8b5d2187758c2848ed421248c180d
 
-Vehicle.Powertrain.CombustionEngine.Engine.Torque:
+Vehicle.Powertrain.CombustionEngine.Torque:
   type: sensor
   datatype: int16
   min: 0
   max: 3000
   unit: Nm
   description: Current engine torque.
-  uuid: b0295cd26bfc586ca3a42f9296a26ceb
+  uuid: b81f504bdb57513299ae6e9402ec7bcd
 
 Vehicle.Powertrain.CombustionEngine.DieselParticulateFilter:
   type: branch
@@ -863,55 +864,50 @@ Vehicle.Powertrain.ElectricMotor.MaxRegenTorque:
   description: Peak regen/brake torque, in newton meter, that the motor(s) can generate.
   uuid: 0e5190c2517b55aa80fcb9bf698e02d6
 
-Vehicle.Powertrain.ElectricMotor.Motor:
-  type: branch
-  description: motor signals
-  uuid: af1521cbe56b599fa9fff8c6171e645c
-
-Vehicle.Powertrain.ElectricMotor.Motor.Rpm:
+Vehicle.Powertrain.ElectricMotor.Rpm:
   type: sensor
   datatype: int32
   min: -100000
   max: 100000
   unit: rpm
   description: Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.
-  uuid: 96259c99dc105266bbe7aba70e16f1ef
+  uuid: b31746b142de52fea3f84d860a0b717e
 
-Vehicle.Powertrain.ElectricMotor.Motor.Temperature:
+Vehicle.Powertrain.ElectricMotor.Temperature:
   type: sensor
   datatype: int16
   min: -50
   max: 200
   unit: celsius
   description: Motor temperature.
-  uuid: 6ae826db62d552c5b9fe2701f5655455
+  uuid: 1b7c15e5341052139995bfacea2c05b2
 
-Vehicle.Powertrain.ElectricMotor.Motor.CoolantTemperature:
+Vehicle.Powertrain.ElectricMotor.CoolantTemperature:
   type: sensor
   datatype: int16
   min: -50
   max: 200
   unit: celsius
   description: Motor coolant temperature (if applicable).
-  uuid: ff978ffe8e615fada4b6423d5ba25e25
+  uuid: 3c5ea8c7700956518f2ae7a2a0f34f1c
 
-Vehicle.Powertrain.ElectricMotor.Motor.Power:
+Vehicle.Powertrain.ElectricMotor.Power:
   type: sensor
   datatype: int16
   min: -2000
   max: 2000
   unit: kW
   description: Current motor power output. Negative values indicate regen mode.
-  uuid: 630a478781b95ad8b012ce52f745f3e8
+  uuid: 46b86286fba059349a733fed9a0e3232
 
-Vehicle.Powertrain.ElectricMotor.Motor.Torque:
+Vehicle.Powertrain.ElectricMotor.Torque:
   type: sensor
   datatype: int16
   min: -5000
   max: 5000
   unit: Nm
   description: Current motor torque. Negative values indicate regen mode.
-  uuid: 0d07c1c502a1557a91b4ed564e024a19
+  uuid: aceffe768ddf5b828fff0975349d2433
 
 Vehicle.Powertrain.Battery:
   type: branch
