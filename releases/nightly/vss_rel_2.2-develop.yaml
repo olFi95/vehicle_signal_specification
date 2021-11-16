@@ -444,11 +444,6 @@ Vehicle.Private:
   description: Uncontrolled branch where non-public signals can be defined.
   uuid: 4161866b048a5b76aa3124dec82e0260
 
-Vehicle.Media:
-  type: branch
-  description: Media service data.
-  uuid: b778b6c07b055eae9f0a51d64c5b3bf3
-
 Vehicle.Powertrain:
   type: branch
   description: Powertrain data for battery management, etc.
@@ -1245,11 +1240,6 @@ Vehicle.Powertrain.FuelSystem.LowFuelLevel:
   datatype: boolean
   description: Indicates that the fuel level is low (e.g. <50km range)
   uuid: 7f5fd2d9ca465d80af8e4bc0f8901b3b
-
-Vehicle.Powertrain.FuelCell:
-  type: branch
-  description: Fuel Cell data.
-  uuid: 63a881bcc20b5666b97d1c0575f2d484
 
 Vehicle.Body:
   type: branch

@@ -4961,12 +4961,6 @@
         "unit": "kg",
         "uuid": "a1b8fd65897654aa8a418bccf443f1f3"
       },
-      "Media": {
-        "children": {},
-        "description": "Media service data.",
-        "type": "branch",
-        "uuid": "b778b6c07b055eae9f0a51d64c5b3bf3"
-      },
       "OBD": {
         "children": {
           "AbsoluteLoad": {
@@ -6549,12 +6543,6 @@
             "description": "Electric Motor specific data.",
             "type": "branch",
             "uuid": "1ade64f6b0d05f6c9340e7a667555ae2"
-          },
-          "FuelCell": {
-            "children": {},
-            "description": "Fuel Cell data.",
-            "type": "branch",
-            "uuid": "63a881bcc20b5666b97d1c0575f2d484"
           },
           "FuelSystem": {
             "children": {
