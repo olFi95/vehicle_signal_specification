@@ -6964,20 +6964,21 @@
         "children": {
           "Label": {
             "datatype": "string",
+            "default": "develop",
             "description": "Label to further describe the version",
             "type": "attribute",
             "uuid": "7c92cd50d24b5662922b27cb9a327e53"
           },
           "Major": {
             "datatype": "uint32",
-            "default": 2,
+            "default": 3,
             "description": "Supported Version of VSS - Major version",
             "type": "attribute",
             "uuid": "5edf1a338c975cbb84d4ce3cfe1aa4b4"
           },
           "Minor": {
             "datatype": "uint32",
-            "default": 2,
+            "default": 0,
             "description": "Supported Version of VSS - Minor version",
             "type": "attribute",
             "uuid": "6e70a598dbc7534c96c58c18e9888cfd"

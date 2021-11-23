@@ -11,14 +11,14 @@ Vehicle.VersionVSS:
 Vehicle.VersionVSS.Major:
   type: attribute
   datatype: uint32
-  default: 2
+  default: 3
   description: Supported Version of VSS - Major version
   uuid: 5edf1a338c975cbb84d4ce3cfe1aa4b4
 
 Vehicle.VersionVSS.Minor:
   type: attribute
   datatype: uint32
-  default: 2
+  default: 0
   description: Supported Version of VSS - Minor version
   uuid: 6e70a598dbc7534c96c58c18e9888cfd
 
@@ -32,6 +32,7 @@ Vehicle.VersionVSS.Patch:
 Vehicle.VersionVSS.Label:
   type: attribute
   datatype: string
+  default: develop
   description: Label to further describe the version
   uuid: 7c92cd50d24b5662922b27cb9a327e53
 
