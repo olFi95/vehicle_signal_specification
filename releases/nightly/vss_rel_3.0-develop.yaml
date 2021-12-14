@@ -915,23 +915,23 @@ Vehicle.Powertrain.TractionBattery:
   description: Battery Management data.
   uuid: 1a2515d1a8875d86873431194ade2b50
 
-Vehicle.Powertrain.TractionBattery.PowerConnected:
+Vehicle.Powertrain.TractionBattery.IsPowerConnected:
   type: sensor
   datatype: boolean
   description: Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.
-  uuid: 0507b2ddc362504a9c69d0ab6f1086e2
+  uuid: e30ef59fc2a25f6b8990248e19a5cdf9
 
-Vehicle.Powertrain.TractionBattery.GroundConnected:
+Vehicle.Powertrain.TractionBattery.IsGroundConnected:
   type: sensor
   datatype: boolean
   description: Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain.
-  uuid: a462b37ac4f253fc9b7b12c603198ab1
+  uuid: dd38d1c7ee12530aac03f49ad01d5c04
 
 Vehicle.Powertrain.TractionBattery.Temperature:
   type: sensor
   datatype: float
   unit: celsius
-  description: Temperature of the battery pack
+  description: Temperature of the battery pack.
   uuid: 1cfbcf8c152959dcb3eb2c54fc42e623
 
 Vehicle.Powertrain.TractionBattery.StateOfCharge:
@@ -963,49 +963,49 @@ Vehicle.Powertrain.TractionBattery.StateOfCharge.Target:
   min: 0
   max: 100
   unit: percent
-  description: Target state of charge set (eg. by customer).
+  description: Target state of charge set (eg. by customer). Shall never exceed Charging.ChargeLimit.
   uuid: 6aca8e9650be5a7782ce34ec4f03b96b
 
 Vehicle.Powertrain.TractionBattery.GrossCapacity:
   type: attribute
   datatype: uint16
   unit: kWh
-  description: Gross capacity of the battery
+  description: Gross capacity of the battery.
   uuid: 5460530488435dc8bfa1298bf47a993d
 
 Vehicle.Powertrain.TractionBattery.NetCapacity:
   type: attribute
   datatype: uint16
   unit: kWh
-  description: Net capacity of the battery
+  description: Net capacity of the battery.
   uuid: 9c68fe42cb81501eb6349f8c9b0b6899
 
 Vehicle.Powertrain.TractionBattery.NominalVoltage:
   type: attribute
   datatype: uint16
   unit: V
-  description: Nominal Voltage of the battery
+  description: Nominal Voltage of the battery.
   uuid: 3eccae5633185b998d5bdb6ea33cd926
 
 Vehicle.Powertrain.TractionBattery.ReferentVoltage:
   type: attribute
   datatype: uint16
   unit: V
-  description: Referent Voltage of the battery
+  description: Referent Voltage of the battery.
   uuid: 51b5e378ccab5dd4905b552d1306cf7c
 
 Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy:
   type: sensor
   datatype: float
   unit: kWh
-  description: The accumulated energy delivered to the battery during charging over lifetime.
+  description: The accumulated energy delivered to the battery during charging over lifetime of the battery.
   uuid: 739d06021d795da0877bc0ef3c107de1
 
 Vehicle.Powertrain.TractionBattery.AccumulatedConsumedEnergy:
   type: sensor
   datatype: float
   unit: kWh
-  description: The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime.
+  description: The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime of the battery.
   uuid: b844cb96765f574d8d31edb09ccaef81
 
 Vehicle.Powertrain.TractionBattery.Range:
@@ -1017,7 +1017,7 @@ Vehicle.Powertrain.TractionBattery.Range:
 
 Vehicle.Powertrain.TractionBattery.Charging:
   type: branch
-  description: Properties related to battery charging
+  description: Properties related to battery charging.
   uuid: 49b9ef0c8b145a36afdf17d0cb44131b
 
 Vehicle.Powertrain.TractionBattery.Charging.ChargeLimit:
@@ -1042,14 +1042,14 @@ Vehicle.Powertrain.TractionBattery.Charging.ChargePortFlap:
   enum:
   - open
   - closed
-  description: Signal indicating if charge port cover is open or closed, can potentially be controlled manually.
+  description: Status of the charge port cover, can potentially be controlled manually.
   uuid: 71bdd2145bb55c3393df194bfc2e03e5
 
-Vehicle.Powertrain.TractionBattery.Charging.ChargePlugStatus:
+Vehicle.Powertrain.TractionBattery.Charging.IsChargingCableConnected:
   type: sensor
   datatype: boolean
-  description: Signal indicating if charge plug is connected or not.
-  uuid: 162d1adfafd95faa86dbd0890705709b
+  description: Indicates if a charging cable is connected to the vehicle or not.
+  uuid: a1c8e2f662b95a54a9933a1b163fff84
 
 Vehicle.Powertrain.TractionBattery.Charging.ChargePlugType:
   type: attribute
@@ -1073,11 +1073,11 @@ Vehicle.Powertrain.TractionBattery.Charging.Mode:
   description: Control of the charge process - manually initiated (plug-in event, companion app, etc), timer-based or grid-controlled (eg ISO 15118).
   uuid: 1e4be3280b265873945531f6f6d0ec6b
 
-Vehicle.Powertrain.TractionBattery.Charging.Status:
+Vehicle.Powertrain.TractionBattery.Charging.IsCharging:
   type: sensor
   datatype: boolean
-  description: State of charging process.
-  uuid: d87c4ad383975eb08c489e3b597293ed
+  description: True if charging is ongoing. Charging is considered to be ongoing if energy is flowing from charger to vehicle.
+  uuid: d28244c9e3365899954bd3e38ef46bb9
 
 Vehicle.Powertrain.TractionBattery.Charging.StartStopCharging:
   type: actuator
@@ -1113,7 +1113,7 @@ Vehicle.Powertrain.TractionBattery.Charging.TimeToComplete:
   type: sensor
   datatype: uint32
   unit: s
-  description: The time needed to complete the current charging process to the set charge limit. 0 if charging is complete, negative number if no charging process is active.
+  description: The time needed for the current charging process to reach StateOfCharge.Target. 0 if charging is complete or no charging process is active or planned.
   uuid: c6439c2e068652b08383b9654e2e784a
 
 Vehicle.Powertrain.TractionBattery.Charging.Timer:
@@ -1121,22 +1121,21 @@ Vehicle.Powertrain.TractionBattery.Charging.Timer:
   description: Properties related to timing of battery charging sessions.
   uuid: cd5b57ada627510e83f90832efed9d5a
 
-Vehicle.Powertrain.TractionBattery.Charging.Timer.Time:
-  type: actuator
-  datatype: uint32
-  unit: s
-  description: Time value for next charging-related action (Unix timestamp, seconds).
-  uuid: c08dcaeda02b5e26aacd7e2542f0fc90
-
 Vehicle.Powertrain.TractionBattery.Charging.Timer.Mode:
   type: actuator
   datatype: string
   enum:
+  - inactive
   - starttime
   - endtime
-  - depaturetime
-  description: Defines whether Timer.Time is defining start- or endtime of a charging action; departuretime denotes that target time should be taken from vehicle-level desired departure-time setting.
+  description: 'Defines timer mode for charging: ''inactive'' - no timer set, charging may start as soon as battery is connected to a charger. ''starttime'' - charging shall start at Charging.Timer.Time. ''endtime'' - charging shall be finished (reach StateOfCharge.Target) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to ''inactive'' or set a new Charging.Timer.Time. Charging shall start immediately if mode is ''starttime'' or ''endtime'' and Charging.Timer.Time is a time in the past.'
   uuid: b09fb52261735977af275dda1904a7a1
+
+Vehicle.Powertrain.TractionBattery.Charging.Timer.Time:
+  type: actuator
+  datatype: string
+  description: Time for next charging-related action, formatted according to ISO 8601 with UTC time zone. Value has no significance if Charging.Timer.Mode is 'inactive'.
+  uuid: c08dcaeda02b5e26aacd7e2542f0fc90
 
 Vehicle.Powertrain.FuelSystem:
   type: branch

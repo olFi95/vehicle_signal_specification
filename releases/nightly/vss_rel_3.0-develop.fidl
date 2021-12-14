@@ -1002,25 +1002,25 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.PowerConnected"
+    name: "Vehicle.Powertrain.TractionBattery.IsPowerConnected"
     type: "sensor"
     description: "Indicating if the power (positive terminator) of the traction battery is connected to the powertrain."
     datatype: boolean
-    uuid: 0507b2ddc362504a9c69d0ab6f1086e2
+    uuid: e30ef59fc2a25f6b8990248e19a5cdf9
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.GroundConnected"
+    name: "Vehicle.Powertrain.TractionBattery.IsGroundConnected"
     type: "sensor"
     description: "Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain."
     datatype: boolean
-    uuid: a462b37ac4f253fc9b7b12c603198ab1
+    uuid: dd38d1c7ee12530aac03f49ad01d5c04
 }
 ,
 {
     name: "Vehicle.Powertrain.TractionBattery.Temperature"
     type: "sensor"
-    description: "Temperature of the battery pack"
+    description: "Temperature of the battery pack."
     datatype: float
     uuid: 1cfbcf8c152959dcb3eb2c54fc42e623
     unit: celsius
@@ -1051,7 +1051,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.StateOfCharge.Target"
     type: "actuator"
-    description: "Target state of charge set (eg. by customer)."
+    description: "Target state of charge set (eg. by customer). Shall never exceed Charging.ChargeLimit."
     datatype: uint8
     uuid: 6aca8e9650be5a7782ce34ec4f03b96b
     min: 0
@@ -1062,7 +1062,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.GrossCapacity"
     type: "attribute"
-    description: "Gross capacity of the battery"
+    description: "Gross capacity of the battery."
     datatype: uint16
     uuid: 5460530488435dc8bfa1298bf47a993d
     unit: kWh
@@ -1071,7 +1071,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.NetCapacity"
     type: "attribute"
-    description: "Net capacity of the battery"
+    description: "Net capacity of the battery."
     datatype: uint16
     uuid: 9c68fe42cb81501eb6349f8c9b0b6899
     unit: kWh
@@ -1080,7 +1080,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.NominalVoltage"
     type: "attribute"
-    description: "Nominal Voltage of the battery"
+    description: "Nominal Voltage of the battery."
     datatype: uint16
     uuid: 3eccae5633185b998d5bdb6ea33cd926
     unit: V
@@ -1089,7 +1089,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.ReferentVoltage"
     type: "attribute"
-    description: "Referent Voltage of the battery"
+    description: "Referent Voltage of the battery."
     datatype: uint16
     uuid: 51b5e378ccab5dd4905b552d1306cf7c
     unit: V
@@ -1098,7 +1098,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy"
     type: "sensor"
-    description: "The accumulated energy delivered to the battery during charging over lifetime."
+    description: "The accumulated energy delivered to the battery during charging over lifetime of the battery."
     datatype: float
     uuid: 739d06021d795da0877bc0ef3c107de1
     unit: kWh
@@ -1107,7 +1107,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.AccumulatedConsumedEnergy"
     type: "sensor"
-    description: "The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime."
+    description: "The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime of the battery."
     datatype: float
     uuid: b844cb96765f574d8d31edb09ccaef81
     unit: kWh
@@ -1145,18 +1145,18 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.ChargePortFlap"
     type: "actuator"
-    description: "Signal indicating if charge port cover is open or closed, can potentially be controlled manually."
+    description: "Status of the charge port cover, can potentially be controlled manually."
     datatype: string
     uuid: 71bdd2145bb55c3393df194bfc2e03e5
     enum: ['open', 'closed']
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargePlugStatus"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.IsChargingCableConnected"
     type: "sensor"
-    description: "Signal indicating if charge plug is connected or not."
+    description: "Indicates if a charging cable is connected to the vehicle or not."
     datatype: boolean
-    uuid: 162d1adfafd95faa86dbd0890705709b
+    uuid: a1c8e2f662b95a54a9933a1b163fff84
 }
 ,
 {
@@ -1178,11 +1178,11 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.Status"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.IsCharging"
     type: "sensor"
-    description: "State of charging process."
+    description: "True if charging is ongoing. Charging is considered to be ongoing if energy is flowing from charger to vehicle."
     datatype: boolean
-    uuid: d87c4ad383975eb08c489e3b597293ed
+    uuid: d28244c9e3365899954bd3e38ef46bb9
 }
 ,
 {
@@ -1224,28 +1224,27 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.TimeToComplete"
     type: "sensor"
-    description: "The time needed to complete the current charging process to the set charge limit. 0 if charging is complete, negative number if no charging process is active."
+    description: "The time needed for the current charging process to reach StateOfCharge.Target. 0 if charging is complete or no charging process is active or planned."
     datatype: uint32
     uuid: c6439c2e068652b08383b9654e2e784a
     unit: s
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.Timer.Time"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.Timer.Mode"
     type: "actuator"
-    description: "Time value for next charging-related action (Unix timestamp, seconds)."
-    datatype: uint32
-    uuid: c08dcaeda02b5e26aacd7e2542f0fc90
-    unit: s
+    description: "Defines timer mode for charging: 'inactive' - no timer set, charging may start as soon as battery is connected to a charger. 'starttime' - charging shall start at Charging.Timer.Time. 'endtime' - charging shall be finished (reach StateOfCharge.Target) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to 'inactive' or set a new Charging.Timer.Time. Charging shall start immediately if mode is 'starttime' or 'endtime' and Charging.Timer.Time is a time in the past."
+    datatype: string
+    uuid: b09fb52261735977af275dda1904a7a1
+    enum: ['inactive', 'starttime', 'endtime']
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.Timer.Mode"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.Timer.Time"
     type: "actuator"
-    description: "Defines whether Timer.Time is defining start- or endtime of a charging action; departuretime denotes that target time should be taken from vehicle-level desired departure-time setting."
+    description: "Time for next charging-related action, formatted according to ISO 8601 with UTC time zone. Value has no significance if Charging.Timer.Mode is 'inactive'."
     datatype: string
-    uuid: b09fb52261735977af275dda1904a7a1
-    enum: ['starttime', 'endtime', 'depaturetime']
+    uuid: c08dcaeda02b5e26aacd7e2542f0fc90
 }
 ,
 {

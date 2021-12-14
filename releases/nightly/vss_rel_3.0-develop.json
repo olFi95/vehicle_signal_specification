@@ -6410,14 +6410,14 @@
             "children": {
               "AccumulatedChargedEnergy": {
                 "datatype": "float",
-                "description": "The accumulated energy delivered to the battery during charging over lifetime.",
+                "description": "The accumulated energy delivered to the battery during charging over lifetime of the battery.",
                 "type": "sensor",
                 "unit": "kWh",
                 "uuid": "739d06021d795da0877bc0ef3c107de1"
               },
               "AccumulatedConsumedEnergy": {
                 "datatype": "float",
-                "description": "The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime.",
+                "description": "The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime of the battery.",
                 "type": "sensor",
                 "unit": "kWh",
                 "uuid": "b844cb96765f574d8d31edb09ccaef81"
@@ -6440,12 +6440,6 @@
                     "unit": "percent",
                     "uuid": "62360a4ed1095275a7052d65112aaef1"
                   },
-                  "ChargePlugStatus": {
-                    "datatype": "boolean",
-                    "description": "Signal indicating if charge plug is connected or not.",
-                    "type": "sensor",
-                    "uuid": "162d1adfafd95faa86dbd0890705709b"
-                  },
                   "ChargePlugType": {
                     "datatype": "string",
                     "default": "ccs",
@@ -6461,7 +6455,7 @@
                   },
                   "ChargePortFlap": {
                     "datatype": "string",
-                    "description": "Signal indicating if charge port cover is open or closed, can potentially be controlled manually.",
+                    "description": "Status of the charge port cover, can potentially be controlled manually.",
                     "enum": [
                       "open",
                       "closed"
@@ -6482,6 +6476,18 @@
                     "type": "sensor",
                     "unit": "V",
                     "uuid": "7170151d653b52c6bb5e75cb0a14d1c5"
+                  },
+                  "IsCharging": {
+                    "datatype": "boolean",
+                    "description": "True if charging is ongoing. Charging is considered to be ongoing if energy is flowing from charger to vehicle.",
+                    "type": "sensor",
+                    "uuid": "d28244c9e3365899954bd3e38ef46bb9"
+                  },
+                  "IsChargingCableConnected": {
+                    "datatype": "boolean",
+                    "description": "Indicates if a charging cable is connected to the vehicle or not.",
+                    "type": "sensor",
+                    "uuid": "a1c8e2f662b95a54a9933a1b163fff84"
                   },
                   "MaximumChargingCurrent": {
                     "datatype": "float",
@@ -6511,15 +6517,10 @@
                     "type": "actuator",
                     "uuid": "80506d3e9a2557c2b52f74a50d89593f"
                   },
-                  "Status": {
-                    "datatype": "boolean",
-                    "description": "State of charging process.",
-                    "type": "sensor",
-                    "uuid": "d87c4ad383975eb08c489e3b597293ed"
-                  },
                   "TimeToComplete": {
+                    "comment": "Shall consider time set by Charging.Timer.Time. E.g. if charging shall start in 3 hours and 2 hours of charging is needed, then Charging.TimeToComplete shall report 5 hours.",
                     "datatype": "uint32",
-                    "description": "The time needed to complete the current charging process to the set charge limit. 0 if charging is complete, negative number if no charging process is active.",
+                    "description": "The time needed for the current charging process to reach StateOfCharge.Target. 0 if charging is complete or no charging process is active or planned.",
                     "type": "sensor",
                     "unit": "s",
                     "uuid": "c6439c2e068652b08383b9654e2e784a"
@@ -6528,20 +6529,19 @@
                     "children": {
                       "Mode": {
                         "datatype": "string",
-                        "description": "Defines whether Timer.Time is defining start- or endtime of a charging action; departuretime denotes that target time should be taken from vehicle-level desired departure-time setting.",
+                        "description": "Defines timer mode for charging: 'inactive' - no timer set, charging may start as soon as battery is connected to a charger. 'starttime' - charging shall start at Charging.Timer.Time. 'endtime' - charging shall be finished (reach StateOfCharge.Target) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to 'inactive' or set a new Charging.Timer.Time. Charging shall start immediately if mode is 'starttime' or 'endtime' and Charging.Timer.Time is a time in the past.",
                         "enum": [
+                          "inactive",
                           "starttime",
-                          "endtime",
-                          "depaturetime"
+                          "endtime"
                         ],
                         "type": "actuator",
                         "uuid": "b09fb52261735977af275dda1904a7a1"
                       },
                       "Time": {
-                        "datatype": "uint32",
-                        "description": "Time value for next charging-related action (Unix timestamp, seconds).",
+                        "datatype": "string",
+                        "description": "Time for next charging-related action, formatted according to ISO 8601 with UTC time zone. Value has no significance if Charging.Timer.Mode is 'inactive'.",
                         "type": "actuator",
-                        "unit": "s",
                         "uuid": "c08dcaeda02b5e26aacd7e2542f0fc90"
                       }
                     },
@@ -6550,42 +6550,44 @@
                     "uuid": "cd5b57ada627510e83f90832efed9d5a"
                   }
                 },
-                "description": "Properties related to battery charging",
+                "description": "Properties related to battery charging.",
                 "type": "branch",
                 "uuid": "49b9ef0c8b145a36afdf17d0cb44131b"
               },
               "GrossCapacity": {
                 "datatype": "uint16",
-                "description": "Gross capacity of the battery",
+                "description": "Gross capacity of the battery.",
                 "type": "attribute",
                 "unit": "kWh",
                 "uuid": "5460530488435dc8bfa1298bf47a993d"
               },
-              "GroundConnected": {
+              "IsGroundConnected": {
+                "comment": "It might be possible to disconnect the traction battery used by an electric powertrain. This is achieved by connectors, typically one for plus and one for minus.",
                 "datatype": "boolean",
                 "description": "Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain.",
                 "type": "sensor",
-                "uuid": "a462b37ac4f253fc9b7b12c603198ab1"
+                "uuid": "dd38d1c7ee12530aac03f49ad01d5c04"
+              },
+              "IsPowerConnected": {
+                "comment": "It might be possible to disconnect the traction battery used by an electric powertrain. This is achieved by connectors, typically one for plus and one for minus.",
+                "datatype": "boolean",
+                "description": "Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.",
+                "type": "sensor",
+                "uuid": "e30ef59fc2a25f6b8990248e19a5cdf9"
               },
               "NetCapacity": {
                 "datatype": "uint16",
-                "description": "Net capacity of the battery",
+                "description": "Net capacity of the battery.",
                 "type": "attribute",
                 "unit": "kWh",
                 "uuid": "9c68fe42cb81501eb6349f8c9b0b6899"
               },
               "NominalVoltage": {
                 "datatype": "uint16",
-                "description": "Nominal Voltage of the battery",
+                "description": "Nominal Voltage of the battery.",
                 "type": "attribute",
                 "unit": "V",
                 "uuid": "3eccae5633185b998d5bdb6ea33cd926"
-              },
-              "PowerConnected": {
-                "datatype": "boolean",
-                "description": "Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.",
-                "type": "sensor",
-                "uuid": "0507b2ddc362504a9c69d0ab6f1086e2"
               },
               "Range": {
                 "datatype": "uint32",
@@ -6596,7 +6598,7 @@
               },
               "ReferentVoltage": {
                 "datatype": "uint16",
-                "description": "Referent Voltage of the battery",
+                "description": "Referent Voltage of the battery.",
                 "type": "attribute",
                 "unit": "V",
                 "uuid": "51b5e378ccab5dd4905b552d1306cf7c"
@@ -6623,7 +6625,7 @@
                   },
                   "Target": {
                     "datatype": "uint8",
-                    "description": "Target state of charge set (eg. by customer).",
+                    "description": "Target state of charge set (eg. by customer). Shall never exceed Charging.ChargeLimit.",
                     "max": 100,
                     "min": 0,
                     "type": "actuator",
@@ -6637,7 +6639,7 @@
               },
               "Temperature": {
                 "datatype": "float",
-                "description": "Temperature of the battery pack",
+                "description": "Temperature of the battery pack.",
                 "type": "sensor",
                 "unit": "celsius",
                 "uuid": "1cfbcf8c152959dcb3eb2c54fc42e623"
