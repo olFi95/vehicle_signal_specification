@@ -4807,13 +4807,6 @@
         "unit": "kg",
         "uuid": "75599d7628bb5f35839055269d3ad205"
       },
-      "DriveTime": {
-        "datatype": "uint32",
-        "description": "Accumulated drive time in seconds.",
-        "type": "sensor",
-        "unit": "s",
-        "uuid": "f707495fbe155b7fa109dbb69c021850"
-      },
       "Driver": {
         "children": {
           "AttentiveProbability": {
@@ -4888,34 +4881,6 @@
         "type": "attribute",
         "unit": "mm",
         "uuid": "9784d39f68b8541f90c355178ded7d7c"
-      },
-      "IdleTime": {
-        "datatype": "uint32",
-        "description": "Accumulated idle time in seconds.",
-        "type": "sensor",
-        "unit": "s",
-        "uuid": "97be8abc404f5c15a78e7edc6296ab04"
-      },
-      "IgnitionOffTime": {
-        "datatype": "uint32",
-        "description": "Accumulated ignition off time in seconds.",
-        "type": "sensor",
-        "unit": "s",
-        "uuid": "c0c4467bb00d5c0683c5bb81bcfdcb3e"
-      },
-      "IgnitionOn": {
-        "datatype": "boolean",
-        "deprecation": "V2.2 replaced by LowVoltageSystemState",
-        "description": "Indicates whether the vehicle ignition is on or off.",
-        "type": "sensor",
-        "uuid": "6de19e6839af5f62acab3fbbd8077a98"
-      },
-      "IgnitionOnTime": {
-        "datatype": "uint32",
-        "description": "Accumulated ignition on time in seconds.",
-        "type": "sensor",
-        "unit": "s",
-        "uuid": "ffae3b559998574ba58ee66dd0ac5d39"
       },
       "IsMoving": {
         "datatype": "boolean",
@@ -6064,6 +6029,13 @@
                 "unit": "l",
                 "uuid": "90b5b64808ea5f4fa2798d96143b0d60"
               },
+              "EngineHours": {
+                "datatype": "float",
+                "description": "Accumulated time during engine lifetime with 'engine speed (rpm) > 0'.",
+                "type": "sensor",
+                "unit": "h",
+                "uuid": "a23a62e24f58514d961890f53262e4e0"
+              },
               "EngineOilCapacity": {
                 "datatype": "float",
                 "description": "Engine oil capacity in liters.",
@@ -6097,6 +6069,14 @@
                 ],
                 "type": "attribute",
                 "uuid": "d0f8c79131c850bab8159eaefc7e23e5"
+              },
+              "IdleHours": {
+                "comment": "Vehicles may calculate accumulated idle time for an engine. It might be based on engine speed (rpm) below a certain limit or any other mechanism.",
+                "datatype": "float",
+                "description": "Accumulated idling time during engine lifetime. Definition of idling is not standardized.",
+                "type": "sensor",
+                "unit": "h",
+                "uuid": "6caa3d7e669c5cc6aecd4a6be9a302d4"
               },
               "IsRunning": {
                 "datatype": "boolean",

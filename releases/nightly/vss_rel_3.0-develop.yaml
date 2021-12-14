@@ -162,41 +162,6 @@ Vehicle.LowVoltageSystemState:
   description: State of the supply voltage of the control units (usually 12V).
   uuid: d7391ceb132e5519b02d4c13d5513d99
 
-Vehicle.IgnitionOn:
-  type: sensor
-  datatype: boolean
-  deprecation: V2.2 replaced by LowVoltageSystemState
-  description: Indicates whether the vehicle ignition is on or off.
-  uuid: 6de19e6839af5f62acab3fbbd8077a98
-
-Vehicle.IgnitionOnTime:
-  type: sensor
-  datatype: uint32
-  unit: s
-  description: Accumulated ignition on time in seconds.
-  uuid: ffae3b559998574ba58ee66dd0ac5d39
-
-Vehicle.IgnitionOffTime:
-  type: sensor
-  datatype: uint32
-  unit: s
-  description: Accumulated ignition off time in seconds.
-  uuid: c0c4467bb00d5c0683c5bb81bcfdcb3e
-
-Vehicle.DriveTime:
-  type: sensor
-  datatype: uint32
-  unit: s
-  description: Accumulated drive time in seconds.
-  uuid: f707495fbe155b7fa109dbb69c021850
-
-Vehicle.IdleTime:
-  type: sensor
-  datatype: uint32
-  unit: s
-  description: Accumulated idle time in seconds.
-  uuid: 97be8abc404f5c15a78e7edc6296ab04
-
 Vehicle.Speed:
   type: sensor
   datatype: float
@@ -614,6 +579,20 @@ Vehicle.Powertrain.CombustionEngine.Speed:
   unit: rpm
   description: Engine speed measured as rotations per minute.
   uuid: 557ce24c5a4d51cc825059c948ac9e29
+
+Vehicle.Powertrain.CombustionEngine.EngineHours:
+  type: sensor
+  datatype: float
+  unit: h
+  description: Accumulated time during engine lifetime with 'engine speed (rpm) > 0'.
+  uuid: a23a62e24f58514d961890f53262e4e0
+
+Vehicle.Powertrain.CombustionEngine.IdleHours:
+  type: sensor
+  datatype: float
+  unit: h
+  description: Accumulated idling time during engine lifetime. Definition of idling is not standardized.
+  uuid: 6caa3d7e669c5cc6aecd4a6be9a302d4
 
 Vehicle.Powertrain.CombustionEngine.ECT:
   type: sensor

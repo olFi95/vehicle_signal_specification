@@ -198,50 +198,6 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.IgnitionOn"
-    type: "sensor"
-    description: "Indicates whether the vehicle ignition is on or off."
-    datatype: boolean
-    uuid: 6de19e6839af5f62acab3fbbd8077a98
-}
-,
-{
-    name: "Vehicle.IgnitionOnTime"
-    type: "sensor"
-    description: "Accumulated ignition on time in seconds."
-    datatype: uint32
-    uuid: ffae3b559998574ba58ee66dd0ac5d39
-    unit: s
-}
-,
-{
-    name: "Vehicle.IgnitionOffTime"
-    type: "sensor"
-    description: "Accumulated ignition off time in seconds."
-    datatype: uint32
-    uuid: c0c4467bb00d5c0683c5bb81bcfdcb3e
-    unit: s
-}
-,
-{
-    name: "Vehicle.DriveTime"
-    type: "sensor"
-    description: "Accumulated drive time in seconds."
-    datatype: uint32
-    uuid: f707495fbe155b7fa109dbb69c021850
-    unit: s
-}
-,
-{
-    name: "Vehicle.IdleTime"
-    type: "sensor"
-    description: "Accumulated idle time in seconds."
-    datatype: uint32
-    uuid: 97be8abc404f5c15a78e7edc6296ab04
-    unit: s
-}
-,
-{
     name: "Vehicle.Speed"
     type: "sensor"
     description: "Vehicle speed"
@@ -681,6 +637,24 @@ const SignalSpec[] signal_spec = [
     datatype: uint16
     uuid: 557ce24c5a4d51cc825059c948ac9e29
     unit: rpm
+}
+,
+{
+    name: "Vehicle.Powertrain.CombustionEngine.EngineHours"
+    type: "sensor"
+    description: "Accumulated time during engine lifetime with 'engine speed (rpm) > 0'."
+    datatype: float
+    uuid: a23a62e24f58514d961890f53262e4e0
+    unit: h
+}
+,
+{
+    name: "Vehicle.Powertrain.CombustionEngine.IdleHours"
+    type: "sensor"
+    description: "Accumulated idling time during engine lifetime. Definition of idling is not standardized."
+    datatype: float
+    uuid: 6caa3d7e669c5cc6aecd4a6be9a302d4
+    unit: h
 }
 ,
 {
