@@ -589,27 +589,9 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.CombustionEngine.CompressionRatio"
     type: "attribute"
-    description: "Engine compression ratio."
+    description: "Engine compression ratio, specified in the format 'X:1', e.g. '9.2:1'."
     datatype: string
     uuid: ead42922511051a0a0a1b634781f3c09
-}
-,
-{
-    name: "Vehicle.Powertrain.CombustionEngine.EngineOilLevel"
-    type: "attribute"
-    description: "Vehicle oil level."
-    datatype: string
-    uuid: e3813f59e94b509eb865fd97255a8a4f
-    enum: ['critically_low', 'low', 'normal', 'high', 'critically_high']
-}
-,
-{
-    name: "Vehicle.Powertrain.CombustionEngine.OilLifeRemaining"
-    type: "sensor"
-    description: "Remaining engine oil life in seconds. Negative values can be used to indicate that lifetime has been exceeded."
-    datatype: int32
-    uuid: 94303734c68c5353a02625f652103918
-    unit: s
 }
 ,
 {
@@ -642,7 +624,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.CombustionEngine.MaxTorque"
     type: "attribute"
-    description: "Peak power, in newton meter, that the engine can generate."
+    description: "Peak torque, in newton meter, that the engine can generate."
     datatype: uint16
     uuid: 471cd478c1e8597f8e97c85b4e4ebe26
     unit: Nm
@@ -667,11 +649,29 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.CombustionEngine.Running"
+    name: "Vehicle.Powertrain.CombustionEngine.EngineOilLevel"
     type: "sensor"
-    description: "Engine Running. True if engine is rotating (Engine.Speed > 0)."
+    description: "Engine oil level."
+    datatype: string
+    uuid: e3813f59e94b509eb865fd97255a8a4f
+    enum: ['critically_low', 'low', 'normal', 'high', 'critically_high']
+}
+,
+{
+    name: "Vehicle.Powertrain.CombustionEngine.OilLifeRemaining"
+    type: "sensor"
+    description: "Remaining engine oil life in seconds. Negative values can be used to indicate that lifetime has been exceeded."
+    datatype: int32
+    uuid: 94303734c68c5353a02625f652103918
+    unit: s
+}
+,
+{
+    name: "Vehicle.Powertrain.CombustionEngine.IsRunning"
+    type: "sensor"
+    description: "Engine Running. True if engine is rotating (Speed > 0)."
     datatype: boolean
-    uuid: b293ae50dceb5adfaa7a7e2ad752b8a1
+    uuid: 57652c27679757398c44d56af7a044d3
 }
 ,
 {
@@ -680,8 +680,6 @@ const SignalSpec[] signal_spec = [
     description: "Engine speed measured as rotations per minute."
     datatype: uint16
     uuid: 557ce24c5a4d51cc825059c948ac9e29
-    min: 0
-    max: 20000
     unit: rpm
 }
 ,
@@ -691,8 +689,6 @@ const SignalSpec[] signal_spec = [
     description: "Engine coolant temperature."
     datatype: int16
     uuid: fff3cad23cac5b189a1a075c3ab562cd
-    min: -50
-    max: 200
     unit: celsius
 }
 ,
@@ -702,19 +698,15 @@ const SignalSpec[] signal_spec = [
     description: "Engine oil temperature."
     datatype: int16
     uuid: eae6f5eae04f530e80f6b024f95b767d
-    min: -50
-    max: 300
     unit: celsius
 }
 ,
 {
     name: "Vehicle.Powertrain.CombustionEngine.MAP"
     type: "sensor"
-    description: "Manifold air pressure possibly boosted using forced induction."
-    datatype: int16
+    description: "Manifold absolute pressure possibly boosted using forced induction."
+    datatype: uint16
     uuid: 28d4354fa34056369acb857aa7cc76ac
-    min: 0
-    max: 1000
     unit: kPa
 }
 ,
@@ -722,10 +714,8 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Powertrain.CombustionEngine.MAF"
     type: "sensor"
     description: "Grams of air drawn into engine per second."
-    datatype: int16
+    datatype: uint16
     uuid: 1e222ed8c48b5dcea60e43ac8af7d6df
-    min: 0
-    max: 3000
     unit: g/s
 }
 ,
@@ -733,9 +723,8 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Powertrain.CombustionEngine.TPS"
     type: "sensor"
     description: "Current throttle position."
-    datatype: int8
+    datatype: uint8
     uuid: 1ddb77860de558b4876ffb399a442bda
-    min: 0
     max: 100
     unit: percent
 }
@@ -744,32 +733,26 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.Powertrain.CombustionEngine.EOP"
     type: "sensor"
     description: "Engine oil pressure."
-    datatype: int16
+    datatype: uint16
     uuid: 76c7039dc7975ec3a003f0f4a04895ec
-    min: 0
-    max: 1000
     unit: kPa
 }
 ,
 {
     name: "Vehicle.Powertrain.CombustionEngine.Power"
     type: "sensor"
-    description: "Current engine power output."
-    datatype: int16
+    description: "Current engine power output. Shall be reported as 0 during engine breaking."
+    datatype: uint16
     uuid: 20e8b5d2187758c2848ed421248c180d
-    min: 0
-    max: 2000
     unit: kW
 }
 ,
 {
     name: "Vehicle.Powertrain.CombustionEngine.Torque"
     type: "sensor"
-    description: "Current engine torque."
-    datatype: int16
+    description: "Current engine torque. Shall be reported as 0 during engine breaking."
+    datatype: uint16
     uuid: b81f504bdb57513299ae6e9402ec7bcd
-    min: 0
-    max: 3000
     unit: Nm
 }
 ,
