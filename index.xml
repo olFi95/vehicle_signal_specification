@@ -116,11 +116,8 @@ IoT Event Analytics Plattform IoT Event Analytics is a Complex Event Processing 
       <pubDate>Sun, 04 Aug 2019 12:37:03 +0200</pubDate>
       
       <guid>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/sensor_actuator/</guid>
-      <description>A data entry defines a single sensor/actuator and its members. A data entry example is given below:
-Speed: type: sensor description: The vehicle speed. comment: For engine speed see Vehicle.Powertrain.CombustionEngine.Engine.Speed. datatype: float unit: km/h min: 0 max: 300 Drivetrain.Transmission.Speed
-Defines the dot-notated name of the data entry. Please note that all parental branches included in the name must be defined as well.
-type
-Defines the type of the node. This can be branch, sensor, actuator, stream or attribute.</description>
+      <description>Sensors are signals to read values of properties in a vehicle. Values of signals typically change over time. Reading a sensor shall return the current actual value of the related property, e.g. the current speed or the current position of the seat.
+Actuators are used to control the desired value of a property. Some properties in a vehicle cannot change instantly. A typical example is position of a seat or a window.</description>
     </item>
     
     <item>
@@ -129,7 +126,7 @@ Defines the type of the node. This can be branch, sensor, actuator, stream or at
       <pubDate>Sun, 04 Aug 2019 12:37:31 +0200</pubDate>
       
       <guid>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/attributes/</guid>
-      <description>An attribute is a signal with a default value, specified by its default member. The standard Vehicle Signal Specification include default values for most attributes. It is expected that these default values do not fit all values. This means that an OEM must override the standard default values if a vehicle needs a different value.
+      <description>An attribute is an entity that has a default value, specified by its default member. The standard Vehicle Signal Specification include default values for most attributes. It is expected that these default values do not fit all values. This means that an OEM must override the standard default values if a vehicle needs a different value.
 Attribute values can also change, similar to sensor values. The latter can be useful for attribute values that are likely to change during the lifetime of the vehicle.</description>
     </item>
     
