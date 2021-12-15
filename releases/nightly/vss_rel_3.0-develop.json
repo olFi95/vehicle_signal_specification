@@ -4661,6 +4661,12 @@
             "type": "sensor",
             "unit": "degrees",
             "uuid": "5246f2ec5fea550cb1b36f110854cfbb"
+          },
+          "Timestamp": {
+            "datatype": "string",
+            "description": "GNSS Timestamp for latest position, formatted according to ISO 8601.",
+            "type": "sensor",
+            "uuid": "094aeff73be05c08905690be0e82a438"
           }
         },
         "description": "The current latitude and longitude of the vehicle.",

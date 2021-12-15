@@ -53,6 +53,7 @@
 "Vehicle.Trailer","branch","","","false","","","","Trailer signals","","","66206ee5c25a5817bef214c0c8ae8013"
 "Vehicle.Trailer.Connected","sensor","boolean","","false","","","","Signal indicating if trailer is connected or not.","","","4da109044a185685a29190dd71838df5"
 "Vehicle.CurrentLocation","branch","","","false","","","","The current latitude and longitude of the vehicle.","","","24777bd485f15fb69550ae0520c40ad5"
+"Vehicle.CurrentLocation.Timestamp","sensor","string","","false","","","","GNSS Timestamp for latest position, formatted according to ISO 8601.","","","094aeff73be05c08905690be0e82a438"
 "Vehicle.CurrentLocation.Latitude","sensor","double","","false","degrees","-90","90","Current latitude of vehicle.","","","08933c5a445055df80bea15fbfa07f1c"
 "Vehicle.CurrentLocation.Longitude","sensor","double","","false","degrees","-180","180","Current longitude of vehicle.","","","5246f2ec5fea550cb1b36f110854cfbb"
 "Vehicle.CurrentLocation.Heading","sensor","double","","false","degrees","0","360","Current magnetic compass heading.","","","2a8f0afa2b315943aa001278875ce012"

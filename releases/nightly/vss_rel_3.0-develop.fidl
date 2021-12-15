@@ -413,6 +413,14 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.CurrentLocation.Timestamp"
+    type: "sensor"
+    description: "GNSS Timestamp for latest position, formatted according to ISO 8601."
+    datatype: string
+    uuid: 094aeff73be05c08905690be0e82a438
+}
+,
+{
     name: "Vehicle.CurrentLocation.Latitude"
     type: "sensor"
     description: "Current latitude of vehicle."

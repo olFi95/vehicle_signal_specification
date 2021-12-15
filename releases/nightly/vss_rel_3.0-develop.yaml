@@ -356,6 +356,12 @@ Vehicle.CurrentLocation:
   description: The current latitude and longitude of the vehicle.
   uuid: 24777bd485f15fb69550ae0520c40ad5
 
+Vehicle.CurrentLocation.Timestamp:
+  type: sensor
+  datatype: string
+  description: GNSS Timestamp for latest position, formatted according to ISO 8601.
+  uuid: 094aeff73be05c08905690be0e82a438
+
 Vehicle.CurrentLocation.Latitude:
   type: sensor
   datatype: double
