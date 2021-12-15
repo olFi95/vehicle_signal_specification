@@ -5833,6 +5833,43 @@
                 "type": "attribute",
                 "uuid": "586be4567fe059ee9e6cf42901c2e773"
               },
+              "DieselExhaustFluid": {
+                "children": {
+                  "Capacity": {
+                    "datatype": "float",
+                    "description": "Capacity in liters of the Diesel Exhaust Fluid Tank.",
+                    "type": "attribute",
+                    "unit": "l",
+                    "uuid": "863c16ad452b5cf5b7a37f58bdda14c3"
+                  },
+                  "IsLevelLow": {
+                    "datatype": "boolean",
+                    "description": "Indicates if the Diesel Exhaust Fluid level is low. True if level is low. Definition of low is vehicle dependent.",
+                    "type": "sensor",
+                    "uuid": "811af3fe4f7f5270b4119bb66cff8759"
+                  },
+                  "Level": {
+                    "datatype": "uint8",
+                    "description": "Level of the Diesel Exhaust Fluid tank as percent of capacity. 0 = empty. 100 = full.",
+                    "max": 100,
+                    "min": 0,
+                    "type": "sensor",
+                    "unit": "percent",
+                    "uuid": "f5b0269b58ff5a8e8399f6d96963a3b6"
+                  },
+                  "Range": {
+                    "datatype": "uint32",
+                    "description": "Remaining range in meters of the Diesel Exhaust Fluid present in the vehicle.",
+                    "type": "sensor",
+                    "unit": "m",
+                    "uuid": "124afbee975c5a67b316413f7b805eac"
+                  }
+                },
+                "comment": "In retail and marketing other names are typically used for the fluid.",
+                "description": "Signals related to Diesel Exhaust Fluid (DEF). DEF is called AUS32 in ISO 22241.",
+                "type": "branch",
+                "uuid": "81d8eec46d9357a3b1064bfb5d070fa2"
+              },
               "DieselParticulateFilter": {
                 "children": {
                   "DeltaPressure": {

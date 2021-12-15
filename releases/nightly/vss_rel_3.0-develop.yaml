@@ -643,6 +643,40 @@ Vehicle.Powertrain.CombustionEngine.Torque:
   description: Current engine torque. Shall be reported as 0 during engine breaking.
   uuid: b81f504bdb57513299ae6e9402ec7bcd
 
+Vehicle.Powertrain.CombustionEngine.DieselExhaustFluid:
+  type: branch
+  description: Signals related to Diesel Exhaust Fluid (DEF). DEF is called AUS32 in ISO 22241.
+  uuid: 81d8eec46d9357a3b1064bfb5d070fa2
+
+Vehicle.Powertrain.CombustionEngine.DieselExhaustFluid.Capacity:
+  type: attribute
+  datatype: float
+  unit: l
+  description: Capacity in liters of the Diesel Exhaust Fluid Tank.
+  uuid: 863c16ad452b5cf5b7a37f58bdda14c3
+
+Vehicle.Powertrain.CombustionEngine.DieselExhaustFluid.Level:
+  type: sensor
+  datatype: uint8
+  min: 0
+  max: 100
+  unit: percent
+  description: Level of the Diesel Exhaust Fluid tank as percent of capacity. 0 = empty. 100 = full.
+  uuid: f5b0269b58ff5a8e8399f6d96963a3b6
+
+Vehicle.Powertrain.CombustionEngine.DieselExhaustFluid.Range:
+  type: sensor
+  datatype: uint32
+  unit: m
+  description: Remaining range in meters of the Diesel Exhaust Fluid present in the vehicle.
+  uuid: 124afbee975c5a67b316413f7b805eac
+
+Vehicle.Powertrain.CombustionEngine.DieselExhaustFluid.IsLevelLow:
+  type: sensor
+  datatype: boolean
+  description: Indicates if the Diesel Exhaust Fluid level is low. True if level is low. Definition of low is vehicle dependent.
+  uuid: 811af3fe4f7f5270b4119bb66cff8759
+
 Vehicle.Powertrain.CombustionEngine.DieselParticulateFilter:
   type: branch
   description: Diesel Particulate Filter signals.
