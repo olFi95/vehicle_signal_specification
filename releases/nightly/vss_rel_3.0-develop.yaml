@@ -262,14 +262,6 @@ Vehicle.RoofLoad:
   description: The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.
   uuid: 97dc98269a19591d9efa455a8d943c16
 
-Vehicle.accelerationTime:
-  type: attribute
-  datatype: int16
-  deprecation: V2.1 removed as ambiguous definition (start/stop-speed not defined)
-  unit: s
-  description: The time needed to accelerate the vehicle from a given start velocity to a given target velocity.
-  uuid: a0dfbb5fa9c052018addeb48d64d4c6a
-
 Vehicle.cargoVolume:
   type: attribute
   datatype: float
@@ -715,31 +707,12 @@ Vehicle.Powertrain.Transmission.DriveType:
   description: Drive type.
   uuid: 0e480b76fb2d5f8bb08fb586f90ee6ae
 
-Vehicle.Powertrain.Transmission.Speed:
-  type: sensor
-  datatype: int32
-  min: -250
-  max: 250
-  deprecation: V2.1 removed because doubled with Vehicle.Speed
-  unit: km/h
-  description: Vehicle speed, as sensed by the gearbox.
-  uuid: 080c5c7a7a8f512a858f84cd678d09cb
-
 Vehicle.Powertrain.Transmission.TravelledDistance:
   type: sensor
   datatype: float
   unit: km
   description: Odometer reading, total distance travelled during the lifetime of the transmission.
   uuid: b9dd66f20c7f5b12a046766b94dc20c1
-
-Vehicle.Powertrain.Transmission.Gear:
-  type: actuator
-  datatype: int8
-  min: -1
-  max: 16
-  deprecation: V2.2 replaced by CurrentGear and SelectedGear
-  description: Current gear. 0=Neutral. -1=Reverse
-  uuid: d72df16818e75f71b9fffdff8250e9b9
 
 Vehicle.Powertrain.Transmission.CurrentGear:
   type: sensor
@@ -2019,68 +1992,6 @@ Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude:
   unit: degrees
   description: Longitude of destination
   uuid: e9bd511146ca51639c8d42c0702e22ee
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation:
-  type: branch
-  deprecation: V2.1 moved to Vehicle.CurrentLocation
-  description: The current latitude and longitude of the vehicle.
-  uuid: 12f930405e815048bf5b77db90c7d6e4
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Latitude:
-  type: sensor
-  datatype: double
-  min: -90
-  max: 90
-  deprecation: V2.1 moved to Vehicle.CurrentLocation.Latitude
-  unit: degrees
-  description: Current latitude of vehicle, as reported by GPS.
-  uuid: dceb455713ac56a59e79c0fd25c01a08
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Longitude:
-  type: sensor
-  datatype: double
-  min: -180
-  max: 180
-  deprecation: V2.1 moved to Vehicle.CurrentLocation.Longitude
-  unit: degrees
-  description: Current longitude of vehicle, as reported by GPS.
-  uuid: 1a9be9c36a9a5ddc945bfb1e8c1f4384
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Heading:
-  type: sensor
-  datatype: double
-  min: 0
-  max: 360
-  deprecation: V2.1 moved to Vehicle.CurrentLocation.Heading
-  unit: degrees
-  description: Current magnetic compass heading, in degrees.
-  uuid: 67cd26aaf82e5e9f8a127aabba993003
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Accuracy:
-  type: sensor
-  datatype: double
-  deprecation: V2.1 moved to Vehicle.CurrentLocation.Accuracy
-  unit: m
-  description: Accuracy level of the latitude and longitude coordinates in meters.
-  uuid: eb9218c66b1451fcac5cfcf39d36f5da
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Altitude:
-  type: sensor
-  datatype: double
-  deprecation: V2.1 moved to Vehicle.CurrentLocation.Altitude
-  unit: m
-  description: Current elevation of the position in meters.
-  uuid: 66e2f3fdf1f15b0a9925b674820f19fd
-
-Vehicle.Cabin.Infotainment.Navigation.CurrentLocation.Speed:
-  type: sensor
-  datatype: uint16
-  min: 0
-  max: 250
-  deprecation: V2.1 removed because doubled with Vehicle.Speed
-  unit: km/h
-  description: Vehicle speed, as sensed by the GPS receiver.
-  uuid: e72a72f3d6dc550f824cb03add1ada3b
 
 Vehicle.Cabin.Infotainment.HMI:
   type: branch
@@ -4937,60 +4848,6 @@ Vehicle.Chassis:
   description: All data concerning steering, suspension, wheels, and brakes.
   uuid: 87d260d635425da0a4ebd62bc4e5c313
 
-Vehicle.Chassis.CurbWeight:
-  type: attribute
-  datatype: uint16
-  default: 0
-  deprecation: V2.1 moved to Vehicle.CurbWeight
-  unit: kg
-  description: Vehicle curb weight, in kg, including all liquids and full tank of fuel, but no cargo or passengers.
-  uuid: ffe3fe9067b15475bb02865ba51cc972
-
-Vehicle.Chassis.GrossWeight:
-  type: attribute
-  datatype: uint16
-  default: 0
-  deprecation: V2.1 moved to Vehicle.GrossWeight
-  unit: kg
-  description: Curb weight of vehicle, including all liquids and full tank of fuel and full load of cargo and passengers.
-  uuid: 1488a8a670535ea2b3ce2ec5b7016175
-
-Vehicle.Chassis.TowWeight:
-  type: attribute
-  datatype: uint16
-  default: 0
-  deprecation: V2.1 moved to Vehicle.TowWeight
-  unit: kg
-  description: Maximum weight, in kilos, of trailer.
-  uuid: ff8fc44fac735c278bf18291790cc9db
-
-Vehicle.Chassis.Length:
-  type: attribute
-  datatype: uint16
-  default: 0
-  deprecation: V2.1 moved to Vehicle.Length
-  unit: mm
-  description: Overall vehicle length, in mm.
-  uuid: ace9409dc191589faf79edd42a3218d3
-
-Vehicle.Chassis.Height:
-  type: attribute
-  datatype: uint16
-  default: 0
-  deprecation: V2.1 moved to Vehicle.Height
-  unit: mm
-  description: Overall vehicle height, in mm.
-  uuid: 63e6660d8f635f4db977c23ee411f0cc
-
-Vehicle.Chassis.Width:
-  type: attribute
-  datatype: uint16
-  default: 0
-  deprecation: V2.1 moved to Vehicle.Width
-  unit: mm
-  description: Overall vehicle width, in mm.
-  uuid: abd0c2786e275dc1b9669dd337ba6c65
-
 Vehicle.Chassis.Wheelbase:
   type: attribute
   datatype: uint16
@@ -5439,19 +5296,6 @@ Vehicle.Chassis.Brake.PedalPosition:
   unit: percent
   description: Brake pedal position as percent. 0 = Not depressed. 100 = Fully depressed.
   uuid: 0477d3a4a831564ea473976cf34374f2
-
-Vehicle.Chassis.Trailer:
-  type: branch
-  deprecation: V2.1 moved to Vehicle.Trailer
-  description: Trailer signals
-  uuid: 228ce19986db5ce383fa5725fcb6b01b
-
-Vehicle.Chassis.Trailer.Connected:
-  type: sensor
-  datatype: boolean
-  deprecation: V2.1 moved to Vehicle.Trailer.Connected
-  description: Signal indicating if trailer is connected or not.
-  uuid: 00894266101c534fbcc4a6fb6d3a497a
 
 Vehicle.OBD:
   type: branch

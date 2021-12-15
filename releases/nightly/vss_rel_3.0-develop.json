@@ -1604,70 +1604,6 @@
               },
               "Navigation": {
                 "children": {
-                  "CurrentLocation": {
-                    "children": {
-                      "Accuracy": {
-                        "datatype": "double",
-                        "deprecation": "V2.1 moved to Vehicle.CurrentLocation.Accuracy",
-                        "description": "Accuracy level of the latitude and longitude coordinates in meters.",
-                        "type": "sensor",
-                        "unit": "m",
-                        "uuid": "eb9218c66b1451fcac5cfcf39d36f5da"
-                      },
-                      "Altitude": {
-                        "datatype": "double",
-                        "deprecation": "V2.1 moved to Vehicle.CurrentLocation.Altitude",
-                        "description": "Current elevation of the position in meters.",
-                        "type": "sensor",
-                        "unit": "m",
-                        "uuid": "66e2f3fdf1f15b0a9925b674820f19fd"
-                      },
-                      "Heading": {
-                        "datatype": "double",
-                        "deprecation": "V2.1 moved to Vehicle.CurrentLocation.Heading",
-                        "description": "Current magnetic compass heading, in degrees.",
-                        "max": 360,
-                        "min": 0,
-                        "type": "sensor",
-                        "unit": "degrees",
-                        "uuid": "67cd26aaf82e5e9f8a127aabba993003"
-                      },
-                      "Latitude": {
-                        "datatype": "double",
-                        "deprecation": "V2.1 moved to Vehicle.CurrentLocation.Latitude",
-                        "description": "Current latitude of vehicle, as reported by GPS.",
-                        "max": 90,
-                        "min": -90,
-                        "type": "sensor",
-                        "unit": "degrees",
-                        "uuid": "dceb455713ac56a59e79c0fd25c01a08"
-                      },
-                      "Longitude": {
-                        "datatype": "double",
-                        "deprecation": "V2.1 moved to Vehicle.CurrentLocation.Longitude",
-                        "description": "Current longitude of vehicle, as reported by GPS.",
-                        "max": 180,
-                        "min": -180,
-                        "type": "sensor",
-                        "unit": "degrees",
-                        "uuid": "1a9be9c36a9a5ddc945bfb1e8c1f4384"
-                      },
-                      "Speed": {
-                        "datatype": "uint16",
-                        "deprecation": "V2.1 removed because doubled with Vehicle.Speed",
-                        "description": "Vehicle speed, as sensed by the GPS receiver.",
-                        "max": 250,
-                        "min": 0,
-                        "type": "sensor",
-                        "unit": "km/h",
-                        "uuid": "e72a72f3d6dc550f824cb03add1ada3b"
-                      }
-                    },
-                    "deprecation": "V2.1 moved to Vehicle.CurrentLocation",
-                    "description": "The current latitude and longitude of the vehicle.",
-                    "type": "branch",
-                    "uuid": "12f930405e815048bf5b77db90c7d6e4"
-                  },
                   "DestinationSet": {
                     "children": {
                       "Latitude": {
@@ -4598,42 +4534,6 @@
             "type": "branch",
             "uuid": "38df972e5c6b558e93839a5e97238c5a"
           },
-          "CurbWeight": {
-            "datatype": "uint16",
-            "default": 0,
-            "deprecation": "V2.1 moved to Vehicle.CurbWeight",
-            "description": "Vehicle curb weight, in kg, including all liquids and full tank of fuel, but no cargo or passengers.",
-            "type": "attribute",
-            "unit": "kg",
-            "uuid": "ffe3fe9067b15475bb02865ba51cc972"
-          },
-          "GrossWeight": {
-            "datatype": "uint16",
-            "default": 0,
-            "deprecation": "V2.1 moved to Vehicle.GrossWeight",
-            "description": "Curb weight of vehicle, including all liquids and full tank of fuel and full load of cargo and passengers.",
-            "type": "attribute",
-            "unit": "kg",
-            "uuid": "1488a8a670535ea2b3ce2ec5b7016175"
-          },
-          "Height": {
-            "datatype": "uint16",
-            "default": 0,
-            "deprecation": "V2.1 moved to Vehicle.Height",
-            "description": "Overall vehicle height, in mm.",
-            "type": "attribute",
-            "unit": "mm",
-            "uuid": "63e6660d8f635f4db977c23ee411f0cc"
-          },
-          "Length": {
-            "datatype": "uint16",
-            "default": 0,
-            "deprecation": "V2.1 moved to Vehicle.Length",
-            "description": "Overall vehicle length, in mm.",
-            "type": "attribute",
-            "unit": "mm",
-            "uuid": "ace9409dc191589faf79edd42a3218d3"
-          },
           "ParkingBrake": {
             "children": {
               "IsEngaged": {
@@ -4690,15 +4590,6 @@
             "type": "branch",
             "uuid": "8c759072791e5986ac4efe9df0c2b751"
           },
-          "TowWeight": {
-            "datatype": "uint16",
-            "default": 0,
-            "deprecation": "V2.1 moved to Vehicle.TowWeight",
-            "description": "Maximum weight, in kilos, of trailer.",
-            "type": "attribute",
-            "unit": "kg",
-            "uuid": "ff8fc44fac735c278bf18291790cc9db"
-          },
           "Track": {
             "datatype": "uint16",
             "default": 0,
@@ -4707,21 +4598,6 @@
             "unit": "mm",
             "uuid": "f66cc4e6d7cf5e1da0d58af902dbb36b"
           },
-          "Trailer": {
-            "children": {
-              "Connected": {
-                "datatype": "boolean",
-                "deprecation": "V2.1 moved to Vehicle.Trailer.Connected",
-                "description": "Signal indicating if trailer is connected or not.",
-                "type": "sensor",
-                "uuid": "00894266101c534fbcc4a6fb6d3a497a"
-              }
-            },
-            "deprecation": "V2.1 moved to Vehicle.Trailer",
-            "description": "Trailer signals",
-            "type": "branch",
-            "uuid": "228ce19986db5ce383fa5725fcb6b01b"
-          },
           "Wheelbase": {
             "datatype": "uint16",
             "default": 0,
@@ -4729,15 +4605,6 @@
             "type": "attribute",
             "unit": "mm",
             "uuid": "11677e0433935dc7aa9c1806c96a8a6b"
-          },
-          "Width": {
-            "datatype": "uint16",
-            "default": 0,
-            "deprecation": "V2.1 moved to Vehicle.Width",
-            "description": "Overall vehicle width, in mm.",
-            "type": "attribute",
-            "unit": "mm",
-            "uuid": "abd0c2786e275dc1b9669dd337ba6c65"
           }
         },
         "description": "All data concerning steering, suspension, wheels, and brakes.",
@@ -6642,15 +6509,6 @@
                 "type": "attribute",
                 "uuid": "0e480b76fb2d5f8bb08fb586f90ee6ae"
               },
-              "Gear": {
-                "datatype": "int8",
-                "deprecation": "V2.2 replaced by CurrentGear and SelectedGear",
-                "description": "Current gear. 0=Neutral. -1=Reverse",
-                "max": 16,
-                "min": -1,
-                "type": "actuator",
-                "uuid": "d72df16818e75f71b9fffdff8250e9b9"
-              },
               "GearChangeMode": {
                 "datatype": "string",
                 "description": "Is the gearbox in automatic or manual (paddle) mode.",
@@ -6686,16 +6544,6 @@
                 "description": "The selected gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse, 126=Park, 127=Drive",
                 "type": "actuator",
                 "uuid": "490fd99b9d5f562eb180c19e8cef5e12"
-              },
-              "Speed": {
-                "datatype": "int32",
-                "deprecation": "V2.1 removed because doubled with Vehicle.Speed",
-                "description": "Vehicle speed, as sensed by the gearbox.",
-                "max": 250,
-                "min": -250,
-                "type": "sensor",
-                "unit": "km/h",
-                "uuid": "080c5c7a7a8f512a858f84cd678d09cb"
               },
               "Temperature": {
                 "datatype": "int16",
@@ -6969,14 +6817,6 @@
         "type": "attribute",
         "unit": "mm",
         "uuid": "b4aabe144e3259adb1459a2e25fec9bd"
-      },
-      "accelerationTime": {
-        "datatype": "int16",
-        "deprecation": "V2.1 removed as ambiguous definition (start/stop-speed not defined)",
-        "description": "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.",
-        "type": "attribute",
-        "unit": "s",
-        "uuid": "a0dfbb5fa9c052018addeb48d64d4c6a"
       },
       "cargoVolume": {
         "datatype": "float",
