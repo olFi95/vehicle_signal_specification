@@ -359,7 +359,7 @@ Vehicle.CurrentLocation:
 Vehicle.CurrentLocation.Timestamp:
   type: sensor
   datatype: string
-  description: GNSS Timestamp for latest position, formatted according to ISO 8601.
+  description: GNSS Timestamp for latest position, formatted according to ISO 8601 with UTC time zone.
   uuid: 094aeff73be05c08905690be0e82a438
 
 Vehicle.CurrentLocation.Latitude:
@@ -368,7 +368,7 @@ Vehicle.CurrentLocation.Latitude:
   min: -90
   max: 90
   unit: degrees
-  description: Current latitude of vehicle.
+  description: Current latitude of vehicle according to WGS 84.
   uuid: 08933c5a445055df80bea15fbfa07f1c
 
 Vehicle.CurrentLocation.Longitude:
@@ -377,7 +377,7 @@ Vehicle.CurrentLocation.Longitude:
   min: -180
   max: 180
   unit: degrees
-  description: Current longitude of vehicle.
+  description: Current longitude of vehicle according to WGS 84.
   uuid: 5246f2ec5fea550cb1b36f110854cfbb
 
 Vehicle.CurrentLocation.Heading:
@@ -400,7 +400,7 @@ Vehicle.CurrentLocation.Altitude:
   type: sensor
   datatype: double
   unit: m
-  description: Current elevation of the position.
+  description: Current altitude relative to WGS 84 reference ellipsoid.
   uuid: d3ead98ab0b751c1a5b5dd5bc0e5e216
 
 Vehicle.Private:
@@ -2021,7 +2021,7 @@ Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Latitude:
   min: -90
   max: 90
   unit: degrees
-  description: Latitude of destination
+  description: Latitude of destination according to WGS 84.
   uuid: 3e33f3252934565d86de5409c761262b
 
 Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude:
@@ -2030,7 +2030,7 @@ Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude:
   min: -180
   max: 180
   unit: degrees
-  description: Longitude of destination
+  description: Longitude of destination according to WGS 84.
   uuid: e9bd511146ca51639c8d42c0702e22ee
 
 Vehicle.Cabin.Infotainment.HMI:

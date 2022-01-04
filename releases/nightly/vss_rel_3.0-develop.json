@@ -1608,7 +1608,7 @@
                     "children": {
                       "Latitude": {
                         "datatype": "double",
-                        "description": "Latitude of destination",
+                        "description": "Latitude of destination according to WGS 84.",
                         "max": 90,
                         "min": -90,
                         "type": "actuator",
@@ -1617,7 +1617,7 @@
                       },
                       "Longitude": {
                         "datatype": "double",
-                        "description": "Longitude of destination",
+                        "description": "Longitude of destination according to WGS 84.",
                         "max": 180,
                         "min": -180,
                         "type": "actuator",
@@ -4630,7 +4630,7 @@
           },
           "Altitude": {
             "datatype": "double",
-            "description": "Current elevation of the position.",
+            "description": "Current altitude relative to WGS 84 reference ellipsoid.",
             "type": "sensor",
             "unit": "m",
             "uuid": "d3ead98ab0b751c1a5b5dd5bc0e5e216"
@@ -4646,7 +4646,7 @@
           },
           "Latitude": {
             "datatype": "double",
-            "description": "Current latitude of vehicle.",
+            "description": "Current latitude of vehicle according to WGS 84.",
             "max": 90,
             "min": -90,
             "type": "sensor",
@@ -4655,7 +4655,7 @@
           },
           "Longitude": {
             "datatype": "double",
-            "description": "Current longitude of vehicle.",
+            "description": "Current longitude of vehicle according to WGS 84.",
             "max": 180,
             "min": -180,
             "type": "sensor",
@@ -4664,7 +4664,7 @@
           },
           "Timestamp": {
             "datatype": "string",
-            "description": "GNSS Timestamp for latest position, formatted according to ISO 8601.",
+            "description": "GNSS Timestamp for latest position, formatted according to ISO 8601 with UTC time zone.",
             "type": "sensor",
             "uuid": "094aeff73be05c08905690be0e82a438"
           }

@@ -415,7 +415,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Timestamp"
     type: "sensor"
-    description: "GNSS Timestamp for latest position, formatted according to ISO 8601."
+    description: "GNSS Timestamp for latest position, formatted according to ISO 8601 with UTC time zone."
     datatype: string
     uuid: 094aeff73be05c08905690be0e82a438
 }
@@ -423,7 +423,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Latitude"
     type: "sensor"
-    description: "Current latitude of vehicle."
+    description: "Current latitude of vehicle according to WGS 84."
     datatype: double
     uuid: 08933c5a445055df80bea15fbfa07f1c
     min: -90
@@ -434,7 +434,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Longitude"
     type: "sensor"
-    description: "Current longitude of vehicle."
+    description: "Current longitude of vehicle according to WGS 84."
     datatype: double
     uuid: 5246f2ec5fea550cb1b36f110854cfbb
     min: -180
@@ -465,7 +465,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Altitude"
     type: "sensor"
-    description: "Current elevation of the position."
+    description: "Current altitude relative to WGS 84 reference ellipsoid."
     datatype: double
     uuid: d3ead98ab0b751c1a5b5dd5bc0e5e216
     unit: m
@@ -1983,7 +1983,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Latitude"
     type: "actuator"
-    description: "Latitude of destination"
+    description: "Latitude of destination according to WGS 84."
     datatype: double
     uuid: 3e33f3252934565d86de5409c761262b
     min: -90
@@ -1994,7 +1994,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude"
     type: "actuator"
-    description: "Longitude of destination"
+    description: "Longitude of destination according to WGS 84."
     datatype: double
     uuid: e9bd511146ca51639c8d42c0702e22ee
     min: -180
