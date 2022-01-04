@@ -757,13 +757,13 @@ Vehicle.Powertrain.Transmission.TravelledDistance:
 Vehicle.Powertrain.Transmission.CurrentGear:
   type: sensor
   datatype: int8
-  description: The current gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse
+  description: The current gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse.
   uuid: cd0ba1d772565e16bff46cbd5c9361da
 
 Vehicle.Powertrain.Transmission.SelectedGear:
   type: actuator
   datatype: int8
-  description: The selected gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse, 126=Park, 127=Drive
+  description: The selected gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse, 126=Park, 127=Drive.
   uuid: 490fd99b9d5f562eb180c19e8cef5e12
 
 Vehicle.Powertrain.Transmission.PerformanceMode:

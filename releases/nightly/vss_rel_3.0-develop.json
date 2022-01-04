@@ -6544,7 +6544,7 @@
               },
               "CurrentGear": {
                 "datatype": "int8",
-                "description": "The current gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse",
+                "description": "The current gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse.",
                 "type": "sensor",
                 "uuid": "cd0ba1d772565e16bff46cbd5c9361da"
               },
@@ -6593,7 +6593,7 @@
               },
               "SelectedGear": {
                 "datatype": "int8",
-                "description": "The selected gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse, 126=Park, 127=Drive",
+                "description": "The selected gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse, 126=Park, 127=Drive.",
                 "type": "actuator",
                 "uuid": "490fd99b9d5f562eb180c19e8cef5e12"
               },
