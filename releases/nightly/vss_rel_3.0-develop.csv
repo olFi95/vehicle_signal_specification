@@ -218,6 +218,7 @@
 "Vehicle.Body.Mirrors.Right.Heating.Status","actuator","boolean","","false","","","","Mirror Heater on or off. True = Heater On. False = Heater Off.","","","3574929e068e5ecb88a90819ad2a9a8d"
 "Vehicle.Body.ChargingPort","branch","","","false","","","","Collects Information about the charging port","","","187537d025a358db843f7e92765ff4b9"
 "Vehicle.Body.ChargingPort.Type","attribute","string","","false","","","","Indicates the primary charging type fitted to the vehicle","","['unknown', 'Not_Fitted', 'AC_Type_1', 'AC_Type_2', 'AC_GBT', 'AC_DC_Type_1_Combo', 'AC_DC_Type_2_Combo', 'DC_GBT', 'DC_Chademo']","fffa718e15fb50c285fb33e99116eddc"
+"Vehicle.Body.RearMainSpoilerPosition","actuator","float","","false","percent","0","100","Rear spoiler position, 0% = Spoiler fully stowed. 100% = Spoiler fully exposed.","","","6209a82390585b869cc3d00d069eade2"
 "Vehicle.Cabin","branch","","","false","","","","All in-cabin components, including doors.","","","1a94457b237f5e8eb3c77c0532ac88d7"
 "Vehicle.Cabin.RearShade","branch","","","false","","","","Rear window shade.","","","8a0c86f4fc6f5ea8ac8cf8f327969dcc"
 "Vehicle.Cabin.RearShade.Switch","actuator","string","","false","","","","Switch controlling sliding action such as window, sunroof, or blind.","","['Inactive', 'Close', 'Open', 'OneShotClose', 'OneShotOpen']","da9f01e9baf35544842f1a7674c5172a"

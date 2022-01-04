@@ -444,6 +444,15 @@
             "type": "branch",
             "uuid": "f16759f3dcfb5be4832e962da29ebd6c"
           },
+          "RearMainSpoilerPosition": {
+            "datatype": "float",
+            "description": "Rear spoiler position, 0% = Spoiler fully stowed. 100% = Spoiler fully exposed.",
+            "max": 100,
+            "min": 0,
+            "type": "actuator",
+            "unit": "percent",
+            "uuid": "6209a82390585b869cc3d00d069eade2"
+          },
           "RefuelPosition": {
             "datatype": "string",
             "description": "Location of the fuel cap or charge port",

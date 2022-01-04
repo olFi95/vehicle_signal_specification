@@ -1554,6 +1554,15 @@ Vehicle.Body.ChargingPort.Type:
   description: Indicates the primary charging type fitted to the vehicle
   uuid: fffa718e15fb50c285fb33e99116eddc
 
+Vehicle.Body.RearMainSpoilerPosition:
+  type: actuator
+  datatype: float
+  min: 0
+  max: 100
+  unit: percent
+  description: Rear spoiler position, 0% = Spoiler fully stowed. 100% = Spoiler fully exposed.
+  uuid: 6209a82390585b869cc3d00d069eade2
+
 Vehicle.Cabin:
   type: branch
   description: All in-cabin components, including doors.

@@ -1596,6 +1596,17 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Body.RearMainSpoilerPosition"
+    type: "actuator"
+    description: "Rear spoiler position, 0% = Spoiler fully stowed. 100% = Spoiler fully exposed."
+    datatype: float
+    uuid: 6209a82390585b869cc3d00d069eade2
+    min: 0
+    max: 100
+    unit: percent
+}
+,
+{
     name: "Vehicle.Cabin.RearShade.Switch"
     type: "actuator"
     description: "Switch controlling sliding action such as window, sunroof, or blind."
