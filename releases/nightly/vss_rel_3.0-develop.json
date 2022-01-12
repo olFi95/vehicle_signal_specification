@@ -237,17 +237,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Indicates the primary charging type fitted to the vehicle.",
-                "enum": [
-                  "unknown",
-                  "Not_Fitted",
-                  "AC_Type_1",
-                  "AC_Type_2",
-                  "AC_GBT",
-                  "AC_DC_Type_1_Combo",
-                  "AC_DC_Type_2_Combo",
-                  "DC_GBT",
-                  "DC_Chademo"
-                ],
                 "type": "attribute",
                 "uuid": "fffa718e15fb50c285fb33e99116eddc"
               }
@@ -442,14 +431,6 @@
           "RefuelPosition": {
             "datatype": "string",
             "description": "Location of the fuel cap or charge port.",
-            "enum": [
-              "front_left",
-              "front_right",
-              "middle_left",
-              "middle_right",
-              "rear_left",
-              "rear_right"
-            ],
             "type": "attribute",
             "uuid": "53ef90a851fa57f0810d50238e852f02"
           },
@@ -507,14 +488,6 @@
                       "Status": {
                         "datatype": "string",
                         "description": "Wiper status.",
-                        "enum": [
-                          "off",
-                          "slow",
-                          "medium",
-                          "fast",
-                          "interval",
-                          "rainsensor"
-                        ],
                         "type": "actuator",
                         "uuid": "2d5509513e4b52e0a337ade730166aec"
                       }
@@ -561,14 +534,6 @@
                       "Status": {
                         "datatype": "string",
                         "description": "Wiper status.",
-                        "enum": [
-                          "off",
-                          "slow",
-                          "medium",
-                          "fast",
-                          "interval",
-                          "rainsensor"
-                        ],
                         "type": "actuator",
                         "uuid": "1aca19889d375a699bc3750993777b08"
                       }
@@ -599,14 +564,6 @@
               "Status": {
                 "datatype": "string",
                 "description": "Roof status on convertible vehicles.",
-                "enum": [
-                  "undefined",
-                  "closed",
-                  "open",
-                  "closing",
-                  "opening",
-                  "stalled"
-                ],
                 "type": "sensor",
                 "uuid": "c8812698198a56d7a1adcc8bbe87845f"
               }
@@ -653,13 +610,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "15c012ed31a054ecb2b9b2b1cf57e825"
                           }
@@ -694,13 +644,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "e276bf971dae507f99b463f7fe574969"
                           }
@@ -748,13 +691,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "763aea099a515fc998fde10d936b0b38"
                           }
@@ -789,13 +725,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "fcb9ede77f065479a10740324c0efdc6"
                           }
@@ -850,13 +779,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "41f6f14bbb595dcf8e51d1696e877114"
                           }
@@ -891,13 +813,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "1a5d1c57f46e576a8a94853e2a44d3f8"
                           }
@@ -945,13 +860,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "5b94a0c4e30a575c93942f0566be8be7"
                           }
@@ -986,13 +894,6 @@
                           "Switch": {
                             "datatype": "string",
                             "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                            "enum": [
-                              "Inactive",
-                              "Close",
-                              "Open",
-                              "OneShotClose",
-                              "OneShotOpen"
-                            ],
                             "type": "actuator",
                             "uuid": "364c0a712fa854b4b1b332eae1be179b"
                           }
@@ -1073,11 +974,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "33ca2e1ed1b1533b8e1309320074c07b"
                           },
@@ -1109,11 +1005,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "00e25d807a755c4cb978a40ebfc0e8d0"
                           },
@@ -1152,11 +1043,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "3c22cd8ac56b59978927fc815ee79104"
                           },
@@ -1188,11 +1074,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "10d42dd4337450e2af1c0dd2c9dcb3a7"
                           },
@@ -1231,11 +1112,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "f1e2dc36082b5980920c5fe3ee875659"
                           },
@@ -1267,11 +1143,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "1b6c21042e3b5ac9ae351f807722795a"
                           },
@@ -1310,11 +1181,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "ee591723296a580ea4ce9fc6ddbb5cf5"
                           },
@@ -1346,11 +1212,6 @@
                           "AirDistribution": {
                             "datatype": "string",
                             "description": "Direction of airstream",
-                            "enum": [
-                              "up",
-                              "middle",
-                              "down"
-                            ],
                             "type": "actuator",
                             "uuid": "7d8b7cbfe68156d4a190a0a7525ee26c"
                           },
@@ -1405,81 +1266,42 @@
                   "DateFormat": {
                     "datatype": "string",
                     "description": "Date format used in the current HMI",
-                    "enum": [
-                      "YYYY MM DD",
-                      "DD MM YYYY",
-                      "MM DD YYYY",
-                      "YY MM DD",
-                      "DD MM YY",
-                      "MM DD YY"
-                    ],
                     "type": "actuator",
                     "uuid": "0f03c3955fe953e9893a1f52e964919e"
                   },
                   "DayNightMode": {
                     "datatype": "string",
                     "description": "Current display theme",
-                    "enum": [
-                      "Day",
-                      "Night"
-                    ],
                     "type": "actuator",
                     "uuid": "a892039ba136588fa26b2670f839c0cc"
                   },
                   "DistanceUnit": {
                     "datatype": "string",
                     "description": "Distance unit used in the current HMI",
-                    "enum": [
-                      "mi",
-                      "km"
-                    ],
                     "type": "actuator",
                     "uuid": "4b40e8bdb1a053ee9ee35338d8804e7b"
                   },
                   "EVEconomyUnits": {
                     "datatype": "string",
                     "description": "EV fuel economy unit used in the current HMI",
-                    "enum": [
-                      "mi/kWh",
-                      "km/kWh",
-                      "kWh/100mi",
-                      "kWh/100km",
-                      "Wh/mi",
-                      "Wh/km"
-                    ],
                     "type": "actuator",
                     "uuid": "914846f6804757ba81ca6bcfac8d2c48"
                   },
                   "FuelEconomyUnits": {
                     "datatype": "string",
                     "description": "Fuel economy unit used in the current HMI",
-                    "enum": [
-                      "mpg_UK",
-                      "mpg_US",
-                      "mpl",
-                      "km/l",
-                      "l/100km"
-                    ],
                     "type": "actuator",
                     "uuid": "0e6a43ce1aa45243b753545ffa1f0f8c"
                   },
                   "TemperatureUnit": {
                     "datatype": "string",
                     "description": "Temperature unit used in the current HMI",
-                    "enum": [
-                      "C",
-                      "F"
-                    ],
                     "type": "actuator",
                     "uuid": "a7d1533490bb52b6b4f650280e72543d"
                   },
                   "TimeFormat": {
                     "datatype": "string",
                     "description": "Time format used in the current HMI",
-                    "enum": [
-                      "12HR",
-                      "24HR"
-                    ],
                     "type": "actuator",
                     "uuid": "73083b87a4e25c02aee672ea32e40005"
                   }
@@ -1493,15 +1315,6 @@
                   "Action": {
                     "datatype": "string",
                     "description": "Tells if the media was",
-                    "enum": [
-                      "unknown",
-                      "Stop",
-                      "Play",
-                      "FastForward",
-                      "FastBackward",
-                      "SkipForward",
-                      "SkipBackward"
-                    ],
                     "type": "actuator",
                     "uuid": "0357aea525bf505981a14e4fc720094e"
                   },
@@ -1528,23 +1341,6 @@
                       "Source": {
                         "datatype": "string",
                         "description": "Media selected for playback",
-                        "enum": [
-                          "unknown",
-                          "SiriusXM",
-                          "AM",
-                          "FM",
-                          "DAB",
-                          "TV",
-                          "CD",
-                          "DVD",
-                          "AUX",
-                          "USB",
-                          "Disk",
-                          "Bluetooth",
-                          "Internet",
-                          "Voice",
-                          "Beep"
-                        ],
                         "type": "actuator",
                         "uuid": "54fb88a7d7cf5e3aab63e8f52415c187"
                       },
@@ -1785,13 +1581,6 @@
               "Switch": {
                 "datatype": "string",
                 "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                "enum": [
-                  "Inactive",
-                  "Close",
-                  "Open",
-                  "OneShotClose",
-                  "OneShotOpen"
-                ],
                 "type": "actuator",
                 "uuid": "da9f01e9baf35544842f1a7674c5172a"
               }
@@ -4056,13 +3845,6 @@
                   "Switch": {
                     "datatype": "string",
                     "description": "Switch controlling sliding action such as window, sunroof, or blind.",
-                    "enum": [
-                      "Inactive",
-                      "Close",
-                      "Open",
-                      "OneShotClose",
-                      "OneShotOpen"
-                    ],
                     "type": "actuator",
                     "uuid": "3836077128c65381b01e74a1a8be1c40"
                   }
@@ -4074,15 +3856,6 @@
               "Switch": {
                 "datatype": "string",
                 "description": "Switch controlling sliding action such as window, sunroof, or shade.",
-                "enum": [
-                  "Inactive",
-                  "Close",
-                  "Open",
-                  "OneShotClose",
-                  "OneShotOpen",
-                  "TiltUp",
-                  "TiltDown"
-                ],
                 "type": "actuator",
                 "uuid": "88c39afd45a25ea2b474ff581e1fb138"
               }
@@ -4561,10 +4334,6 @@
                 "datatype": "string",
                 "default": "front_left",
                 "description": "Position of the steering wheel on the left or right side of the vehicle.",
-                "enum": [
-                  "front_left",
-                  "front_right"
-                ],
                 "type": "attribute",
                 "uuid": "314d6eeeba195098b36ae7f476d27824"
               },
@@ -4771,14 +4540,6 @@
       "LowVoltageSystemState": {
         "datatype": "string",
         "description": "State of the supply voltage of the control units (usually 12V).",
-        "enum": [
-          "UNDEFINED",
-          "LOCK",
-          "OFF",
-          "ACC",
-          "ON",
-          "START"
-        ],
         "type": "sensor",
         "uuid": "d7391ceb132e5519b02d4c13d5513d99"
       },
@@ -4963,10 +4724,6 @@
               "IgnitionType": {
                 "datatype": "string",
                 "description": "Type of the ignition for ICE - spark = spark plug ignition, compression = self-igniting (Diesel engines)",
-                "enum": [
-                  "spark",
-                  "compression"
-                ],
                 "type": "sensor",
                 "uuid": "1aeb7b6d025f5a8693104824abaa1c49"
               },
@@ -5709,10 +5466,6 @@
               "IgnitionType": {
                 "datatype": "string",
                 "description": "Type of the ignition for ICE - spark = spark plug ignition, compression = self-igniting (Diesel engines)",
-                "enum": [
-                  "spark",
-                  "compression"
-                ],
                 "type": "sensor",
                 "uuid": "7ffd71caac8e5bd18f93366afdfe534d"
               },
@@ -5795,12 +5548,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Type of aspiration (natural, turbocharger, supercharger etc).",
-                "enum": [
-                  "unknown",
-                  "natural",
-                  "supercharger",
-                  "turbocharger"
-                ],
                 "type": "attribute",
                 "uuid": "3ca6a8ff30275c20a9d8d6d6829574eb"
               },
@@ -5821,20 +5568,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Engine configuration.",
-                "enum": [
-                  "unknown",
-                  "straight",
-                  "V",
-                  "boxer",
-                  "W",
-                  "rotary",
-                  "radial",
-                  "square",
-                  "H",
-                  "U",
-                  "opposed",
-                  "X"
-                ],
                 "type": "attribute",
                 "uuid": "586be4567fe059ee9e6cf42901c2e773"
               },
@@ -5955,13 +5688,6 @@
               "EngineOilLevel": {
                 "datatype": "string",
                 "description": "Engine oil level.",
-                "enum": [
-                  "critically_low",
-                  "low",
-                  "normal",
-                  "high",
-                  "critically_high"
-                ],
                 "type": "sensor",
                 "uuid": "e3813f59e94b509eb865fd97255a8a4f"
               },
@@ -5969,13 +5695,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Type of fuel that the engine runs on.",
-                "enum": [
-                  "unknown",
-                  "gasoline",
-                  "diesel",
-                  "E85",
-                  "CNG"
-                ],
                 "type": "attribute",
                 "uuid": "d0f8c79131c850bab8159eaefc7e23e5"
               },
@@ -6190,16 +5909,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Defines the fuel type of the vehicle.",
-                "enum": [
-                  "unknown",
-                  "gasoline",
-                  "diesel",
-                  "electric",
-                  "hybrid",
-                  "E85",
-                  "CNG",
-                  "LPG"
-                ],
                 "type": "attribute",
                 "uuid": "76442e696df5540b8b747373b29895d9"
               },
@@ -6207,14 +5916,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Defines the hybrid type of the vehicle.",
-                "enum": [
-                  "unknown",
-                  "not_applicable",
-                  "stop_start",
-                  "belt_ISG",
-                  "CIMG",
-                  "PHEV"
-                ],
                 "type": "attribute",
                 "uuid": "f0f72012f5e453c1935ff8c3a5aff696"
               },
@@ -6318,22 +6019,12 @@
                     "datatype": "string",
                     "default": "ccs",
                     "description": "Type of charge plug available on the vehicle (CSS includes Type2).",
-                    "enum": [
-                      "type 1",
-                      "type 2",
-                      "ccs",
-                      "chademo"
-                    ],
                     "type": "attribute",
                     "uuid": "4c56357a6f1d586395215a9beeb26d91"
                   },
                   "ChargePortFlap": {
                     "datatype": "string",
                     "description": "Status of the charge port cover, can potentially be controlled manually.",
-                    "enum": [
-                      "open",
-                      "closed"
-                    ],
                     "type": "actuator",
                     "uuid": "71bdd2145bb55c3393df194bfc2e03e5"
                   },
@@ -6373,21 +6064,12 @@
                   "Mode": {
                     "datatype": "string",
                     "description": "Control of the charge process - manually initiated (plug-in event, companion app, etc), timer-based or grid-controlled (eg ISO 15118).",
-                    "enum": [
-                      "manual",
-                      "timer",
-                      "grid"
-                    ],
                     "type": "actuator",
                     "uuid": "1e4be3280b265873945531f6f6d0ec6b"
                   },
                   "StartStopCharging": {
                     "datatype": "string",
                     "description": "Start or stop the charging process.",
-                    "enum": [
-                      "start",
-                      "stop"
-                    ],
                     "type": "actuator",
                     "uuid": "80506d3e9a2557c2b52f74a50d89593f"
                   },
@@ -6404,11 +6086,6 @@
                       "Mode": {
                         "datatype": "string",
                         "description": "Defines timer mode for charging: 'inactive' - no timer set, charging may start as soon as battery is connected to a charger. 'starttime' - charging shall start at Charging.Timer.Time. 'endtime' - charging shall be finished (reach StateOfCharge.Target) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to 'inactive' or set a new Charging.Timer.Time. Charging shall start immediately if mode is 'starttime' or 'endtime' and Charging.Timer.Time is a time in the past.",
-                        "enum": [
-                          "inactive",
-                          "starttime",
-                          "endtime"
-                        ],
                         "type": "actuator",
                         "uuid": "b09fb52261735977af275dda1904a7a1"
                       },
@@ -6542,22 +6219,12 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Drive type.",
-                "enum": [
-                  "unknown",
-                  "forward wheel drive",
-                  "rear wheel drive",
-                  "all wheel drive"
-                ],
                 "type": "attribute",
                 "uuid": "0e480b76fb2d5f8bb08fb586f90ee6ae"
               },
               "GearChangeMode": {
                 "datatype": "string",
                 "description": "Is the gearbox in automatic or manual (paddle) mode.",
-                "enum": [
-                  "manual",
-                  "automatic"
-                ],
                 "type": "actuator",
                 "uuid": "ff3c69378c2f598286e51f7dac13adaa"
               },
@@ -6571,13 +6238,6 @@
               "PerformanceMode": {
                 "datatype": "string",
                 "description": "Current gearbox performance mode.",
-                "enum": [
-                  "normal",
-                  "sport",
-                  "economy",
-                  "snow",
-                  "rain"
-                ],
                 "type": "actuator",
                 "uuid": "6b5cfd85cb595e559503ccf993be04dd"
               },
@@ -6607,14 +6267,6 @@
                 "datatype": "string",
                 "default": "unknown",
                 "description": "Transmission type.",
-                "enum": [
-                  "unknown",
-                  "sequential",
-                  "H",
-                  "automatic",
-                  "DSG",
-                  "CVT"
-                ],
                 "type": "attribute",
                 "uuid": "f83b9e5464d85a0288fcb32c164d3c63"
               }

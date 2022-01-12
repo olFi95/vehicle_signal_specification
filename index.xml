@@ -131,14 +131,12 @@ Attribute values can also change, similar to sensor values. The latter can be us
     </item>
     
     <item>
-      <title>Enumerated Data Entries</title>
+      <title>Defined Value restrictions</title>
       <link>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/enum/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:12 +0200</pubDate>
       
       <guid>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/enum/</guid>
-      <description>A data entry can optionally be enumerated, allowing it to be assigned a value from a specified set of values. An examples of a signal using enum is given below:
-Charging.ChargePlugType: datatype: string type: attribute default: ccs enum: [ &amp;#39;type 1&amp;#39;, &amp;#39;type 2&amp;#39;, &amp;#39;ccs&amp;#39;, &amp;#39;chademo&amp;#39; ] description: Type of charge plug available on the vehicle (CSS includes Type2). An enumerated signal entry has no min, max, or unit element.
-The enum element is an array of values, all of which must be specified in the enum list.</description>
+      <description>Optionally it is possible to define an array of allowed, which will restrict the usage of the data entry in the implementation of the specification. It is expected, that any value not mentioned in the array is considered an error and the implementation of the specification shall react accordingly. The datatype of the array elements is the datatype defined for the data entry itself. For attributes it is possible to set optionally a default value.</description>
     </item>
     
     <item>
