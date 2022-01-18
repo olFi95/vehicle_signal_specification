@@ -686,7 +686,7 @@ Vehicle.Powertrain.Transmission.Type:
 
 Vehicle.Powertrain.Transmission.GearCount:
   type: attribute
-  datatype: uint8
+  datatype: int8
   default: 0
   description: Number of forward gears in the transmission. -1 = CVT.
   uuid: 84293f40d3ed57f1a08992d97b1a9ccd
@@ -717,6 +717,24 @@ Vehicle.Powertrain.Transmission.SelectedGear:
   description: The selected gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse, 126=Park, 127=Drive.
   uuid: 490fd99b9d5f562eb180c19e8cef5e12
 
+Vehicle.Powertrain.Transmission.IsParkLockEngaged:
+  type: actuator
+  datatype: boolean
+  description: Is the transmission park lock engaged or not. False = Disengaged. True = Engaged.
+  uuid: 1578da3f925e54ac9df978abd0195408
+
+Vehicle.Powertrain.Transmission.IsLowRangeEngaged:
+  type: actuator
+  datatype: boolean
+  description: Is gearbox in low range mode or not. False = Normal/High range engaged. True = Low range engaged.
+  uuid: 63ba7593926b574ebbe4f90b28557e78
+
+Vehicle.Powertrain.Transmission.IsElectricalPowertrainEngaged:
+  type: actuator
+  datatype: boolean
+  description: Is electrical powertrain mechanically connected/engaged to the drivetrain or not. False = Disconnected/Disengaged. True = Connected/Engaged.
+  uuid: 6660cf1d88d15430b1e7c8908a7b769b
+
 Vehicle.Powertrain.Transmission.PerformanceMode:
   type: actuator
   datatype: string
@@ -732,18 +750,53 @@ Vehicle.Powertrain.Transmission.GearChangeMode:
 Vehicle.Powertrain.Transmission.Temperature:
   type: sensor
   datatype: int16
-  min: -50
-  max: 200
   unit: celsius
-  description: The current gearbox temperature
+  description: The current gearbox temperature.
   uuid: 4f5e48c3511b5e1abff11aa7ec62dd18
+
+Vehicle.Powertrain.Transmission.ClutchEngagement:
+  type: actuator
+  datatype: float
+  min: 0
+  max: 100
+  unit: percent
+  description: Clutch engagement. 0% = Clutch fully disengaged. 100% = Clutch fully engaged.
+  uuid: 2890bd4a2b6a56c19b62d7bd95151fc6
 
 Vehicle.Powertrain.Transmission.ClutchWear:
   type: sensor
   datatype: uint8
+  max: 100
   unit: percent
   description: Clutch wear as a percent. 0 = no wear. 100 = worn.
   uuid: c113405ad165571a9d53ae4cf55dc929
+
+Vehicle.Powertrain.Transmission.DiffLockFrontEngagement:
+  type: actuator
+  datatype: float
+  min: 0
+  max: 100
+  unit: percent
+  description: Front Diff Lock engagement. 0% = Diff lock fully disengaged. 100% = Diff lock fully engaged.
+  uuid: 5149afe37fbd5c24847b5820821abc02
+
+Vehicle.Powertrain.Transmission.DiffLockRearEngagement:
+  type: actuator
+  datatype: float
+  min: 0
+  max: 100
+  unit: percent
+  description: Rear Diff Lock engagement. 0% = Diff lock fully disengaged. 100% = Diff lock fully engaged.
+  uuid: 197c939bd1405613b80179becec6db83
+
+Vehicle.Powertrain.Transmission.TorqueDistribution:
+  type: actuator
+  datatype: float
+  min: -100
+  max: 100
+  unit: percent
+  description: Torque distribution between front and rear axle in percent. -100% = Full torque to front axle, 0% = 50:50 Front/Rear, 100% = Full torque to rear axle.
+  uuid: d3bcaaf973d3512287817049db9bd677
 
 Vehicle.Powertrain.ElectricMotor:
   type: branch

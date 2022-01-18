@@ -6202,9 +6202,19 @@
           },
           "Transmission": {
             "children": {
+              "ClutchEngagement": {
+                "datatype": "float",
+                "description": "Clutch engagement. 0% = Clutch fully disengaged. 100% = Clutch fully engaged.",
+                "max": 100,
+                "min": 0,
+                "type": "actuator",
+                "unit": "percent",
+                "uuid": "2890bd4a2b6a56c19b62d7bd95151fc6"
+              },
               "ClutchWear": {
                 "datatype": "uint8",
                 "description": "Clutch wear as a percent. 0 = no wear. 100 = worn.",
+                "max": 100,
                 "type": "sensor",
                 "unit": "percent",
                 "uuid": "c113405ad165571a9d53ae4cf55dc929"
@@ -6214,6 +6224,24 @@
                 "description": "The current gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse.",
                 "type": "sensor",
                 "uuid": "cd0ba1d772565e16bff46cbd5c9361da"
+              },
+              "DiffLockFrontEngagement": {
+                "datatype": "float",
+                "description": "Front Diff Lock engagement. 0% = Diff lock fully disengaged. 100% = Diff lock fully engaged.",
+                "max": 100,
+                "min": 0,
+                "type": "actuator",
+                "unit": "percent",
+                "uuid": "5149afe37fbd5c24847b5820821abc02"
+              },
+              "DiffLockRearEngagement": {
+                "datatype": "float",
+                "description": "Rear Diff Lock engagement. 0% = Diff lock fully disengaged. 100% = Diff lock fully engaged.",
+                "max": 100,
+                "min": 0,
+                "type": "actuator",
+                "unit": "percent",
+                "uuid": "197c939bd1405613b80179becec6db83"
               },
               "DriveType": {
                 "datatype": "string",
@@ -6229,11 +6257,31 @@
                 "uuid": "ff3c69378c2f598286e51f7dac13adaa"
               },
               "GearCount": {
-                "datatype": "uint8",
+                "datatype": "int8",
                 "default": 0,
                 "description": "Number of forward gears in the transmission. -1 = CVT.",
                 "type": "attribute",
                 "uuid": "84293f40d3ed57f1a08992d97b1a9ccd"
+              },
+              "IsElectricalPowertrainEngaged": {
+                "comment": "In some hybrid solutions it is possible to disconnect/disengage the electrical powertrain mechanically to avoid induced voltage reaching a too high level when driving at high speed.",
+                "datatype": "boolean",
+                "description": "Is electrical powertrain mechanically connected/engaged to the drivetrain or not. False = Disconnected/Disengaged. True = Connected/Engaged.",
+                "type": "actuator",
+                "uuid": "6660cf1d88d15430b1e7c8908a7b769b"
+              },
+              "IsLowRangeEngaged": {
+                "comment": "The possibility to switch between low and high gear range is typically only available in heavy vehicles and off-road vehicles.",
+                "datatype": "boolean",
+                "description": "Is gearbox in low range mode or not. False = Normal/High range engaged. True = Low range engaged.",
+                "type": "actuator",
+                "uuid": "63ba7593926b574ebbe4f90b28557e78"
+              },
+              "IsParkLockEngaged": {
+                "datatype": "boolean",
+                "description": "Is the transmission park lock engaged or not. False = Disengaged. True = Engaged.",
+                "type": "actuator",
+                "uuid": "1578da3f925e54ac9df978abd0195408"
               },
               "PerformanceMode": {
                 "datatype": "string",
@@ -6249,12 +6297,19 @@
               },
               "Temperature": {
                 "datatype": "int16",
-                "description": "The current gearbox temperature",
-                "max": 200,
-                "min": -50,
+                "description": "The current gearbox temperature.",
                 "type": "sensor",
                 "unit": "celsius",
                 "uuid": "4f5e48c3511b5e1abff11aa7ec62dd18"
+              },
+              "TorqueDistribution": {
+                "datatype": "float",
+                "description": "Torque distribution between front and rear axle in percent. -100% = Full torque to front axle, 0% = 50:50 Front/Rear, 100% = Full torque to rear axle.",
+                "max": 100,
+                "min": -100,
+                "type": "actuator",
+                "unit": "percent",
+                "uuid": "d3bcaaf973d3512287817049db9bd677"
               },
               "TravelledDistance": {
                 "datatype": "float",
