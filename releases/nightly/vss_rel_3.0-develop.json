@@ -989,8 +989,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "347c13ff2a735d54a5f011d4573694cd"
@@ -1020,8 +1018,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "592dc63c45145f739edbc5677196eb85"
@@ -1058,8 +1054,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "7185fb43728f53f3960e1284b89a6f66"
@@ -1089,8 +1083,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "c6822e4c0eae59cab832057bac327c67"
@@ -1127,8 +1119,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "b12b9565bd4e5c8e974ac0ff97223af4"
@@ -1158,8 +1148,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "a76ea2c628df5099b0dca839aac84e63"
@@ -1196,8 +1184,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "accc4bb43c775735843e87b545af08b2"
@@ -1227,8 +1213,6 @@
                           "Temperature": {
                             "datatype": "int8",
                             "description": "Temperature",
-                            "max": 50,
-                            "min": -50,
                             "type": "actuator",
                             "unit": "celsius",
                             "uuid": "49c59496aa7356cf86c275a0eb93ba28"
@@ -1626,8 +1610,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint16",
-                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.",
-                            "max": 500,
+                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -1635,8 +1618,7 @@
                           },
                           "Length": {
                             "datatype": "uint16",
-                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.",
-                            "max": 500,
+                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -1651,8 +1633,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Height of head restraint. 0 = Bottommost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Height of head restraint. 0 = Bottommost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -1674,8 +1655,7 @@
                       },
                       "Height": {
                         "datatype": "uint16",
-                        "description": "Seat vertical position. 0 = Lowermost. 1000 = Uppermost.",
-                        "max": 1000,
+                        "description": "Seat vertical position. 0 = Lowermost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -1697,10 +1677,10 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Lumbar support position. 0 = Lowermost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Lumbar support position. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
+                            "unit": "mm",
                             "uuid": "88cd5a9e251f5c1b8fd1fca9eef93652"
                           },
                           "Inflation": {
@@ -1753,8 +1733,7 @@
                       },
                       "Position": {
                         "datatype": "uint16",
-                        "description": "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.",
-                        "max": 1000,
+                        "description": "Seat horizontal position. 0 = Frontmost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -1989,8 +1968,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint16",
-                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.",
-                            "max": 500,
+                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -1998,8 +1976,7 @@
                           },
                           "Length": {
                             "datatype": "uint16",
-                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.",
-                            "max": 500,
+                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2014,8 +1991,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Height of head restraint. 0 = Bottommost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Height of head restraint. 0 = Bottommost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2037,8 +2013,7 @@
                       },
                       "Height": {
                         "datatype": "uint16",
-                        "description": "Seat vertical position. 0 = Lowermost. 1000 = Uppermost.",
-                        "max": 1000,
+                        "description": "Seat vertical position. 0 = Lowermost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -2060,10 +2035,10 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Lumbar support position. 0 = Lowermost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Lumbar support position. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
+                            "unit": "mm",
                             "uuid": "b416d0e40df55cbf8055d7f5245993c4"
                           },
                           "Inflation": {
@@ -2116,8 +2091,7 @@
                       },
                       "Position": {
                         "datatype": "uint16",
-                        "description": "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.",
-                        "max": 1000,
+                        "description": "Seat horizontal position. 0 = Frontmost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -2352,8 +2326,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint16",
-                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.",
-                            "max": 500,
+                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2361,8 +2334,7 @@
                           },
                           "Length": {
                             "datatype": "uint16",
-                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.",
-                            "max": 500,
+                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2377,8 +2349,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Height of head restraint. 0 = Bottommost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Height of head restraint. 0 = Bottommost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2400,8 +2371,7 @@
                       },
                       "Height": {
                         "datatype": "uint16",
-                        "description": "Seat vertical position. 0 = Lowermost. 1000 = Uppermost.",
-                        "max": 1000,
+                        "description": "Seat vertical position. 0 = Lowermost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -2423,10 +2393,10 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Lumbar support position. 0 = Lowermost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Lumbar support position. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
+                            "unit": "mm",
                             "uuid": "98b4873c63e354ba9280dcd27e2aae66"
                           },
                           "Inflation": {
@@ -2479,8 +2449,7 @@
                       },
                       "Position": {
                         "datatype": "uint16",
-                        "description": "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.",
-                        "max": 1000,
+                        "description": "Seat horizontal position. 0 = Frontmost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -2722,8 +2691,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint16",
-                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.",
-                            "max": 500,
+                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2731,8 +2699,7 @@
                           },
                           "Length": {
                             "datatype": "uint16",
-                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.",
-                            "max": 500,
+                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2747,8 +2714,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Height of head restraint. 0 = Bottommost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Height of head restraint. 0 = Bottommost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -2770,8 +2736,7 @@
                       },
                       "Height": {
                         "datatype": "uint16",
-                        "description": "Seat vertical position. 0 = Lowermost. 1000 = Uppermost.",
-                        "max": 1000,
+                        "description": "Seat vertical position. 0 = Lowermost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -2793,10 +2758,10 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Lumbar support position. 0 = Lowermost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Lumbar support position. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
+                            "unit": "mm",
                             "uuid": "41c8cc38221a52649a923f533eb74233"
                           },
                           "Inflation": {
@@ -2849,8 +2814,7 @@
                       },
                       "Position": {
                         "datatype": "uint16",
-                        "description": "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.",
-                        "max": 1000,
+                        "description": "Seat horizontal position. 0 = Frontmost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -3085,8 +3049,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint16",
-                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.",
-                            "max": 500,
+                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -3094,8 +3057,7 @@
                           },
                           "Length": {
                             "datatype": "uint16",
-                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.",
-                            "max": 500,
+                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -3110,8 +3072,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Height of head restraint. 0 = Bottommost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Height of head restraint. 0 = Bottommost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -3133,8 +3094,7 @@
                       },
                       "Height": {
                         "datatype": "uint16",
-                        "description": "Seat vertical position. 0 = Lowermost. 1000 = Uppermost.",
-                        "max": 1000,
+                        "description": "Seat vertical position. 0 = Lowermost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -3156,10 +3116,10 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Lumbar support position. 0 = Lowermost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Lumbar support position. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
+                            "unit": "mm",
                             "uuid": "95bf0522c35653588932404e7e49f603"
                           },
                           "Inflation": {
@@ -3212,8 +3172,7 @@
                       },
                       "Position": {
                         "datatype": "uint16",
-                        "description": "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.",
-                        "max": 1000,
+                        "description": "Seat horizontal position. 0 = Frontmost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -3448,8 +3407,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint16",
-                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.",
-                            "max": 500,
+                            "description": "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -3457,8 +3415,7 @@
                           },
                           "Length": {
                             "datatype": "uint16",
-                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.",
-                            "max": 500,
+                            "description": "Forward length of cushion (leg support), relative to seat. 0 = Rearmost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -3473,8 +3430,7 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Height of head restraint. 0 = Bottommost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Height of head restraint. 0 = Bottommost.",
                             "min": 0,
                             "type": "actuator",
                             "unit": "mm",
@@ -3496,8 +3452,7 @@
                       },
                       "Height": {
                         "datatype": "uint16",
-                        "description": "Seat vertical position. 0 = Lowermost. 1000 = Uppermost.",
-                        "max": 1000,
+                        "description": "Seat vertical position. 0 = Lowermost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -3519,10 +3474,10 @@
                         "children": {
                           "Height": {
                             "datatype": "uint8",
-                            "description": "Lumbar support position. 0 = Lowermost. 255 = Uppermost.",
-                            "max": 255,
+                            "description": "Lumbar support position. 0 = Lowermost.",
                             "min": 0,
                             "type": "actuator",
+                            "unit": "mm",
                             "uuid": "c2d250c021aa531cb364f52a80ae1131"
                           },
                           "Inflation": {
@@ -3575,8 +3530,7 @@
                       },
                       "Position": {
                         "datatype": "uint16",
-                        "description": "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.",
-                        "max": 1000,
+                        "description": "Seat horizontal position. 0 = Frontmost.",
                         "min": 0,
                         "type": "actuator",
                         "unit": "mm",
@@ -5809,8 +5763,6 @@
               "CoolantTemperature": {
                 "datatype": "int16",
                 "description": "Motor coolant temperature (if applicable).",
-                "max": 200,
-                "min": -50,
                 "type": "sensor",
                 "unit": "celsius",
                 "uuid": "3c5ea8c7700956518f2ae7a2a0f34f1c"
@@ -5850,8 +5802,6 @@
               "Power": {
                 "datatype": "int16",
                 "description": "Current motor power output. Negative values indicate regen mode.",
-                "max": 2000,
-                "min": -2000,
                 "type": "sensor",
                 "unit": "kW",
                 "uuid": "46b86286fba059349a733fed9a0e3232"
@@ -5859,8 +5809,6 @@
               "Rpm": {
                 "datatype": "int32",
                 "description": "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.",
-                "max": 100000,
-                "min": -100000,
                 "type": "sensor",
                 "unit": "rpm",
                 "uuid": "b31746b142de52fea3f84d860a0b717e"
@@ -5868,8 +5816,6 @@
               "Temperature": {
                 "datatype": "int16",
                 "description": "Motor temperature.",
-                "max": 200,
-                "min": -50,
                 "type": "sensor",
                 "unit": "celsius",
                 "uuid": "1b7c15e5341052139995bfacea2c05b2"
@@ -5877,8 +5823,6 @@
               "Torque": {
                 "datatype": "int16",
                 "description": "Current motor torque. Negative values indicate regen mode.",
-                "max": 5000,
-                "min": -5000,
                 "type": "sensor",
                 "unit": "Nm",
                 "uuid": "aceffe768ddf5b828fff0975349d2433"

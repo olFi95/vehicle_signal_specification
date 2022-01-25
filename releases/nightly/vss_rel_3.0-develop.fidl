@@ -982,8 +982,6 @@ const SignalSpec[] signal_spec = [
     description: "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode."
     datatype: int32
     uuid: b31746b142de52fea3f84d860a0b717e
-    min: -100000
-    max: 100000
     unit: rpm
 }
 ,
@@ -993,8 +991,6 @@ const SignalSpec[] signal_spec = [
     description: "Motor temperature."
     datatype: int16
     uuid: 1b7c15e5341052139995bfacea2c05b2
-    min: -50
-    max: 200
     unit: celsius
 }
 ,
@@ -1004,8 +1000,6 @@ const SignalSpec[] signal_spec = [
     description: "Motor coolant temperature (if applicable)."
     datatype: int16
     uuid: 3c5ea8c7700956518f2ae7a2a0f34f1c
-    min: -50
-    max: 200
     unit: celsius
 }
 ,
@@ -1015,8 +1009,6 @@ const SignalSpec[] signal_spec = [
     description: "Current motor power output. Negative values indicate regen mode."
     datatype: int16
     uuid: 46b86286fba059349a733fed9a0e3232
-    min: -2000
-    max: 2000
     unit: kW
 }
 ,
@@ -1026,8 +1018,6 @@ const SignalSpec[] signal_spec = [
     description: "Current motor torque. Negative values indicate regen mode."
     datatype: int16
     uuid: aceffe768ddf5b828fff0975349d2433
-    min: -5000
-    max: 5000
     unit: Nm
 }
 ,
@@ -1689,8 +1679,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: 347c13ff2a735d54a5f011d4573694cd
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1719,8 +1707,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: 592dc63c45145f739edbc5677196eb85
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1749,8 +1735,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: 7185fb43728f53f3960e1284b89a6f66
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1779,8 +1763,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: c6822e4c0eae59cab832057bac327c67
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1809,8 +1791,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: b12b9565bd4e5c8e974ac0ff97223af4
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1839,8 +1819,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: a76ea2c628df5099b0dca839aac84e63
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1869,8 +1847,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: accc4bb43c775735843e87b545af08b2
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -1899,8 +1875,6 @@ const SignalSpec[] signal_spec = [
     description: "Temperature"
     datatype: int8
     uuid: 49c59496aa7356cf86c275a0eb93ba28
-    min: -50
-    max: 50
     unit: celsius
 }
 ,
@@ -2689,44 +2663,40 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos1.Position"
     type: "actuator"
-    description: "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost."
+    description: "Seat horizontal position. 0 = Frontmost."
     datatype: uint16
     uuid: 78283eb5efee58f8bce8b5fa3760df54
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos1.Height"
     type: "actuator"
-    description: "Seat vertical position. 0 = Lowermost. 1000 = Uppermost."
+    description: "Seat vertical position. 0 = Lowermost."
     datatype: uint16
     uuid: a28e02777f0652c09282c639b2ab0a63
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos1.Cushion.Height"
     type: "actuator"
-    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost."
+    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost."
     datatype: uint16
     uuid: 7fcca1759439553da9ba96f6b8e5ab0c
     min: 0
-    max: 500
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos1.Cushion.Length"
     type: "actuator"
-    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost."
+    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost."
     datatype: uint16
     uuid: 2e82eb84c2315844a31c3799917302c8
     min: 0
-    max: 500
     unit: mm
 }
 ,
@@ -2743,11 +2713,11 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos1.Lumbar.Height"
     type: "actuator"
-    description: "Lumbar support position. 0 = Lowermost. 255 = Uppermost."
+    description: "Lumbar support position. 0 = Lowermost."
     datatype: uint8
     uuid: 88cd5a9e251f5c1b8fd1fca9eef93652
     min: 0
-    max: 255
+    unit: mm
 }
 ,
 {
@@ -2763,11 +2733,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos1.HeadRestraint.Height"
     type: "actuator"
-    description: "Height of head restraint. 0 = Bottommost. 255 = Uppermost."
+    description: "Height of head restraint. 0 = Bottommost."
     datatype: uint8
     uuid: cf523dc17f9451b08be069c5ea7be059
     min: 0
-    max: 255
     unit: mm
 }
 ,
@@ -3023,44 +2992,40 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos2.Position"
     type: "actuator"
-    description: "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost."
+    description: "Seat horizontal position. 0 = Frontmost."
     datatype: uint16
     uuid: f14a3e9eaaf35012a8be3782b6a53f55
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos2.Height"
     type: "actuator"
-    description: "Seat vertical position. 0 = Lowermost. 1000 = Uppermost."
+    description: "Seat vertical position. 0 = Lowermost."
     datatype: uint16
     uuid: fc3b3498a15c5417aadbbce4f758a6d5
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos2.Cushion.Height"
     type: "actuator"
-    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost."
+    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost."
     datatype: uint16
     uuid: 729a4a9cc12f5f0da260406967b48f1f
     min: 0
-    max: 500
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos2.Cushion.Length"
     type: "actuator"
-    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost."
+    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost."
     datatype: uint16
     uuid: 7bea75eec2565b7e9e2bb45e83b0e11a
     min: 0
-    max: 500
     unit: mm
 }
 ,
@@ -3077,11 +3042,11 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos2.Lumbar.Height"
     type: "actuator"
-    description: "Lumbar support position. 0 = Lowermost. 255 = Uppermost."
+    description: "Lumbar support position. 0 = Lowermost."
     datatype: uint8
     uuid: b416d0e40df55cbf8055d7f5245993c4
     min: 0
-    max: 255
+    unit: mm
 }
 ,
 {
@@ -3097,11 +3062,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos2.HeadRestraint.Height"
     type: "actuator"
-    description: "Height of head restraint. 0 = Bottommost. 255 = Uppermost."
+    description: "Height of head restraint. 0 = Bottommost."
     datatype: uint8
     uuid: 54d2ecd1932f507398273dcbfc6e914d
     min: 0
-    max: 255
     unit: mm
 }
 ,
@@ -3357,44 +3321,40 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos3.Position"
     type: "actuator"
-    description: "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost."
+    description: "Seat horizontal position. 0 = Frontmost."
     datatype: uint16
     uuid: 2a2ba0e42dcc563cba80cc491b66c45f
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos3.Height"
     type: "actuator"
-    description: "Seat vertical position. 0 = Lowermost. 1000 = Uppermost."
+    description: "Seat vertical position. 0 = Lowermost."
     datatype: uint16
     uuid: d19199de59a153f782b8d61788c510a7
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos3.Cushion.Height"
     type: "actuator"
-    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost."
+    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost."
     datatype: uint16
     uuid: 4c82794acd9553dbb2ec735379c0e517
     min: 0
-    max: 500
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos3.Cushion.Length"
     type: "actuator"
-    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost."
+    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost."
     datatype: uint16
     uuid: c686c30c88145df9b690649fa0849ccb
     min: 0
-    max: 500
     unit: mm
 }
 ,
@@ -3411,11 +3371,11 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos3.Lumbar.Height"
     type: "actuator"
-    description: "Lumbar support position. 0 = Lowermost. 255 = Uppermost."
+    description: "Lumbar support position. 0 = Lowermost."
     datatype: uint8
     uuid: 98b4873c63e354ba9280dcd27e2aae66
     min: 0
-    max: 255
+    unit: mm
 }
 ,
 {
@@ -3431,11 +3391,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row1.Pos3.HeadRestraint.Height"
     type: "actuator"
-    description: "Height of head restraint. 0 = Bottommost. 255 = Uppermost."
+    description: "Height of head restraint. 0 = Bottommost."
     datatype: uint8
     uuid: ca45741cffe153c68e8cd62ceff7a82c
     min: 0
-    max: 255
     unit: mm
 }
 ,
@@ -3691,44 +3650,40 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos1.Position"
     type: "actuator"
-    description: "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost."
+    description: "Seat horizontal position. 0 = Frontmost."
     datatype: uint16
     uuid: 3dd247aae2555a1ebaf76ae4017f23bb
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos1.Height"
     type: "actuator"
-    description: "Seat vertical position. 0 = Lowermost. 1000 = Uppermost."
+    description: "Seat vertical position. 0 = Lowermost."
     datatype: uint16
     uuid: 6e6e7aadfd0d52d4ac877147d84540d0
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos1.Cushion.Height"
     type: "actuator"
-    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost."
+    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost."
     datatype: uint16
     uuid: af1c06009f2f51a8a9691dc76f67daf5
     min: 0
-    max: 500
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos1.Cushion.Length"
     type: "actuator"
-    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost."
+    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost."
     datatype: uint16
     uuid: da1627d60d1855e481585118413545c4
     min: 0
-    max: 500
     unit: mm
 }
 ,
@@ -3745,11 +3700,11 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos1.Lumbar.Height"
     type: "actuator"
-    description: "Lumbar support position. 0 = Lowermost. 255 = Uppermost."
+    description: "Lumbar support position. 0 = Lowermost."
     datatype: uint8
     uuid: 41c8cc38221a52649a923f533eb74233
     min: 0
-    max: 255
+    unit: mm
 }
 ,
 {
@@ -3765,11 +3720,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos1.HeadRestraint.Height"
     type: "actuator"
-    description: "Height of head restraint. 0 = Bottommost. 255 = Uppermost."
+    description: "Height of head restraint. 0 = Bottommost."
     datatype: uint8
     uuid: 860c83873c885e468f376ed62fa1ad5a
     min: 0
-    max: 255
     unit: mm
 }
 ,
@@ -4025,44 +3979,40 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos2.Position"
     type: "actuator"
-    description: "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost."
+    description: "Seat horizontal position. 0 = Frontmost."
     datatype: uint16
     uuid: 7c24fa880576550da14bae1e5eed26b9
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos2.Height"
     type: "actuator"
-    description: "Seat vertical position. 0 = Lowermost. 1000 = Uppermost."
+    description: "Seat vertical position. 0 = Lowermost."
     datatype: uint16
     uuid: 3cf2e042421b540da4aa047680dcdf84
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos2.Cushion.Height"
     type: "actuator"
-    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost."
+    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost."
     datatype: uint16
     uuid: 330a944fd2005b53a4d546744d21e591
     min: 0
-    max: 500
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos2.Cushion.Length"
     type: "actuator"
-    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost."
+    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost."
     datatype: uint16
     uuid: 203d653612605d988c639c0f6c728906
     min: 0
-    max: 500
     unit: mm
 }
 ,
@@ -4079,11 +4029,11 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos2.Lumbar.Height"
     type: "actuator"
-    description: "Lumbar support position. 0 = Lowermost. 255 = Uppermost."
+    description: "Lumbar support position. 0 = Lowermost."
     datatype: uint8
     uuid: 95bf0522c35653588932404e7e49f603
     min: 0
-    max: 255
+    unit: mm
 }
 ,
 {
@@ -4099,11 +4049,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos2.HeadRestraint.Height"
     type: "actuator"
-    description: "Height of head restraint. 0 = Bottommost. 255 = Uppermost."
+    description: "Height of head restraint. 0 = Bottommost."
     datatype: uint8
     uuid: 4214c90aad0e538fae2d16f9cb4a8a62
     min: 0
-    max: 255
     unit: mm
 }
 ,
@@ -4359,44 +4308,40 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos3.Position"
     type: "actuator"
-    description: "Seat horizontal position. 0 = Frontmost. 1000 = Rearmost."
+    description: "Seat horizontal position. 0 = Frontmost."
     datatype: uint16
     uuid: 64eb763cc10358b49968797fbf50c092
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos3.Height"
     type: "actuator"
-    description: "Seat vertical position. 0 = Lowermost. 1000 = Uppermost."
+    description: "Seat vertical position. 0 = Lowermost."
     datatype: uint16
     uuid: 077a21fca4d857dd81debfd81119bc73
     min: 0
-    max: 1000
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos3.Cushion.Height"
     type: "actuator"
-    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost."
+    description: "Height of the seat cushion (leg support), relative to seat. 0 = Lowermost."
     datatype: uint16
     uuid: 859ea2de83275a4ca91c59e248e9b159
     min: 0
-    max: 500
     unit: mm
 }
 ,
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos3.Cushion.Length"
     type: "actuator"
-    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost."
+    description: "Forward length of cushion (leg support), relative to seat. 0 = Rearmost."
     datatype: uint16
     uuid: ddf566c0b12256df94fcd72bcaa3f570
     min: 0
-    max: 500
     unit: mm
 }
 ,
@@ -4413,11 +4358,11 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos3.Lumbar.Height"
     type: "actuator"
-    description: "Lumbar support position. 0 = Lowermost. 255 = Uppermost."
+    description: "Lumbar support position. 0 = Lowermost."
     datatype: uint8
     uuid: c2d250c021aa531cb364f52a80ae1131
     min: 0
-    max: 255
+    unit: mm
 }
 ,
 {
@@ -4433,11 +4378,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Seat.Row2.Pos3.HeadRestraint.Height"
     type: "actuator"
-    description: "Height of head restraint. 0 = Bottommost. 255 = Uppermost."
+    description: "Height of head restraint. 0 = Bottommost."
     datatype: uint8
     uuid: dbaefb0c59505e83b1f87b4010f3049a
     min: 0
-    max: 255
     unit: mm
 }
 ,

@@ -838,8 +838,6 @@ Vehicle.Powertrain.ElectricMotor.MaxRegenTorque:
 Vehicle.Powertrain.ElectricMotor.Rpm:
   type: sensor
   datatype: int32
-  min: -100000
-  max: 100000
   unit: rpm
   description: Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.
   uuid: b31746b142de52fea3f84d860a0b717e
@@ -847,8 +845,6 @@ Vehicle.Powertrain.ElectricMotor.Rpm:
 Vehicle.Powertrain.ElectricMotor.Temperature:
   type: sensor
   datatype: int16
-  min: -50
-  max: 200
   unit: celsius
   description: Motor temperature.
   uuid: 1b7c15e5341052139995bfacea2c05b2
@@ -856,8 +852,6 @@ Vehicle.Powertrain.ElectricMotor.Temperature:
 Vehicle.Powertrain.ElectricMotor.CoolantTemperature:
   type: sensor
   datatype: int16
-  min: -50
-  max: 200
   unit: celsius
   description: Motor coolant temperature (if applicable).
   uuid: 3c5ea8c7700956518f2ae7a2a0f34f1c
@@ -865,8 +859,6 @@ Vehicle.Powertrain.ElectricMotor.CoolantTemperature:
 Vehicle.Powertrain.ElectricMotor.Power:
   type: sensor
   datatype: int16
-  min: -2000
-  max: 2000
   unit: kW
   description: Current motor power output. Negative values indicate regen mode.
   uuid: 46b86286fba059349a733fed9a0e3232
@@ -874,8 +866,6 @@ Vehicle.Powertrain.ElectricMotor.Power:
 Vehicle.Powertrain.ElectricMotor.Torque:
   type: sensor
   datatype: int16
-  min: -5000
-  max: 5000
   unit: Nm
   description: Current motor torque. Negative values indicate regen mode.
   uuid: aceffe768ddf5b828fff0975349d2433
@@ -1529,8 +1519,6 @@ Vehicle.Cabin.HVAC.Station.Row1.Left.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row1.Left.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: 347c13ff2a735d54a5f011d4573694cd
@@ -1558,8 +1546,6 @@ Vehicle.Cabin.HVAC.Station.Row1.Right.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row1.Right.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: 592dc63c45145f739edbc5677196eb85
@@ -1592,8 +1578,6 @@ Vehicle.Cabin.HVAC.Station.Row2.Left.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row2.Left.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: 7185fb43728f53f3960e1284b89a6f66
@@ -1621,8 +1605,6 @@ Vehicle.Cabin.HVAC.Station.Row2.Right.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row2.Right.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: c6822e4c0eae59cab832057bac327c67
@@ -1655,8 +1637,6 @@ Vehicle.Cabin.HVAC.Station.Row3.Left.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row3.Left.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: b12b9565bd4e5c8e974ac0ff97223af4
@@ -1684,8 +1664,6 @@ Vehicle.Cabin.HVAC.Station.Row3.Right.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row3.Right.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: a76ea2c628df5099b0dca839aac84e63
@@ -1718,8 +1696,6 @@ Vehicle.Cabin.HVAC.Station.Row4.Left.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row4.Left.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: accc4bb43c775735843e87b545af08b2
@@ -1747,8 +1723,6 @@ Vehicle.Cabin.HVAC.Station.Row4.Right.FanSpeed:
 Vehicle.Cabin.HVAC.Station.Row4.Right.Temperature:
   type: actuator
   datatype: int8
-  min: -50
-  max: 50
   unit: celsius
   description: Temperature
   uuid: 49c59496aa7356cf86c275a0eb93ba28
@@ -2533,18 +2507,16 @@ Vehicle.Cabin.Seat.Row1.Pos1.Position:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.
+  description: Seat horizontal position. 0 = Frontmost.
   uuid: 78283eb5efee58f8bce8b5fa3760df54
 
 Vehicle.Cabin.Seat.Row1.Pos1.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat vertical position. 0 = Lowermost. 1000 = Uppermost.
+  description: Seat vertical position. 0 = Lowermost.
   uuid: a28e02777f0652c09282c639b2ab0a63
 
 Vehicle.Cabin.Seat.Row1.Pos1.Cushion:
@@ -2556,18 +2528,16 @@ Vehicle.Cabin.Seat.Row1.Pos1.Cushion.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.
+  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.
   uuid: 7fcca1759439553da9ba96f6b8e5ab0c
 
 Vehicle.Cabin.Seat.Row1.Pos1.Cushion.Length:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.
+  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost.
   uuid: 2e82eb84c2315844a31c3799917302c8
 
 Vehicle.Cabin.Seat.Row1.Pos1.Lumbar:
@@ -2587,8 +2557,8 @@ Vehicle.Cabin.Seat.Row1.Pos1.Lumbar.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
-  description: Lumbar support position. 0 = Lowermost. 255 = Uppermost.
+  unit: mm
+  description: Lumbar support position. 0 = Lowermost.
   uuid: 88cd5a9e251f5c1b8fd1fca9eef93652
 
 Vehicle.Cabin.Seat.Row1.Pos1.SideBolster:
@@ -2613,9 +2583,8 @@ Vehicle.Cabin.Seat.Row1.Pos1.HeadRestraint.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
   unit: mm
-  description: Height of head restraint. 0 = Bottommost. 255 = Uppermost.
+  description: Height of head restraint. 0 = Bottommost.
   uuid: cf523dc17f9451b08be069c5ea7be059
 
 Vehicle.Cabin.Seat.Row1.Pos1.Airbag:
@@ -2866,18 +2835,16 @@ Vehicle.Cabin.Seat.Row1.Pos2.Position:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.
+  description: Seat horizontal position. 0 = Frontmost.
   uuid: f14a3e9eaaf35012a8be3782b6a53f55
 
 Vehicle.Cabin.Seat.Row1.Pos2.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat vertical position. 0 = Lowermost. 1000 = Uppermost.
+  description: Seat vertical position. 0 = Lowermost.
   uuid: fc3b3498a15c5417aadbbce4f758a6d5
 
 Vehicle.Cabin.Seat.Row1.Pos2.Cushion:
@@ -2889,18 +2856,16 @@ Vehicle.Cabin.Seat.Row1.Pos2.Cushion.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.
+  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.
   uuid: 729a4a9cc12f5f0da260406967b48f1f
 
 Vehicle.Cabin.Seat.Row1.Pos2.Cushion.Length:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.
+  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost.
   uuid: 7bea75eec2565b7e9e2bb45e83b0e11a
 
 Vehicle.Cabin.Seat.Row1.Pos2.Lumbar:
@@ -2920,8 +2885,8 @@ Vehicle.Cabin.Seat.Row1.Pos2.Lumbar.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
-  description: Lumbar support position. 0 = Lowermost. 255 = Uppermost.
+  unit: mm
+  description: Lumbar support position. 0 = Lowermost.
   uuid: b416d0e40df55cbf8055d7f5245993c4
 
 Vehicle.Cabin.Seat.Row1.Pos2.SideBolster:
@@ -2946,9 +2911,8 @@ Vehicle.Cabin.Seat.Row1.Pos2.HeadRestraint.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
   unit: mm
-  description: Height of head restraint. 0 = Bottommost. 255 = Uppermost.
+  description: Height of head restraint. 0 = Bottommost.
   uuid: 54d2ecd1932f507398273dcbfc6e914d
 
 Vehicle.Cabin.Seat.Row1.Pos2.Airbag:
@@ -3199,18 +3163,16 @@ Vehicle.Cabin.Seat.Row1.Pos3.Position:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.
+  description: Seat horizontal position. 0 = Frontmost.
   uuid: 2a2ba0e42dcc563cba80cc491b66c45f
 
 Vehicle.Cabin.Seat.Row1.Pos3.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat vertical position. 0 = Lowermost. 1000 = Uppermost.
+  description: Seat vertical position. 0 = Lowermost.
   uuid: d19199de59a153f782b8d61788c510a7
 
 Vehicle.Cabin.Seat.Row1.Pos3.Cushion:
@@ -3222,18 +3184,16 @@ Vehicle.Cabin.Seat.Row1.Pos3.Cushion.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.
+  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.
   uuid: 4c82794acd9553dbb2ec735379c0e517
 
 Vehicle.Cabin.Seat.Row1.Pos3.Cushion.Length:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.
+  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost.
   uuid: c686c30c88145df9b690649fa0849ccb
 
 Vehicle.Cabin.Seat.Row1.Pos3.Lumbar:
@@ -3253,8 +3213,8 @@ Vehicle.Cabin.Seat.Row1.Pos3.Lumbar.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
-  description: Lumbar support position. 0 = Lowermost. 255 = Uppermost.
+  unit: mm
+  description: Lumbar support position. 0 = Lowermost.
   uuid: 98b4873c63e354ba9280dcd27e2aae66
 
 Vehicle.Cabin.Seat.Row1.Pos3.SideBolster:
@@ -3279,9 +3239,8 @@ Vehicle.Cabin.Seat.Row1.Pos3.HeadRestraint.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
   unit: mm
-  description: Height of head restraint. 0 = Bottommost. 255 = Uppermost.
+  description: Height of head restraint. 0 = Bottommost.
   uuid: ca45741cffe153c68e8cd62ceff7a82c
 
 Vehicle.Cabin.Seat.Row1.Pos3.Airbag:
@@ -3537,18 +3496,16 @@ Vehicle.Cabin.Seat.Row2.Pos1.Position:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.
+  description: Seat horizontal position. 0 = Frontmost.
   uuid: 3dd247aae2555a1ebaf76ae4017f23bb
 
 Vehicle.Cabin.Seat.Row2.Pos1.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat vertical position. 0 = Lowermost. 1000 = Uppermost.
+  description: Seat vertical position. 0 = Lowermost.
   uuid: 6e6e7aadfd0d52d4ac877147d84540d0
 
 Vehicle.Cabin.Seat.Row2.Pos1.Cushion:
@@ -3560,18 +3517,16 @@ Vehicle.Cabin.Seat.Row2.Pos1.Cushion.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.
+  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.
   uuid: af1c06009f2f51a8a9691dc76f67daf5
 
 Vehicle.Cabin.Seat.Row2.Pos1.Cushion.Length:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.
+  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost.
   uuid: da1627d60d1855e481585118413545c4
 
 Vehicle.Cabin.Seat.Row2.Pos1.Lumbar:
@@ -3591,8 +3546,8 @@ Vehicle.Cabin.Seat.Row2.Pos1.Lumbar.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
-  description: Lumbar support position. 0 = Lowermost. 255 = Uppermost.
+  unit: mm
+  description: Lumbar support position. 0 = Lowermost.
   uuid: 41c8cc38221a52649a923f533eb74233
 
 Vehicle.Cabin.Seat.Row2.Pos1.SideBolster:
@@ -3617,9 +3572,8 @@ Vehicle.Cabin.Seat.Row2.Pos1.HeadRestraint.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
   unit: mm
-  description: Height of head restraint. 0 = Bottommost. 255 = Uppermost.
+  description: Height of head restraint. 0 = Bottommost.
   uuid: 860c83873c885e468f376ed62fa1ad5a
 
 Vehicle.Cabin.Seat.Row2.Pos1.Airbag:
@@ -3870,18 +3824,16 @@ Vehicle.Cabin.Seat.Row2.Pos2.Position:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.
+  description: Seat horizontal position. 0 = Frontmost.
   uuid: 7c24fa880576550da14bae1e5eed26b9
 
 Vehicle.Cabin.Seat.Row2.Pos2.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat vertical position. 0 = Lowermost. 1000 = Uppermost.
+  description: Seat vertical position. 0 = Lowermost.
   uuid: 3cf2e042421b540da4aa047680dcdf84
 
 Vehicle.Cabin.Seat.Row2.Pos2.Cushion:
@@ -3893,18 +3845,16 @@ Vehicle.Cabin.Seat.Row2.Pos2.Cushion.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.
+  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.
   uuid: 330a944fd2005b53a4d546744d21e591
 
 Vehicle.Cabin.Seat.Row2.Pos2.Cushion.Length:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.
+  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost.
   uuid: 203d653612605d988c639c0f6c728906
 
 Vehicle.Cabin.Seat.Row2.Pos2.Lumbar:
@@ -3924,8 +3874,8 @@ Vehicle.Cabin.Seat.Row2.Pos2.Lumbar.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
-  description: Lumbar support position. 0 = Lowermost. 255 = Uppermost.
+  unit: mm
+  description: Lumbar support position. 0 = Lowermost.
   uuid: 95bf0522c35653588932404e7e49f603
 
 Vehicle.Cabin.Seat.Row2.Pos2.SideBolster:
@@ -3950,9 +3900,8 @@ Vehicle.Cabin.Seat.Row2.Pos2.HeadRestraint.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
   unit: mm
-  description: Height of head restraint. 0 = Bottommost. 255 = Uppermost.
+  description: Height of head restraint. 0 = Bottommost.
   uuid: 4214c90aad0e538fae2d16f9cb4a8a62
 
 Vehicle.Cabin.Seat.Row2.Pos2.Airbag:
@@ -4203,18 +4152,16 @@ Vehicle.Cabin.Seat.Row2.Pos3.Position:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat horizontal position. 0 = Frontmost. 1000 = Rearmost.
+  description: Seat horizontal position. 0 = Frontmost.
   uuid: 64eb763cc10358b49968797fbf50c092
 
 Vehicle.Cabin.Seat.Row2.Pos3.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 1000
   unit: mm
-  description: Seat vertical position. 0 = Lowermost. 1000 = Uppermost.
+  description: Seat vertical position. 0 = Lowermost.
   uuid: 077a21fca4d857dd81debfd81119bc73
 
 Vehicle.Cabin.Seat.Row2.Pos3.Cushion:
@@ -4226,18 +4173,16 @@ Vehicle.Cabin.Seat.Row2.Pos3.Cushion.Height:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost. 500 = Uppermost.
+  description: Height of the seat cushion (leg support), relative to seat. 0 = Lowermost.
   uuid: 859ea2de83275a4ca91c59e248e9b159
 
 Vehicle.Cabin.Seat.Row2.Pos3.Cushion.Length:
   type: actuator
   datatype: uint16
   min: 0
-  max: 500
   unit: mm
-  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost. 500 = Forwardmost.
+  description: Forward length of cushion (leg support), relative to seat. 0 = Rearmost.
   uuid: ddf566c0b12256df94fcd72bcaa3f570
 
 Vehicle.Cabin.Seat.Row2.Pos3.Lumbar:
@@ -4257,8 +4202,8 @@ Vehicle.Cabin.Seat.Row2.Pos3.Lumbar.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
-  description: Lumbar support position. 0 = Lowermost. 255 = Uppermost.
+  unit: mm
+  description: Lumbar support position. 0 = Lowermost.
   uuid: c2d250c021aa531cb364f52a80ae1131
 
 Vehicle.Cabin.Seat.Row2.Pos3.SideBolster:
@@ -4283,9 +4228,8 @@ Vehicle.Cabin.Seat.Row2.Pos3.HeadRestraint.Height:
   type: actuator
   datatype: uint8
   min: 0
-  max: 255
   unit: mm
-  description: Height of head restraint. 0 = Bottommost. 255 = Uppermost.
+  description: Height of head restraint. 0 = Bottommost.
   uuid: dbaefb0c59505e83b1f87b4010f3049a
 
 Vehicle.Cabin.Seat.Row2.Pos3.Airbag:
