@@ -4449,6 +4449,18 @@ Vehicle.ADAS:
   description: All Advanced Driver Assist Systems data.
   uuid: 14c2b2e1297b513197d320a5ce58f42e
 
+Vehicle.ADAS.ActiveAutonomyLevel:
+  type: sensor
+  datatype: string
+  description: Indicates the currently active level of autonomy according to SAE J3016 taxonomy.
+  uuid: b101c6928fc55948b1cc485e568ecd8d
+
+Vehicle.ADAS.SupportedAutonomyLevel:
+  type: attribute
+  datatype: string
+  description: Indicates the highest level of autonomy according to SAE J3016 taxonomy the vehicle is capable of.
+  uuid: 020410189ab4517cb85ceda268b40f51
+
 Vehicle.ADAS.CruiseControl:
   type: branch
   description: Signals from Cruise Control system.

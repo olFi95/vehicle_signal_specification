@@ -4602,6 +4602,22 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.ADAS.ActiveAutonomyLevel"
+    type: "sensor"
+    description: "Indicates the currently active level of autonomy according to SAE J3016 taxonomy."
+    datatype: string
+    uuid: b101c6928fc55948b1cc485e568ecd8d
+}
+,
+{
+    name: "Vehicle.ADAS.SupportedAutonomyLevel"
+    type: "attribute"
+    description: "Indicates the highest level of autonomy according to SAE J3016 taxonomy the vehicle is capable of."
+    datatype: string
+    uuid: 020410189ab4517cb85ceda268b40f51
+}
+,
+{
     name: "Vehicle.ADAS.CruiseControl.IsActive"
     type: "actuator"
     description: "Indicates if cruise control system is enabled. True = Enabled. False = Disabled."

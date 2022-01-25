@@ -28,6 +28,13 @@
             "type": "branch",
             "uuid": "219270ef27c4531f874bbda63743b330"
           },
+          "ActiveAutonomyLevel": {
+            "comment": "Follows https://www.sae.org/news/2019/01/sae-updates-j3016-automated-driving-graphic taxonomy. For SAE levels 3 and 4 the system is required to alert the driver before it will disengage. Level 4 systems are required to reach a safe state even if a driver does not take over. Only level 5 systems are required to not rely on a driver at all. While level 2 systems require the driver to be monitoring the system at all times, many level 2 systems, often termed \"level 2.5\" systems, do warn the driver shortly before reaching their operational limits, therefore we also support the DISENGAGING state for SAE_2.",
+            "datatype": "string",
+            "description": "Indicates the currently active level of autonomy according to SAE J3016 taxonomy.",
+            "type": "sensor",
+            "uuid": "b101c6928fc55948b1cc485e568ecd8d"
+          },
           "CruiseControl": {
             "children": {
               "IsActive": {
@@ -122,6 +129,12 @@
             "description": "Signals form Obstacle Sensor System.",
             "type": "branch",
             "uuid": "e7b6d81631cc5ac584d027d4c1a66cb5"
+          },
+          "SupportedAutonomyLevel": {
+            "datatype": "string",
+            "description": "Indicates the highest level of autonomy according to SAE J3016 taxonomy the vehicle is capable of.",
+            "type": "attribute",
+            "uuid": "020410189ab4517cb85ceda268b40f51"
           },
           "TCS": {
             "children": {
