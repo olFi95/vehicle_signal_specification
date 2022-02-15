@@ -432,6 +432,12 @@ Vehicle.Powertrain.CombustionEngine:
   description: Engine-specific data, stopping at the bell housing.
   uuid: 159e2e3e75f0590f95b4d2f6cfae54b5
 
+Vehicle.Powertrain.CombustionEngine.EngineCode:
+  type: attribute
+  datatype: string
+  description: Engine code designation, as specified by vehicle manufacturer.
+  uuid: 4ec845911b8e5b64b2cb1d34063184de
+
 Vehicle.Powertrain.CombustionEngine.Displacement:
   type: attribute
   datatype: uint16
@@ -860,6 +866,12 @@ Vehicle.Powertrain.ElectricMotor:
   type: branch
   description: Electric Motor specific data.
   uuid: 1ade64f6b0d05f6c9340e7a667555ae2
+
+Vehicle.Powertrain.ElectricMotor.EngineCode:
+  type: attribute
+  datatype: string
+  description: Engine code designation, as specified by vehicle manufacturer.
+  uuid: e4102a5142ed501495e5edafd3d36dfb
 
 Vehicle.Powertrain.ElectricMotor.MaxPower:
   type: attribute

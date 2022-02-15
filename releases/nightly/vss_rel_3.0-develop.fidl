@@ -490,6 +490,14 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Powertrain.CombustionEngine.EngineCode"
+    type: "attribute"
+    description: "Engine code designation, as specified by vehicle manufacturer."
+    datatype: string
+    uuid: 4ec845911b8e5b64b2cb1d34063184de
+}
+,
+{
     name: "Vehicle.Powertrain.CombustionEngine.Displacement"
     type: "attribute"
     description: "Displacement in cubic centimetres."
@@ -947,6 +955,14 @@ const SignalSpec[] signal_spec = [
     min: -100
     max: 100
     unit: percent
+}
+,
+{
+    name: "Vehicle.Powertrain.ElectricMotor.EngineCode"
+    type: "attribute"
+    description: "Engine code designation, as specified by vehicle manufacturer."
+    datatype: string
+    uuid: e4102a5142ed501495e5edafd3d36dfb
 }
 ,
 {

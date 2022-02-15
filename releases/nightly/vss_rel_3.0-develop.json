@@ -5917,6 +5917,13 @@
                 "unit": "celsius",
                 "uuid": "eae6f5eae04f530e80f6b024f95b767d"
               },
+              "EngineCode": {
+                "comment": "For hybrid vehicles the engine code may refer to the combination of combustion and electric engine.",
+                "datatype": "string",
+                "description": "Engine code designation, as specified by vehicle manufacturer.",
+                "type": "attribute",
+                "uuid": "4ec845911b8e5b64b2cb1d34063184de"
+              },
               "EngineCoolantCapacity": {
                 "datatype": "float",
                 "description": "Engine coolant capacity in liters.",
@@ -6079,6 +6086,12 @@
                 "type": "sensor",
                 "unit": "celsius",
                 "uuid": "3c5ea8c7700956518f2ae7a2a0f34f1c"
+              },
+              "EngineCode": {
+                "datatype": "string",
+                "description": "Engine code designation, as specified by vehicle manufacturer.",
+                "type": "attribute",
+                "uuid": "e4102a5142ed501495e5edafd3d36dfb"
               },
               "MaxPower": {
                 "datatype": "uint16",
