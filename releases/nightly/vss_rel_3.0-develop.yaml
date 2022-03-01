@@ -359,7 +359,7 @@ Vehicle.CurrentLocation:
 Vehicle.CurrentLocation.Timestamp:
   type: sensor
   datatype: string
-  description: GNSS Timestamp for latest position, formatted according to ISO 8601 with UTC time zone.
+  description: Timestamp from GNSS system for current location, formatted according to ISO 8601 with UTC time zone.
   uuid: 094aeff73be05c08905690be0e82a438
 
 Vehicle.CurrentLocation.Latitude:
@@ -386,15 +386,15 @@ Vehicle.CurrentLocation.Heading:
   min: 0
   max: 360
   unit: degrees
-  description: Current magnetic compass heading.
+  description: Current heading relative to geographic north. 0 = North, 90 = East, 180 = South, 270 = West.
   uuid: 2a8f0afa2b315943aa001278875ce012
 
-Vehicle.CurrentLocation.Accuracy:
+Vehicle.CurrentLocation.HorizontalAccuracy:
   type: sensor
   datatype: double
   unit: m
-  description: Accuracy level of the latitude and longitude coordinates.
-  uuid: c6135205a21753e49b45614d562a89b7
+  description: Accuracy of the latitude and longitude coordinates.
+  uuid: bf25ef243f0c5f839f7ef874f9c57fda
 
 Vehicle.CurrentLocation.Altitude:
   type: sensor
@@ -402,6 +402,13 @@ Vehicle.CurrentLocation.Altitude:
   unit: m
   description: Current altitude relative to WGS 84 reference ellipsoid.
   uuid: d3ead98ab0b751c1a5b5dd5bc0e5e216
+
+Vehicle.CurrentLocation.VerticalAccuracy:
+  type: sensor
+  datatype: double
+  unit: m
+  description: Accuracy of altitude.
+  uuid: 8f54055bce9e5e8e97fb6051582707ab
 
 Vehicle.Private:
   type: branch
