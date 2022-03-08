@@ -281,7 +281,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.AngularVelocity.Roll"
     type: "sensor"
     description: "Vehicle rotation rate along X (longitudinal)."
-    datatype: int16
+    datatype: float
     uuid: 221e6b93881e5771bcbd03e0849e0075
     unit: degrees/s
 }
@@ -290,7 +290,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.AngularVelocity.Pitch"
     type: "sensor"
     description: "Vehicle rotation rate along Y (lateral)."
-    datatype: int16
+    datatype: float
     uuid: 42236f4a01f45313a97fdd9b6848ce4f
     unit: degrees/s
 }
@@ -299,7 +299,7 @@ const SignalSpec[] signal_spec = [
     name: "Vehicle.AngularVelocity.Yaw"
     type: "sensor"
     description: "Vehicle rotation rate along Z (vertical)."
-    datatype: int16
+    datatype: float
     uuid: 4114c41552565c1f9035670cabe2a611
     unit: degrees/s
 }

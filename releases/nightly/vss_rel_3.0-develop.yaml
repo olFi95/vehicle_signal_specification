@@ -229,7 +229,7 @@ Vehicle.ADAS.TCS.IsError:
   uuid: 08f88723ba63558b8c804b8fe8e3f149
 
 Vehicle.Acceleration:
-  description: Spatial acceleration.
+  description: Spatial acceleration. Axis definitions according to ISO 8855.
   type: branch
   uuid: 6c490e6a798c5abc8f0178ed6deae0a8
 
@@ -262,26 +262,26 @@ Vehicle.AmbientAirTemperature:
   uuid: 2ffcbc2e6ea75dd991e3ae80b29a1d85
 
 Vehicle.AngularVelocity:
-  description: Spatial rotation.
+  description: Spatial rotation. Axis definitions according to ISO 8855.
   type: branch
   uuid: 1eef530a43de56aab665d2766483cde2
 
 Vehicle.AngularVelocity.Pitch:
-  datatype: int16
+  datatype: float
   description: Vehicle rotation rate along Y (lateral).
   type: sensor
   unit: degrees/s
   uuid: 42236f4a01f45313a97fdd9b6848ce4f
 
 Vehicle.AngularVelocity.Roll:
-  datatype: int16
+  datatype: float
   description: Vehicle rotation rate along X (longitudinal).
   type: sensor
   unit: degrees/s
   uuid: 221e6b93881e5771bcbd03e0849e0075
 
 Vehicle.AngularVelocity.Yaw:
-  datatype: int16
+  datatype: float
   description: Vehicle rotation rate along Z (vertical).
   type: sensor
   unit: degrees/s
