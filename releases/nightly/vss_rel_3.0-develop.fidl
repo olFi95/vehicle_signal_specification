@@ -499,6 +499,15 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Powertrain.Type"
+    type: "attribute"
+    description: "Defines the powertrain type of the vehicle."
+    datatype: string
+    uuid: 2a000da4204658a4a6e3ecd5176bdfba
+    allowed: ['COMBUSTION', 'HYBRID', 'ELECTRIC']
+}
+,
+{
     name: "Vehicle.Powertrain.CombustionEngine.EngineCode"
     type: "attribute"
     description: "Engine code designation, as specified by vehicle manufacturer."
@@ -609,15 +618,6 @@ const SignalSpec[] signal_spec = [
     datatype: string
     uuid: 3ca6a8ff30275c20a9d8d6d6829574eb
     allowed: ['UNKNOWN', 'NATURAL', 'SUPERCHARGER', 'TURBOCHARGER']
-}
-,
-{
-    name: "Vehicle.Powertrain.CombustionEngine.FuelType"
-    type: "attribute"
-    description: "Type of fuel that the engine runs on."
-    datatype: string
-    uuid: d0f8c79131c850bab8159eaefc7e23e5
-    allowed: ['UNKNOWN', 'GASOLINE', 'DIESEL', 'E85', 'CNG']
 }
 ,
 {
@@ -1302,12 +1302,21 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.FuelSystem.FuelType"
+    name: "Vehicle.Powertrain.FuelSystem.SupportedFuelTypes"
     type: "attribute"
-    description: "Defines the fuel type of the vehicle."
-    datatype: string
-    uuid: 76442e696df5540b8b747373b29895d9
-    allowed: ['UNKNOWN', 'GASOLINE', 'DIESEL', 'ELECTRIC', 'HYBRID', 'E85', 'CNG', 'LPG']
+    description: "High level information of fuel types supported"
+    datatype: string[]
+    uuid: 80edc3002aa25097aba6455fe459fa6c
+    allowed: ['GASOLINE', 'DIESEL', 'E85', 'LPG', 'CNG', 'LNG', 'H2', 'OTHER']
+}
+,
+{
+    name: "Vehicle.Powertrain.FuelSystem.SupportedFuel"
+    type: "attribute"
+    description: "Detailed information on fuels supported by the vehicle. Identifiers originating from DIN EN 16942:2021-08, appendix B, with additional suffix for octane (RON) where relevant."
+    datatype: string[]
+    uuid: 7fd3bf2ef0c650e69ff2037875ec59ee
+    allowed: ['E5_95', 'E5_98', 'E10_95', 'E10_98', 'E85', 'B7', 'B10', 'B20', 'B30', 'B100', 'XTL', 'LPG', 'CNG', 'LNG', 'H2', 'OTHER']
 }
 ,
 {

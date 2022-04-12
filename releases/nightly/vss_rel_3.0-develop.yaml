@@ -5686,19 +5686,6 @@ Vehicle.Powertrain.CombustionEngine.EngineOilLevel:
   type: sensor
   uuid: e3813f59e94b509eb865fd97255a8a4f
 
-Vehicle.Powertrain.CombustionEngine.FuelType:
-  allowed:
-  - UNKNOWN
-  - GASOLINE
-  - DIESEL
-  - E85
-  - CNG
-  datatype: string
-  default: UNKNOWN
-  description: Type of fuel that the engine runs on.
-  type: attribute
-  uuid: d0f8c79131c850bab8159eaefc7e23e5
-
 Vehicle.Powertrain.CombustionEngine.IdleHours:
   datatype: float
   description: Accumulated idling time during engine lifetime. Definition of idling is not standardized.
@@ -5895,22 +5882,6 @@ Vehicle.Powertrain.FuelSystem.ConsumptionSinceStart:
   unit: l
   uuid: adf0a40964ff556f92b10275ad918883
 
-Vehicle.Powertrain.FuelSystem.FuelType:
-  allowed:
-  - UNKNOWN
-  - GASOLINE
-  - DIESEL
-  - ELECTRIC
-  - HYBRID
-  - E85
-  - CNG
-  - LPG
-  datatype: string
-  default: UNKNOWN
-  description: Defines the fuel type of the vehicle.
-  type: attribute
-  uuid: 76442e696df5540b8b747373b29895d9
-
 Vehicle.Powertrain.FuelSystem.HybridType:
   allowed:
   - UNKNOWN
@@ -5960,6 +5931,44 @@ Vehicle.Powertrain.FuelSystem.Range:
   type: sensor
   unit: m
   uuid: c5a0dbe5e754553897f0aed0069af57a
+
+Vehicle.Powertrain.FuelSystem.SupportedFuel:
+  allowed:
+  - E5_95
+  - E5_98
+  - E10_95
+  - E10_98
+  - E85
+  - B7
+  - B10
+  - B20
+  - B30
+  - B100
+  - XTL
+  - LPG
+  - CNG
+  - LNG
+  - H2
+  - OTHER
+  datatype: string[]
+  description: Detailed information on fuels supported by the vehicle. Identifiers originating from DIN EN 16942:2021-08, appendix B, with additional suffix for octane (RON) where relevant.
+  type: attribute
+  uuid: 7fd3bf2ef0c650e69ff2037875ec59ee
+
+Vehicle.Powertrain.FuelSystem.SupportedFuelTypes:
+  allowed:
+  - GASOLINE
+  - DIESEL
+  - E85
+  - LPG
+  - CNG
+  - LNG
+  - H2
+  - OTHER
+  datatype: string[]
+  description: High level information of fuel types supported
+  type: attribute
+  uuid: 80edc3002aa25097aba6455fe459fa6c
 
 Vehicle.Powertrain.FuelSystem.TankCapacity:
   datatype: float
@@ -6362,6 +6371,16 @@ Vehicle.Powertrain.Transmission.Type:
   description: Transmission type.
   type: attribute
   uuid: f83b9e5464d85a0288fcb32c164d3c63
+
+Vehicle.Powertrain.Type:
+  allowed:
+  - COMBUSTION
+  - HYBRID
+  - ELECTRIC
+  datatype: string
+  description: Defines the powertrain type of the vehicle.
+  type: attribute
+  uuid: 2a000da4204658a4a6e3ecd5176bdfba
 
 Vehicle.Private:
   description: Uncontrolled branch where non-public signals can be defined.

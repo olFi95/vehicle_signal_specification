@@ -6190,20 +6190,6 @@
                 "type": "sensor",
                 "uuid": "e3813f59e94b509eb865fd97255a8a4f"
               },
-              "FuelType": {
-                "allowed": [
-                  "UNKNOWN",
-                  "GASOLINE",
-                  "DIESEL",
-                  "E85",
-                  "CNG"
-                ],
-                "datatype": "string",
-                "default": "UNKNOWN",
-                "description": "Type of fuel that the engine runs on.",
-                "type": "attribute",
-                "uuid": "d0f8c79131c850bab8159eaefc7e23e5"
-              },
               "IdleHours": {
                 "comment": "Vehicles may calculate accumulated idle time for an engine. It might be based on engine speed (rpm) below a certain limit or any other mechanism.",
                 "datatype": "float",
@@ -6407,23 +6393,6 @@
                 "unit": "l",
                 "uuid": "adf0a40964ff556f92b10275ad918883"
               },
-              "FuelType": {
-                "allowed": [
-                  "UNKNOWN",
-                  "GASOLINE",
-                  "DIESEL",
-                  "ELECTRIC",
-                  "HYBRID",
-                  "E85",
-                  "CNG",
-                  "LPG"
-                ],
-                "datatype": "string",
-                "default": "UNKNOWN",
-                "description": "Defines the fuel type of the vehicle.",
-                "type": "attribute",
-                "uuid": "76442e696df5540b8b747373b29895d9"
-              },
               "HybridType": {
                 "allowed": [
                   "UNKNOWN",
@@ -6474,6 +6443,48 @@
                 "type": "sensor",
                 "unit": "m",
                 "uuid": "c5a0dbe5e754553897f0aed0069af57a"
+              },
+              "SupportedFuel": {
+                "allowed": [
+                  "E5_95",
+                  "E5_98",
+                  "E10_95",
+                  "E10_98",
+                  "E85",
+                  "B7",
+                  "B10",
+                  "B20",
+                  "B30",
+                  "B100",
+                  "XTL",
+                  "LPG",
+                  "CNG",
+                  "LNG",
+                  "H2",
+                  "OTHER"
+                ],
+                "comment": "RON 95 is sometimes referred to as Super, RON 98 as Super Plus.",
+                "datatype": "string[]",
+                "description": "Detailed information on fuels supported by the vehicle. Identifiers originating from DIN EN 16942:2021-08, appendix B, with additional suffix for octane (RON) where relevant.",
+                "type": "attribute",
+                "uuid": "7fd3bf2ef0c650e69ff2037875ec59ee"
+              },
+              "SupportedFuelTypes": {
+                "allowed": [
+                  "GASOLINE",
+                  "DIESEL",
+                  "E85",
+                  "LPG",
+                  "CNG",
+                  "LNG",
+                  "H2",
+                  "OTHER"
+                ],
+                "comment": "If a vehicle also has an electric drivetrain (e.g. hybrid) that will be obvious from the PowerTrain.Type signal.",
+                "datatype": "string[]",
+                "description": "High level information of fuel types supported",
+                "type": "attribute",
+                "uuid": "80edc3002aa25097aba6455fe459fa6c"
               },
               "TankCapacity": {
                 "datatype": "float",
@@ -6906,6 +6917,18 @@
             "description": "Transmission-specific data, stopping at the drive shafts.",
             "type": "branch",
             "uuid": "6b71e284b63a527caa6296a66e9fdd0c"
+          },
+          "Type": {
+            "allowed": [
+              "COMBUSTION",
+              "HYBRID",
+              "ELECTRIC"
+            ],
+            "comment": "For vehicles with a combustion engine (including hybrids) more detailed information on fuels supported can be found in FuelSystem.SupportedFuelTypes and FuelSystem.SupportedFuels.",
+            "datatype": "string",
+            "description": "Defines the powertrain type of the vehicle.",
+            "type": "attribute",
+            "uuid": "2a000da4204658a4a6e3ecd5176bdfba"
           }
         },
         "description": "Powertrain data for battery management, etc.",
