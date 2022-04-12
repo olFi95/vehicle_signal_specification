@@ -524,17 +524,43 @@
           },
           "Trunk": {
             "children": {
-              "IsLocked": {
-                "datatype": "boolean",
-                "description": "Is trunk locked or unlocked. True = Locked. False = Unlocked.",
-                "type": "actuator",
-                "uuid": "d89db9a83c0955c3a049c529072d397f"
+              "Front": {
+                "children": {
+                  "IsLocked": {
+                    "datatype": "boolean",
+                    "description": "Is trunk locked or unlocked. True = Locked. False = Unlocked.",
+                    "type": "actuator",
+                    "uuid": "e0eabc210f07505fa1b66b67729d681b"
+                  },
+                  "IsOpen": {
+                    "datatype": "boolean",
+                    "description": "Trunk open or closed. True = Open. False = Closed.",
+                    "type": "actuator",
+                    "uuid": "2047de0896a352fcaf02baa06819a023"
+                  }
+                },
+                "description": "Trunk status.",
+                "type": "branch",
+                "uuid": "a455aca5bae55c22b7949fd31a765a6c"
               },
-              "IsOpen": {
-                "datatype": "boolean",
-                "description": "Trunk open or closed. True = Open. False = Closed.",
-                "type": "actuator",
-                "uuid": "58c8eb023b4b5db794705d7ce63e2d75"
+              "Rear": {
+                "children": {
+                  "IsLocked": {
+                    "datatype": "boolean",
+                    "description": "Is trunk locked or unlocked. True = Locked. False = Unlocked.",
+                    "type": "actuator",
+                    "uuid": "8f9b55b002ed59d3ac2ef0b014abf4aa"
+                  },
+                  "IsOpen": {
+                    "datatype": "boolean",
+                    "description": "Trunk open or closed. True = Open. False = Closed.",
+                    "type": "actuator",
+                    "uuid": "3d3249e59306594698367b839b12c938"
+                  }
+                },
+                "description": "Trunk status.",
+                "type": "branch",
+                "uuid": "a6170ff5e4325f38b5d57402e1d95e5a"
               }
             },
             "description": "Trunk status.",

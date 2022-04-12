@@ -492,17 +492,39 @@ Vehicle.Body.Trunk:
   type: branch
   uuid: a584c6a5aa235cb88ac686f8d72a1dff
 
-Vehicle.Body.Trunk.IsLocked:
+Vehicle.Body.Trunk.Front:
+  description: Trunk status.
+  type: branch
+  uuid: a455aca5bae55c22b7949fd31a765a6c
+
+Vehicle.Body.Trunk.Front.IsLocked:
   datatype: boolean
   description: Is trunk locked or unlocked. True = Locked. False = Unlocked.
   type: actuator
-  uuid: d89db9a83c0955c3a049c529072d397f
+  uuid: e0eabc210f07505fa1b66b67729d681b
 
-Vehicle.Body.Trunk.IsOpen:
+Vehicle.Body.Trunk.Front.IsOpen:
   datatype: boolean
   description: Trunk open or closed. True = Open. False = Closed.
   type: actuator
-  uuid: 58c8eb023b4b5db794705d7ce63e2d75
+  uuid: 2047de0896a352fcaf02baa06819a023
+
+Vehicle.Body.Trunk.Rear:
+  description: Trunk status.
+  type: branch
+  uuid: a6170ff5e4325f38b5d57402e1d95e5a
+
+Vehicle.Body.Trunk.Rear.IsLocked:
+  datatype: boolean
+  description: Is trunk locked or unlocked. True = Locked. False = Unlocked.
+  type: actuator
+  uuid: 8f9b55b002ed59d3ac2ef0b014abf4aa
+
+Vehicle.Body.Trunk.Rear.IsOpen:
+  datatype: boolean
+  description: Trunk open or closed. True = Open. False = Closed.
+  type: actuator
+  uuid: 3d3249e59306594698367b839b12c938
 
 Vehicle.Body.Windshield:
   description: Windshield signals.

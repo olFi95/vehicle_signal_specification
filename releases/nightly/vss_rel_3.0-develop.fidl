@@ -1428,19 +1428,35 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Body.Trunk.IsOpen"
+    name: "Vehicle.Body.Trunk.Front.IsOpen"
     type: "actuator"
     description: "Trunk open or closed. True = Open. False = Closed."
     datatype: boolean
-    uuid: 58c8eb023b4b5db794705d7ce63e2d75
+    uuid: 2047de0896a352fcaf02baa06819a023
 }
 ,
 {
-    name: "Vehicle.Body.Trunk.IsLocked"
+    name: "Vehicle.Body.Trunk.Front.IsLocked"
     type: "actuator"
     description: "Is trunk locked or unlocked. True = Locked. False = Unlocked."
     datatype: boolean
-    uuid: d89db9a83c0955c3a049c529072d397f
+    uuid: e0eabc210f07505fa1b66b67729d681b
+}
+,
+{
+    name: "Vehicle.Body.Trunk.Rear.IsOpen"
+    type: "actuator"
+    description: "Trunk open or closed. True = Open. False = Closed."
+    datatype: boolean
+    uuid: 3d3249e59306594698367b839b12c938
+}
+,
+{
+    name: "Vehicle.Body.Trunk.Rear.IsLocked"
+    type: "actuator"
+    description: "Is trunk locked or unlocked. True = Locked. False = Unlocked."
+    datatype: boolean
+    uuid: 8f9b55b002ed59d3ac2ef0b014abf4aa
 }
 ,
 {
