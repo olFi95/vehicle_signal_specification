@@ -135,7 +135,7 @@ Actuators are used to control the desired value of a property. Some properties i
       <pubDate>Sun, 04 Aug 2019 12:37:12 +0200</pubDate>
       
       <guid>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/allowed/</guid>
-      <description>Optionally it is possible to define an array of allowed values, which will restrict the usage of the data entry in the implementation of the specification. It is expected, that any value not mentioned in the array is considered an error and the implementation of the specification shall react accordingly. The datatype of the array elements is the datatype defined for the data entry itself. For attributes it is possible to optionally set a default value.</description>
+      <description>Specifying allowed values Optionally it is possible to define an array of allowed values, which will restrict the usage of the data entry in the implementation of the specification. It is expected, that any value not mentioned in the array is considered an error and the implementation of the specification shall react accordingly. The datatype of the array elements is the datatype defined for the data entry itself. For attributes it is possible to optionally set a default value.</description>
     </item>
     
     <item>
