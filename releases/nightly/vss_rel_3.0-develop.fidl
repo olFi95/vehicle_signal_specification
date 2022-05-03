@@ -5034,6 +5034,47 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.ADAS.ESC.IsStrongCrossWindDetected"
+    type: "sensor"
+    description: "Indicates if the ESC system is detecting strong cross winds. True = Strong cross winds detected. False = No strong cross winds detected."
+    datatype: boolean
+    uuid: ebfd609531345c37914b89e553df80cb
+}
+,
+{
+    name: "Vehicle.ADAS.ESC.RoadFriction.MostProbable"
+    type: "sensor"
+    description: "Most probable road friction, as calculated by the ESC system. Exact meaning of most probable is implementation specific. 0 = no friction, 100 = maximum friction."
+    datatype: float
+    uuid: b0eb72430cd95bfbba0d187fcb6e2a62
+    min: 0
+    max: 100
+    unit: percent
+}
+,
+{
+    name: "Vehicle.ADAS.ESC.RoadFriction.LowerBound"
+    type: "sensor"
+    description: "Lower bound road friction, as calculated by the ESC system. 5% possibility that road friction is below this value. 0 = no friction, 100 = maximum friction."
+    datatype: float
+    uuid: 634289f58b5d511ea9979f04a9d0f2ab
+    min: 0
+    max: 100
+    unit: percent
+}
+,
+{
+    name: "Vehicle.ADAS.ESC.RoadFriction.UpperBound"
+    type: "sensor"
+    description: "Upper bound road friction, as calculated by the ESC system. 95% possibility that road friction is below this value. 0 = no friction, 100 = maximum friction."
+    datatype: float
+    uuid: ad0415a799575fcd8d1f49bed9a2baeb
+    min: 0
+    max: 100
+    unit: percent
+}
+,
+{
     name: "Vehicle.ADAS.EBD.IsEnabled"
     type: "actuator"
     description: "Indicates if EBD is enabled. True = Enabled. False = Disabled."
