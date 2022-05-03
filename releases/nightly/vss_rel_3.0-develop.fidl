@@ -423,7 +423,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Latitude"
     type: "sensor"
-    description: "Current latitude of vehicle according to WGS 84."
+    description: "Current latitude of vehicle in WGS 84 geodetic coordinates, as measured at the position of GNSS receiver antenna."
     datatype: double
     uuid: 08933c5a445055df80bea15fbfa07f1c
     min: -90
@@ -434,7 +434,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Longitude"
     type: "sensor"
-    description: "Current longitude of vehicle according to WGS 84."
+    description: "Current longitude of vehicle in WGS 84 geodetic coordinates, as measured at the position of GNSS receiver antenna."
     datatype: double
     uuid: 5246f2ec5fea550cb1b36f110854cfbb
     min: -180
@@ -465,7 +465,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.CurrentLocation.Altitude"
     type: "sensor"
-    description: "Current altitude relative to WGS 84 reference ellipsoid."
+    description: "Current altitude relative to WGS 84 reference ellipsoid, as measured at the position of GNSS receiver antenna."
     datatype: double
     uuid: d3ead98ab0b751c1a5b5dd5bc0e5e216
     unit: m
@@ -478,6 +478,42 @@ const SignalSpec[] signal_spec = [
     datatype: double
     uuid: 8f54055bce9e5e8e97fb6051582707ab
     unit: m
+}
+,
+{
+    name: "Vehicle.CurrentLocation.GNSSReceiver.FixType"
+    type: "sensor"
+    description: "Fix status of GNSS receiver."
+    datatype: string
+    uuid: 52853b33d4605608bd0ae50595c69309
+    allowed: ['NONE', 'TWO_D', 'TWO_D_SATELLITE_BASED_AUGMENTATION', 'TWO_D_GROUND_BASED_AUGMENTATION', 'TWO_D_SATELLITE_AND_GROUND_BASED_AUGMENTATION', 'THREE_D', 'THREE_D_SATELLITE_BASED_AUGMENTATION', 'THREE_D_GROUND_BASED_AUGMENTATION', 'THREE_D_SATELLITE_AND_GROUND_BASED_AUGMENTATION']
+}
+,
+{
+    name: "Vehicle.CurrentLocation.GNSSReceiver.MountingPosition.X"
+    type: "attribute"
+    description: "Mounting position of GNSS receiver antenna relative to vehicle coordinate system. Axis definitions according to ISO 8855. Origin at center of (first) rear axle. Positive values = forward of rear axle. Negative values = backward of rear axle."
+    datatype: int16
+    uuid: f23d40f3556b5676a0d1e3def037197f
+    unit: mm
+}
+,
+{
+    name: "Vehicle.CurrentLocation.GNSSReceiver.MountingPosition.Y"
+    type: "attribute"
+    description: "Mounting position of GNSS receiver antenna relative to vehicle coordinate system. Axis definitions according to ISO 8855. Origin at center of (first) rear axle. Positive values = left of origin. Negative values = right of origin. Left/Right is as seen from driver perspective, i.e. by a person looking forward."
+    datatype: int16
+    uuid: 16745ae827c0527ea2c48c20f0c146f1
+    unit: mm
+}
+,
+{
+    name: "Vehicle.CurrentLocation.GNSSReceiver.MountingPosition.Z"
+    type: "attribute"
+    description: "Mounting position of GNSS receiver on Z-axis. Axis definitions according to ISO 8855. Origin at center of (first) rear axle. Positive values = above center of rear axle. Negative values = below center of rear axle."
+    datatype: int16
+    uuid: a4d04e86518e5c5ab60e5e4face35756
+    unit: mm
 }
 ,
 {
@@ -2076,7 +2112,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Latitude"
     type: "actuator"
-    description: "Latitude of destination according to WGS 84."
+    description: "Latitude of destination in WGS 84 geodetic coordinates."
     datatype: double
     uuid: 3e33f3252934565d86de5409c761262b
     min: -90
@@ -2087,7 +2123,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude"
     type: "actuator"
-    description: "Longitude of destination according to WGS 84."
+    description: "Longitude of destination in WGS 84 geodetic coordinates."
     datatype: double
     uuid: e9bd511146ca51639c8d42c0702e22ee
     min: -180
