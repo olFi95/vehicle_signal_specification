@@ -225,15 +225,6 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.AmbientAirTemperature"
-    type: "sensor"
-    description: "Ambient air temperature outside the vehicle."
-    datatype: float
-    uuid: 2ffcbc2e6ea75dd991e3ae80b29a1d85
-    unit: celsius
-}
-,
-{
     name: "Vehicle.IsMoving"
     type: "sensor"
     description: "Indicates whether the vehicle is stationary or moving."
@@ -6631,6 +6622,37 @@ const SignalSpec[] signal_spec = [
     description: "Heart rate of the driver."
     datatype: uint16
     uuid: d71516905f785c4da867a2f86e774d93
+}
+,
+{
+    name: "Vehicle.Exterior.AirTemperature"
+    type: "sensor"
+    description: "Air temperature outside the vehicle."
+    datatype: float
+    uuid: a38d3f5dfeb35317aca8b90453dc1a75
+    unit: celsius
+}
+,
+{
+    name: "Vehicle.Exterior.Humidity"
+    type: "sensor"
+    description: "Relative humidity outside the vehicle. 0 = Dry, 100 = Air fully saturated."
+    datatype: float
+    uuid: 6c785ec5d9a5534f98be7ce198d25d6b
+    min: 0
+    max: 100
+    unit: percent
+}
+,
+{
+    name: "Vehicle.Exterior.LightIntensity"
+    type: "sensor"
+    description: "Light intensity outside the vehicle. 0 = No light detected, 100 = Fully lit."
+    datatype: float
+    uuid: 9b46b70490f853e891e1cc35dd08dddc
+    min: 0
+    max: 100
+    unit: percent
 }
 ,
 {

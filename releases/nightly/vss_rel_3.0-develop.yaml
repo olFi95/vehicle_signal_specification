@@ -254,13 +254,6 @@ Vehicle.Acceleration.Vertical:
   unit: m/s^2
   uuid: a4a8a7c4ac5b52deb0b3ee4ed8787c59
 
-Vehicle.AmbientAirTemperature:
-  datatype: float
-  description: Ambient air temperature outside the vehicle.
-  type: sensor
-  unit: celsius
-  uuid: 2ffcbc2e6ea75dd991e3ae80b29a1d85
-
 Vehicle.AngularVelocity:
   description: Spatial rotation. Axis definitions according to ISO 8855.
   type: branch
@@ -4552,6 +4545,36 @@ Vehicle.EmissionsCO2:
   type: attribute
   unit: g/km
   uuid: b73e8f1ed17d584fad3f088c666dc2a5
+
+Vehicle.Exterior:
+  description: Information about exterior measured by vehicle.
+  type: branch
+  uuid: 06c5def549f3580e8cdaffa3e0f5d25c
+
+Vehicle.Exterior.AirTemperature:
+  datatype: float
+  description: Air temperature outside the vehicle.
+  type: sensor
+  unit: celsius
+  uuid: a38d3f5dfeb35317aca8b90453dc1a75
+
+Vehicle.Exterior.Humidity:
+  datatype: float
+  description: Relative humidity outside the vehicle. 0 = Dry, 100 = Air fully saturated.
+  max: 100
+  min: 0
+  type: sensor
+  unit: percent
+  uuid: 6c785ec5d9a5534f98be7ce198d25d6b
+
+Vehicle.Exterior.LightIntensity:
+  datatype: float
+  description: Light intensity outside the vehicle. 0 = No light detected, 100 = Fully lit.
+  max: 100
+  min: 0
+  type: sensor
+  unit: percent
+  uuid: 9b46b70490f853e891e1cc35dd08dddc
 
 Vehicle.GrossWeight:
   datatype: uint16
