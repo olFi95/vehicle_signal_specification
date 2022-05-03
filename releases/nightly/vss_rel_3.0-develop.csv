@@ -851,6 +851,7 @@
 "Vehicle.Chassis.Accelerator.PedalPosition","sensor","uint8","","percent","0","100","Accelerator pedal position as percent. 0 = Not depressed. 100 = Fully depressed.","","","2fabd8b61db45f62b4e97e7a612b4a73"
 "Vehicle.Chassis.Brake","branch","","","","","","Brake system signals","","","38df972e5c6b558e93839a5e97238c5a"
 "Vehicle.Chassis.Brake.PedalPosition","sensor","uint8","","percent","0","100","Brake pedal position as percent. 0 = Not depressed. 100 = Fully depressed.","","","0477d3a4a831564ea473976cf34374f2"
+"Vehicle.Chassis.Brake.IsDriverEmergencyBrakingDetected","sensor","boolean","","","","","Indicates if emergency braking initiated by driver is detected. True = Emergency braking detected. False = Emergency braking not detected.","Detection of emergency braking can trigger Emergency Brake Assist (EBA) to engage.","","0d462892aeac5062a62ee7d07306f6a6"
 "Vehicle.OBD","branch","","","","","","OBD data.","","","7ad7c512ed5d52c8b31944d2d47a4bc3"
 "Vehicle.OBD.PidsA","sensor","uint32","","","","","PID 00 - Bit array of the supported pids 01 to 20","","","ba1c1b9034955d2d97249c3b4516beef"
 "Vehicle.OBD.Status","branch","","","","","","PID 01 - OBD status","","","474f58e593ee5bfebbb9c6ce4a453f96"

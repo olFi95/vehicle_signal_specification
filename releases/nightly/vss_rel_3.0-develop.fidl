@@ -5561,6 +5561,14 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Chassis.Brake.IsDriverEmergencyBrakingDetected"
+    type: "sensor"
+    description: "Indicates if emergency braking initiated by driver is detected. True = Emergency braking detected. False = Emergency braking not detected."
+    datatype: boolean
+    uuid: 0d462892aeac5062a62ee7d07306f6a6
+}
+,
+{
     name: "Vehicle.OBD.PidsA"
     type: "sensor"
     description: "PID 00 - Bit array of the supported pids 01 to 20"
