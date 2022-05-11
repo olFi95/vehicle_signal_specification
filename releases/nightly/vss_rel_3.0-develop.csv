@@ -28,6 +28,7 @@
 "Vehicle.Speed","sensor","float","","km/h","","","Vehicle speed.","","","efe50798638d55fab18ab7d43cc490e9"
 "Vehicle.TravelledDistance","sensor","float","","km","","","Odometer reading, total distance travelled during the lifetime of the vehicle.","","","90be9d7b0ac15b75a83027ea3b73b65b"
 "Vehicle.TripMeterReading","sensor","float","","km","","","Current trip meter reading.","","","81f51ebfe29c591190171d7b96e1c948"
+"Vehicle.IsBrokenDown","sensor","boolean","","","","","Vehicle breakdown or any similar event causing vehicle to stop on the road, that might pose a risk to other road users. True = Vehicle broken down on the road, due to e.g. engine problems, flat tire, out of gas, brake problems. False = Vehicle not broken down.","Actual criteria and method used to decide if a vehicle is broken down is implementation specific.","","469ebd2a76b45e5b97b799262a085330"
 "Vehicle.IsMoving","sensor","boolean","","","","","Indicates whether the vehicle is stationary or moving.","","","db69549cc7375e919c2a2883b41cd19c"
 "Vehicle.AverageSpeed","sensor","float","","km/h","","","Average speed for the current trip.","","","43a489636a665c3abb99b63174eb552b"
 "Vehicle.Acceleration","branch","","","","","","Spatial acceleration. Axis definitions according to ISO 8855.","","","6c490e6a798c5abc8f0178ed6deae0a8"

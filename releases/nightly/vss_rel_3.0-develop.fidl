@@ -225,6 +225,14 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.IsBrokenDown"
+    type: "sensor"
+    description: "Vehicle breakdown or any similar event causing vehicle to stop on the road, that might pose a risk to other road users. True = Vehicle broken down on the road, due to e.g. engine problems, flat tire, out of gas, brake problems. False = Vehicle not broken down."
+    datatype: boolean
+    uuid: 469ebd2a76b45e5b97b799262a085330
+}
+,
+{
     name: "Vehicle.IsMoving"
     type: "sensor"
     description: "Indicates whether the vehicle is stationary or moving."

@@ -4636,6 +4636,12 @@ Vehicle.Height:
   unit: mm
   uuid: 9784d39f68b8541f90c355178ded7d7c
 
+Vehicle.IsBrokenDown:
+  datatype: boolean
+  description: Vehicle breakdown or any similar event causing vehicle to stop on the road, that might pose a risk to other road users. True = Vehicle broken down on the road, due to e.g. engine problems, flat tire, out of gas, brake problems. False = Vehicle not broken down.
+  type: sensor
+  uuid: 469ebd2a76b45e5b97b799262a085330
+
 Vehicle.IsMoving:
   datatype: boolean
   description: Indicates whether the vehicle is stationary or moving.
