@@ -1738,6 +1738,7 @@ const SignalSpec[] signal_spec = [
     description: "Rain intensity. 0 = Dry, No Rain. 100 = Covered."
     datatype: uint8
     uuid: 1ee0a2f22e8257d299425a4ff2652555
+    max: 100
     unit: percent
 }
 ,
@@ -1772,6 +1773,7 @@ const SignalSpec[] signal_spec = [
     description: "Washer fluid level as a percent. 0 = Empty. 100 = Full."
     datatype: uint8
     uuid: a36dfb91414f5792bd01d193dceff1f4
+    max: 100
     unit: percent
 }
 ,
@@ -1806,6 +1808,7 @@ const SignalSpec[] signal_spec = [
     description: "Washer fluid level as a percent. 0 = Empty. 100 = Full."
     datatype: uint8
     uuid: c167e5b265895c108da1b9582de2dd91
+    max: 100
     unit: percent
 }
 ,
@@ -1903,6 +1906,8 @@ const SignalSpec[] signal_spec = [
     description: "Mirror tilt as a percent. 0 = Center Position. 100 = Fully Upward Position. -100 = Fully Downward Position."
     datatype: int8
     uuid: 698fee82cc115f3cba54825a298b46ab
+    min: -100
+    max: 100
     unit: percent
 }
 ,
@@ -1912,6 +1917,8 @@ const SignalSpec[] signal_spec = [
     description: "Mirror pan as a percent. 0 = Center Position. 100 = Fully Left Position. -100 = Fully Right Position."
     datatype: int8
     uuid: 9dae4bc33a28531199fce500e0562f82
+    min: -100
+    max: 100
     unit: percent
 }
 ,
@@ -1929,6 +1936,8 @@ const SignalSpec[] signal_spec = [
     description: "Mirror tilt as a percent. 0 = Center Position. 100 = Fully Upward Position. -100 = Fully Downward Position."
     datatype: int8
     uuid: 9a28a6ec824c57408881b916a1a0e32b
+    min: -100
+    max: 100
     unit: percent
 }
 ,
@@ -1938,6 +1947,8 @@ const SignalSpec[] signal_spec = [
     description: "Mirror pan as a percent. 0 = Center Position. 100 = Fully Left Position. -100 = Fully Right Position."
     datatype: int8
     uuid: 26088f96804d5d7e811ba50bfb1113eb
+    min: -100
+    max: 100
     unit: percent
 }
 ,
@@ -2467,6 +2478,7 @@ const SignalSpec[] signal_spec = [
     description: "Dimming level of rearview mirror. 0 = undimmed. 100 = fully dimmed."
     datatype: uint8
     uuid: 4e2bcbaa6dc1586d8282324b475e5dee
+    max: 100
     unit: percent
 }
 ,
@@ -5428,6 +5440,7 @@ const SignalSpec[] signal_spec = [
     description: "Brake fluid level as percent. 0 = Empty. 100 = Full."
     datatype: uint8
     uuid: 63aa9c4973ef50b18bd7214c9f2634c5
+    max: 100
     unit: percent
 }
 ,
@@ -5445,6 +5458,8 @@ const SignalSpec[] signal_spec = [
     description: "Brake pad wear as percent. 0 = No Wear. 100 = Worn."
     datatype: uint8
     uuid: b4ed36f8143d512fadaca3e641739ee2
+    max: 100
+    unit: percent
 }
 ,
 {
@@ -5487,6 +5502,7 @@ const SignalSpec[] signal_spec = [
     description: "Brake fluid level as percent. 0 = Empty. 100 = Full."
     datatype: uint8
     uuid: 386bfddee4605e419d59755a51835650
+    max: 100
     unit: percent
 }
 ,
@@ -5504,6 +5520,8 @@ const SignalSpec[] signal_spec = [
     description: "Brake pad wear as percent. 0 = No Wear. 100 = Worn."
     datatype: uint8
     uuid: f3c53c8c5628527a8501e12778dae6c7
+    max: 100
+    unit: percent
 }
 ,
 {
@@ -5599,6 +5617,7 @@ const SignalSpec[] signal_spec = [
     description: "Brake fluid level as percent. 0 = Empty. 100 = Full."
     datatype: uint8
     uuid: 4b0d4f80b8855973a55ffee80fdfc4ba
+    max: 100
     unit: percent
 }
 ,
@@ -5616,6 +5635,8 @@ const SignalSpec[] signal_spec = [
     description: "Brake pad wear as percent. 0 = No Wear. 100 = Worn."
     datatype: uint8
     uuid: 8eff72d583015e1e94eab98bf8f0497e
+    max: 100
+    unit: percent
 }
 ,
 {
@@ -5658,6 +5679,7 @@ const SignalSpec[] signal_spec = [
     description: "Brake fluid level as percent. 0 = Empty. 100 = Full."
     datatype: uint8
     uuid: 83e5e261302d5ab38c9ee4dddc18c8ae
+    max: 100
     unit: percent
 }
 ,
@@ -5675,6 +5697,8 @@ const SignalSpec[] signal_spec = [
     description: "Brake pad wear as percent. 0 = No Wear. 100 = Worn."
     datatype: uint8
     uuid: 63a564bca18a5b1fabd7d3cff1af0e6d
+    max: 100
+    unit: percent
 }
 ,
 {
@@ -6865,6 +6889,8 @@ const SignalSpec[] signal_spec = [
     description: "Distraction level of the driver will be the level how much the driver is distracted, by multiple factors. E.g. Driving situation, acustical or optical signales inside the cockpit, phone calls."
     datatype: float
     uuid: cb35ec0b924e58979e1469146d65c3fa
+    min: 0
+    max: 100
     unit: percent
 }
 ,
@@ -6882,6 +6908,8 @@ const SignalSpec[] signal_spec = [
     description: "Probability of attentiveness of the driver."
     datatype: float
     uuid: fcd202467afb533fbbf9e7da89cc1cee
+    min: 0
+    max: 100
     unit: percent
 }
 ,
@@ -6891,6 +6919,8 @@ const SignalSpec[] signal_spec = [
     description: "Fatigueness level of driver. Evaluated by multiple factors like trip time, behaviour of steering, eye status."
     datatype: float
     uuid: 49b1626295705a79ae20d8a270c48b6b
+    min: 0
+    max: 100
     unit: percent
 }
 ,

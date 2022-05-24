@@ -448,6 +448,8 @@ Vehicle.Body.Mirrors.Left.IsHeatingOn:
 Vehicle.Body.Mirrors.Left.Pan:
   datatype: int8
   description: Mirror pan as a percent. 0 = Center Position. 100 = Fully Left Position. -100 = Fully Right Position.
+  max: 100
+  min: -100
   type: actuator
   unit: percent
   uuid: 9dae4bc33a28531199fce500e0562f82
@@ -455,6 +457,8 @@ Vehicle.Body.Mirrors.Left.Pan:
 Vehicle.Body.Mirrors.Left.Tilt:
   datatype: int8
   description: Mirror tilt as a percent. 0 = Center Position. 100 = Fully Upward Position. -100 = Fully Downward Position.
+  max: 100
+  min: -100
   type: actuator
   unit: percent
   uuid: 698fee82cc115f3cba54825a298b46ab
@@ -473,6 +477,8 @@ Vehicle.Body.Mirrors.Right.IsHeatingOn:
 Vehicle.Body.Mirrors.Right.Pan:
   datatype: int8
   description: Mirror pan as a percent. 0 = Center Position. 100 = Fully Left Position. -100 = Fully Right Position.
+  max: 100
+  min: -100
   type: actuator
   unit: percent
   uuid: 26088f96804d5d7e811ba50bfb1113eb
@@ -480,6 +486,8 @@ Vehicle.Body.Mirrors.Right.Pan:
 Vehicle.Body.Mirrors.Right.Tilt:
   datatype: int8
   description: Mirror tilt as a percent. 0 = Center Position. 100 = Fully Upward Position. -100 = Fully Downward Position.
+  max: 100
+  min: -100
   type: actuator
   unit: percent
   uuid: 9a28a6ec824c57408881b916a1a0e32b
@@ -492,6 +500,7 @@ Vehicle.Body.Raindetection:
 Vehicle.Body.Raindetection.Intensity:
   datatype: uint8
   description: Rain intensity. 0 = Dry, No Rain. 100 = Covered.
+  max: 100
   type: sensor
   unit: percent
   uuid: 1ee0a2f22e8257d299425a4ff2652555
@@ -587,6 +596,7 @@ Vehicle.Body.Windshield.Front.WasherFluid.IsLevelLow:
 Vehicle.Body.Windshield.Front.WasherFluid.Level:
   datatype: uint8
   description: Washer fluid level as a percent. 0 = Empty. 100 = Full.
+  max: 100
   type: sensor
   unit: percent
   uuid: a36dfb91414f5792bd01d193dceff1f4
@@ -634,6 +644,7 @@ Vehicle.Body.Windshield.Rear.WasherFluid.IsLevelLow:
 Vehicle.Body.Windshield.Rear.WasherFluid.Level:
   datatype: uint8
   description: Washer fluid level as a percent. 0 = Empty. 100 = Full.
+  max: 100
   type: sensor
   unit: percent
   uuid: c167e5b265895c108da1b9582de2dd91
@@ -1745,6 +1756,7 @@ Vehicle.Cabin.RearviewMirror:
 Vehicle.Cabin.RearviewMirror.DimmingLevel:
   datatype: uint8
   description: Dimming level of rearview mirror. 0 = undimmed. 100 = fully dimmed.
+  max: 100
   type: actuator
   unit: percent
   uuid: 4e2bcbaa6dc1586d8282324b475e5dee
@@ -4015,6 +4027,7 @@ Vehicle.Chassis.Axle.Row1.Wheel.Left.Brake:
 Vehicle.Chassis.Axle.Row1.Wheel.Left.Brake.FluidLevel:
   datatype: uint8
   description: Brake fluid level as percent. 0 = Empty. 100 = Full.
+  max: 100
   type: sensor
   unit: percent
   uuid: 63aa9c4973ef50b18bd7214c9f2634c5
@@ -4034,7 +4047,9 @@ Vehicle.Chassis.Axle.Row1.Wheel.Left.Brake.IsFluidLevelLow:
 Vehicle.Chassis.Axle.Row1.Wheel.Left.Brake.PadWear:
   datatype: uint8
   description: Brake pad wear as percent. 0 = No Wear. 100 = Worn.
+  max: 100
   type: sensor
+  unit: percent
   uuid: b4ed36f8143d512fadaca3e641739ee2
 
 Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire:
@@ -4075,6 +4090,7 @@ Vehicle.Chassis.Axle.Row1.Wheel.Right.Brake:
 Vehicle.Chassis.Axle.Row1.Wheel.Right.Brake.FluidLevel:
   datatype: uint8
   description: Brake fluid level as percent. 0 = Empty. 100 = Full.
+  max: 100
   type: sensor
   unit: percent
   uuid: 386bfddee4605e419d59755a51835650
@@ -4094,7 +4110,9 @@ Vehicle.Chassis.Axle.Row1.Wheel.Right.Brake.IsFluidLevelLow:
 Vehicle.Chassis.Axle.Row1.Wheel.Right.Brake.PadWear:
   datatype: uint8
   description: Brake pad wear as percent. 0 = No Wear. 100 = Worn.
+  max: 100
   type: sensor
+  unit: percent
   uuid: f3c53c8c5628527a8501e12778dae6c7
 
 Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire:
@@ -4186,6 +4204,7 @@ Vehicle.Chassis.Axle.Row2.Wheel.Left.Brake:
 Vehicle.Chassis.Axle.Row2.Wheel.Left.Brake.FluidLevel:
   datatype: uint8
   description: Brake fluid level as percent. 0 = Empty. 100 = Full.
+  max: 100
   type: sensor
   unit: percent
   uuid: 4b0d4f80b8855973a55ffee80fdfc4ba
@@ -4205,7 +4224,9 @@ Vehicle.Chassis.Axle.Row2.Wheel.Left.Brake.IsFluidLevelLow:
 Vehicle.Chassis.Axle.Row2.Wheel.Left.Brake.PadWear:
   datatype: uint8
   description: Brake pad wear as percent. 0 = No Wear. 100 = Worn.
+  max: 100
   type: sensor
+  unit: percent
   uuid: 8eff72d583015e1e94eab98bf8f0497e
 
 Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire:
@@ -4246,6 +4267,7 @@ Vehicle.Chassis.Axle.Row2.Wheel.Right.Brake:
 Vehicle.Chassis.Axle.Row2.Wheel.Right.Brake.FluidLevel:
   datatype: uint8
   description: Brake fluid level as percent. 0 = Empty. 100 = Full.
+  max: 100
   type: sensor
   unit: percent
   uuid: 83e5e261302d5ab38c9ee4dddc18c8ae
@@ -4265,7 +4287,9 @@ Vehicle.Chassis.Axle.Row2.Wheel.Right.Brake.IsFluidLevelLow:
 Vehicle.Chassis.Axle.Row2.Wheel.Right.Brake.PadWear:
   datatype: uint8
   description: Brake pad wear as percent. 0 = No Wear. 100 = Worn.
+  max: 100
   type: sensor
+  unit: percent
   uuid: 63a564bca18a5b1fabd7d3cff1af0e6d
 
 Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire:
@@ -4547,6 +4571,8 @@ Vehicle.Driver:
 Vehicle.Driver.AttentiveProbability:
   datatype: float
   description: Probability of attentiveness of the driver.
+  max: 100
+  min: 0
   type: sensor
   unit: percent
   uuid: fcd202467afb533fbbf9e7da89cc1cee
@@ -4554,6 +4580,8 @@ Vehicle.Driver.AttentiveProbability:
 Vehicle.Driver.DistractionLevel:
   datatype: float
   description: Distraction level of the driver will be the level how much the driver is distracted, by multiple factors. E.g. Driving situation, acustical or optical signales inside the cockpit, phone calls.
+  max: 100
+  min: 0
   type: sensor
   unit: percent
   uuid: cb35ec0b924e58979e1469146d65c3fa
@@ -4561,6 +4589,8 @@ Vehicle.Driver.DistractionLevel:
 Vehicle.Driver.FatigueLevel:
   datatype: float
   description: Fatigueness level of driver. Evaluated by multiple factors like trip time, behaviour of steering, eye status.
+  max: 100
+  min: 0
   type: sensor
   unit: percent
   uuid: 49b1626295705a79ae20d8a270c48b6b
