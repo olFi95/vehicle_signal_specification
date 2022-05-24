@@ -6123,6 +6123,13 @@ Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy:
   unit: kWh
   uuid: 739d06021d795da0877bc0ef3c107de1
 
+Vehicle.Powertrain.TractionBattery.AccumulatedChargedThroughput:
+  datatype: float
+  description: The accumulated charge throughput delivered to the battery during charging over lifetime of the battery.
+  type: sensor
+  unit: Ah
+  uuid: 6d038ccc313351fba3a9104c1158a207
+
 Vehicle.Powertrain.TractionBattery.AccumulatedConsumedEnergy:
   datatype: float
   description: The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime of the battery.
@@ -6130,21 +6137,54 @@ Vehicle.Powertrain.TractionBattery.AccumulatedConsumedEnergy:
   unit: kWh
   uuid: b844cb96765f574d8d31edb09ccaef81
 
+Vehicle.Powertrain.TractionBattery.AccumulatedConsumedThroughput:
+  datatype: float
+  description: The accumulated charge throughput leaving HV battery for propulsion and auxiliary loads over lifetime of the battery.
+  type: sensor
+  unit: Ah
+  uuid: f3e2ca21f3b550288d494827c9a172dd
+
 Vehicle.Powertrain.TractionBattery.Charging:
   description: Properties related to battery charging.
   type: branch
   uuid: 49b9ef0c8b145a36afdf17d0cb44131b
 
 Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent:
-  datatype: float
   description: Current charging current.
+  type: branch
+  uuid: 94739cf563735b438878ac0f85601f27
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.DC:
+  datatype: float
+  description: Current DC charging current at inlet. Negative if returning energy to grid.
   type: sensor
   unit: A
-  uuid: 94739cf563735b438878ac0f85601f27
+  uuid: 44204d7ae6fd5f8e954d0670a739bdf2
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.Phase1:
+  datatype: float
+  description: Current AC charging current (rms) at inlet for Phase 1. Negative if returning energy to grid.
+  type: sensor
+  unit: A
+  uuid: 400dca50fcde52a6bb605d7e86f49776
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.Phase2:
+  datatype: float
+  description: Current AC charging current (rms) at inlet for Phase 2. Negative if returning energy to grid.
+  type: sensor
+  unit: A
+  uuid: 32cb24d1c495503a9087d6f55997cf57
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.Phase3:
+  datatype: float
+  description: Current AC charging current (rms) at inlet for Phase 3. Negative if returning energy to grid.
+  type: sensor
+  unit: A
+  uuid: 55fb7fb7ff4a5df9b6a3af435eac868e
 
 Vehicle.Powertrain.TractionBattery.Charging.ChargeLimit:
   datatype: uint8
-  description: Maximum charge level for battery, can potentially be set manually.
+  description: Target charge limit (state of charge) for battery.
   max: 100
   min: 0
   type: actuator
@@ -6165,8 +6205,8 @@ Vehicle.Powertrain.TractionBattery.Charging.ChargePlugType:
   - GBT_AC
   - GBT_DC
   - OTHER
-  datatype: string
-  description: Type of charge plug (charging connector) available on the vehicle. IEC types refer to IEC 62196,  GBT refers to  GB/T 20234.
+  datatype: string[]
+  description: Type of charge plug (charging inlet) available on the vehicle. IEC types refer to IEC 62196,  GBT refers to  GB/T 20234.
   type: attribute
   uuid: 4c56357a6f1d586395215a9beeb26d91
 
@@ -6187,11 +6227,37 @@ Vehicle.Powertrain.TractionBattery.Charging.ChargeRate:
   uuid: a287cea3fdaa533180c8e349343a7851
 
 Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage:
+  description: Current charging voltage, as measured at the charging inlet.
+  type: branch
+  uuid: 7170151d653b52c6bb5e75cb0a14d1c5
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.DC:
   datatype: float
-  description: Current charging voltage.
+  description: Current DC charging voltage at charging inlet.
   type: sensor
   unit: V
-  uuid: 7170151d653b52c6bb5e75cb0a14d1c5
+  uuid: 701c21d1a4815b35ba061415789ec911
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.Phase1:
+  datatype: float
+  description: Current AC charging voltage (rms) at inlet for Phase 1.
+  type: sensor
+  unit: V
+  uuid: 15991c8316585816815d6f4fb6b06776
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.Phase2:
+  datatype: float
+  description: Current AC charging voltage (rms) at inlet for Phase 2.
+  type: sensor
+  unit: V
+  uuid: 6c0dcf98169d5a5190736a6dd81291a4
+
+Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.Phase3:
+  datatype: float
+  description: Current AC charging voltage (rms) at inlet for Phase 3.
+  type: sensor
+  unit: V
+  uuid: 1ab06b48231e54e2ac27e543508c84f0
 
 Vehicle.Powertrain.TractionBattery.Charging.IsCharging:
   datatype: boolean
@@ -6201,26 +6267,72 @@ Vehicle.Powertrain.TractionBattery.Charging.IsCharging:
 
 Vehicle.Powertrain.TractionBattery.Charging.IsChargingCableConnected:
   datatype: boolean
-  description: Indicates if a charging cable is connected to the vehicle or not.
+  description: Indicates if a charging cable is physically connected to the vehicle or not.
   type: sensor
   uuid: a1c8e2f662b95a54a9933a1b163fff84
 
+Vehicle.Powertrain.TractionBattery.Charging.IsChargingCableLocked:
+  datatype: boolean
+  description: Is charging cable locked to prevent removal.
+  type: actuator
+  uuid: 7fa81693f3b8587f8d71e7b1619c8e21
+
+Vehicle.Powertrain.TractionBattery.Charging.IsDischarging:
+  datatype: boolean
+  description: True if discharging (vehicle to grid) is ongoing. Discharging is considered to be ongoing if energy is flowing from vehicle to charger/grid.
+  type: sensor
+  uuid: 534d884fb36652688535543b52419529
+
 Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent:
+  description: Maximum charging current that can be accepted by the system, as measured at the charging inlet.
+  type: branch
+  uuid: e3f2e57e7a395d9ca9931d429e540a34
+
+Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.DC:
   datatype: float
-  description: Maximum charging current that can be accepted by the system.
+  description: Maximum DC charging current at inlet that can be accepted by the system.
   type: sensor
   unit: A
-  uuid: e3f2e57e7a395d9ca9931d429e540a34
+  uuid: 5a70acfd3c8959898b43738151ab36e1
+
+Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.Phase1:
+  datatype: float
+  description: Maximum AC charging current (rms) at inlet for Phase 1 that can be accepted by the system.
+  type: sensor
+  unit: A
+  uuid: e3c1034e89cc55968ff51b990906db43
+
+Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.Phase2:
+  datatype: float
+  description: Maximum AC charging current (rms) at inlet for Phase 2 that can be accepted by the system.
+  type: sensor
+  unit: A
+  uuid: ab3514bc982e54f2b98698fb6c752368
+
+Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.Phase3:
+  datatype: float
+  description: Maximum AC charging current (rms) at inlet for Phase 3 that can be accepted by the system.
+  type: sensor
+  unit: A
+  uuid: 47dd5e99c30d562e9e2e1c58007846b6
 
 Vehicle.Powertrain.TractionBattery.Charging.Mode:
   allowed:
   - MANUAL
   - TIMER
   - GRID
+  - PROFILE
   datatype: string
-  description: Control of the charge process - manually initiated (plug-in event, companion app, etc), timer-based or grid-controlled (eg ISO 15118).
+  description: Control of the charge process. MANUAL means manually initiated (plug-in event, companion app, etc). TIMER means timer-based. GRID means grid-controlled (eg ISO 15118). PROFILE means controlled by profile download to vehicle.
   type: actuator
   uuid: 1e4be3280b265873945531f6f6d0ec6b
+
+Vehicle.Powertrain.TractionBattery.Charging.PowerLoss:
+  datatype: float
+  description: Electrical energy lost by power dissipation to heat inside the AC/DC converter.
+  type: sensor
+  unit: W
+  uuid: 88f40bbeb80b5dfb97ceba13269665c5
 
 Vehicle.Powertrain.TractionBattery.Charging.StartStopCharging:
   allowed:
@@ -6231,9 +6343,16 @@ Vehicle.Powertrain.TractionBattery.Charging.StartStopCharging:
   type: actuator
   uuid: 80506d3e9a2557c2b52f74a50d89593f
 
+Vehicle.Powertrain.TractionBattery.Charging.Temperature:
+  datatype: float
+  description: Current temperature of AC/DC converter converting grid voltage to battery voltage.
+  type: sensor
+  unit: celsius
+  uuid: c3c0ef3a41db5df1bab659803adbc7ba
+
 Vehicle.Powertrain.TractionBattery.Charging.TimeToComplete:
   datatype: uint32
-  description: The time needed for the current charging process to reach StateOfCharge.Target. 0 if charging is complete or no charging process is active or planned.
+  description: The time needed for the current charging process to reach Charging.ChargeLimit. 0 if charging is complete or no charging process is active or planned.
   type: sensor
   unit: s
   uuid: c6439c2e068652b08383b9654e2e784a
@@ -6249,7 +6368,7 @@ Vehicle.Powertrain.TractionBattery.Charging.Timer.Mode:
   - START_TIME
   - END_TIME
   datatype: string
-  description: 'Defines timer mode for charging: INACTIVE - no timer set, charging may start as soon as battery is connected to a charger. START_TIME - charging shall start at Charging.Timer.Time. END_TIME - charging shall be finished (reach StateOfCharge.Target) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to ''inactive'' or set a new Charging.Timer.Time. Charging shall start immediately if mode is ''starttime'' or ''endtime'' and Charging.Timer.Time is a time in the past.'
+  description: 'Defines timer mode for charging: INACTIVE - no timer set, charging may start as soon as battery is connected to a charger. START_TIME - charging shall start at Charging.Timer.Time. END_TIME - charging shall be finished (reach Charging.ChargeLimit) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to ''inactive'' or set a new Charging.Timer.Time. Charging shall start immediately if mode is ''starttime'' or ''endtime'' and Charging.Timer.Time is a time in the past.'
   type: actuator
   uuid: b09fb52261735977af275dda1904a7a1
 
@@ -6259,12 +6378,58 @@ Vehicle.Powertrain.TractionBattery.Charging.Timer.Time:
   type: actuator
   uuid: c08dcaeda02b5e26aacd7e2542f0fc90
 
+Vehicle.Powertrain.TractionBattery.CurrentCurrent:
+  datatype: float
+  description: Current current flowing in/out of battery. Positive = Current flowing in to battery, e.g. during charging. Negative = Current flowing out of battery, e.g. during driving.
+  type: sensor
+  unit: A
+  uuid: 7a1488e0c83f50a6b69d8ea85c5bb592
+
+Vehicle.Powertrain.TractionBattery.CurrentPower:
+  datatype: float
+  description: Current electrical energy flowing in/out of battery. Positive = Energy flowing in to battery, e.g. during charging. Negative = Energy flowing out of battery, e.g. during driving.
+  type: sensor
+  unit: W
+  uuid: 8859e1b0386a5eda880a9c30cd0dfa8e
+
+Vehicle.Powertrain.TractionBattery.CurrentVoltage:
+  datatype: float
+  description: Current Voltage of the battery.
+  type: sensor
+  unit: V
+  uuid: 7b54ea22ee7d5f559da552aefcc07222
+
+Vehicle.Powertrain.TractionBattery.DCDC:
+  description: Properties related to DC/DC converter converting high voltage (from high voltage battery) to vehicle low voltage (supply voltage, typically 12 Volts).
+  type: branch
+  uuid: 01f4943795b55cbd8f94e1bca137fc0a
+
+Vehicle.Powertrain.TractionBattery.DCDC.PowerLoss:
+  datatype: float
+  description: Electrical energy lost by power dissipation to heat inside DC/DC converter.
+  type: sensor
+  unit: W
+  uuid: f29e37087cdf57ca998188c7b945a77b
+
+Vehicle.Powertrain.TractionBattery.DCDC.Temperature:
+  datatype: float
+  description: Current temperature of DC/DC converter converting battery high voltage to vehicle low voltage (typically 12 Volts).
+  type: sensor
+  unit: celsius
+  uuid: 4e587c3af2aa5fbb9205e42a64fc8d77
+
 Vehicle.Powertrain.TractionBattery.GrossCapacity:
   datatype: uint16
   description: Gross capacity of the battery.
   type: attribute
   unit: kWh
   uuid: 5460530488435dc8bfa1298bf47a993d
+
+Vehicle.Powertrain.TractionBattery.Id:
+  datatype: string
+  description: Battery Identification Number as assigned by OEM.
+  type: attribute
+  uuid: c8279874660c55b38c7ac64a8503a519
 
 Vehicle.Powertrain.TractionBattery.IsGroundConnected:
   datatype: boolean
@@ -6278,10 +6443,17 @@ Vehicle.Powertrain.TractionBattery.IsPowerConnected:
   type: sensor
   uuid: e30ef59fc2a25f6b8990248e19a5cdf9
 
+Vehicle.Powertrain.TractionBattery.MaxVoltage:
+  datatype: uint16
+  description: Max allowed voltage of the battery, e.g. during charging.
+  type: attribute
+  unit: V
+  uuid: a81264a0ef0c55d288671cfc62c4add5
+
 Vehicle.Powertrain.TractionBattery.NetCapacity:
   datatype: uint16
-  description: Net capacity of the battery.
-  type: attribute
+  description: Total net capacity of the battery considering aging.
+  type: sensor
   unit: kWh
   uuid: 9c68fe42cb81501eb6349f8c9b0b6899
 
@@ -6292,19 +6464,25 @@ Vehicle.Powertrain.TractionBattery.NominalVoltage:
   unit: V
   uuid: 3eccae5633185b998d5bdb6ea33cd926
 
+Vehicle.Powertrain.TractionBattery.PowerLoss:
+  datatype: float
+  description: Electrical energy lost by power dissipation to heat inside the battery.
+  type: sensor
+  unit: W
+  uuid: 880082aafe025cb3a5776b623f9a48b5
+
+Vehicle.Powertrain.TractionBattery.ProductionDate:
+  datatype: string
+  description: Production date of battery in ISO8601 format, e.g. YYYY-MM-DD.
+  type: attribute
+  uuid: c9509ba4d76c56d9a8c1d6e2280ae02f
+
 Vehicle.Powertrain.TractionBattery.Range:
   datatype: uint32
   description: Remaining range in meters using only battery.
   type: sensor
   unit: m
   uuid: c0376a425e5d578d9d86ae0dc2ad9778
-
-Vehicle.Powertrain.TractionBattery.ReferentVoltage:
-  datatype: uint16
-  description: Referent Voltage of the battery.
-  type: attribute
-  unit: V
-  uuid: 51b5e378ccab5dd4905b552d1306cf7c
 
 Vehicle.Powertrain.TractionBattery.StateOfCharge:
   description: Information on the state of charge of the vehicle's high voltage battery.
@@ -6313,7 +6491,7 @@ Vehicle.Powertrain.TractionBattery.StateOfCharge:
 
 Vehicle.Powertrain.TractionBattery.StateOfCharge.Current:
   datatype: float
-  description: Physical state of charge of the high voltage battery. This is not necessarily the state of charge being displayed to the customer.
+  description: Physical state of charge of the high voltage battery, relative to net capacity. This is not necessarily the state of charge being displayed to the customer.
   max: 100.0
   min: 0
   type: sensor
@@ -6329,21 +6507,40 @@ Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed:
   unit: percent
   uuid: 1bfcc228293b5512aafe2508ab0500d2
 
-Vehicle.Powertrain.TractionBattery.StateOfCharge.Target:
-  datatype: uint8
-  description: Target state of charge set (eg. by customer). Shall never exceed Charging.ChargeLimit.
+Vehicle.Powertrain.TractionBattery.StateofHealth:
+  datatype: float
+  description: Calculated battery state of health at standard conditions.
   max: 100
   min: 0
-  type: actuator
+  type: sensor
   unit: percent
-  uuid: 6aca8e9650be5a7782ce34ec4f03b96b
+  uuid: edd621adffa25e22a37a5eced3df2eea
 
 Vehicle.Powertrain.TractionBattery.Temperature:
+  description: Temperature Information for the battery pack.
+  type: branch
+  uuid: 1cfbcf8c152959dcb3eb2c54fc42e623
+
+Vehicle.Powertrain.TractionBattery.Temperature.Average:
   datatype: float
-  description: Temperature of the battery pack.
+  description: Current average temperature of the battery cells.
   type: sensor
   unit: celsius
-  uuid: 1cfbcf8c152959dcb3eb2c54fc42e623
+  uuid: ae28e502137f56b9a037ed9b32bc04e1
+
+Vehicle.Powertrain.TractionBattery.Temperature.Max:
+  datatype: float
+  description: Current maximum temperature of the battery cells, i.e. temperature of the hottest cell.
+  type: sensor
+  unit: celsius
+  uuid: 07aa7c8ba1d355398d7469c2b337152a
+
+Vehicle.Powertrain.TractionBattery.Temperature.Min:
+  datatype: float
+  description: Current minimum temperature of the battery cells, i.e. temperature of the coldest cell.
+  type: sensor
+  unit: celsius
+  uuid: 4e3f630fefa7558fa302b175bc7eb5c7
 
 Vehicle.Powertrain.Transmission:
   description: Transmission-specific data, stopping at the drive shafts.

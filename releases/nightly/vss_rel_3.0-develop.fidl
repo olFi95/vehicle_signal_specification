@@ -1091,6 +1091,22 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Powertrain.TractionBattery.Id"
+    type: "attribute"
+    description: "Battery Identification Number as assigned by OEM."
+    datatype: string
+    uuid: c8279874660c55b38c7ac64a8503a519
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.ProductionDate"
+    type: "attribute"
+    description: "Production date of battery in ISO8601 format, e.g. YYYY-MM-DD."
+    datatype: string
+    uuid: c9509ba4d76c56d9a8c1d6e2280ae02f
+}
+,
+{
     name: "Vehicle.Powertrain.TractionBattery.IsPowerConnected"
     type: "sensor"
     description: "Indicating if the power (positive terminator) of the traction battery is connected to the powertrain."
@@ -1107,18 +1123,65 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Temperature"
+    name: "Vehicle.Powertrain.TractionBattery.Temperature.Average"
     type: "sensor"
-    description: "Temperature of the battery pack."
+    description: "Current average temperature of the battery cells."
     datatype: float
-    uuid: 1cfbcf8c152959dcb3eb2c54fc42e623
+    uuid: ae28e502137f56b9a037ed9b32bc04e1
     unit: celsius
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Temperature.Min"
+    type: "sensor"
+    description: "Current minimum temperature of the battery cells, i.e. temperature of the coldest cell."
+    datatype: float
+    uuid: 4e3f630fefa7558fa302b175bc7eb5c7
+    unit: celsius
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Temperature.Max"
+    type: "sensor"
+    description: "Current maximum temperature of the battery cells, i.e. temperature of the hottest cell."
+    datatype: float
+    uuid: 07aa7c8ba1d355398d7469c2b337152a
+    unit: celsius
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.GrossCapacity"
+    type: "attribute"
+    description: "Gross capacity of the battery."
+    datatype: uint16
+    uuid: 5460530488435dc8bfa1298bf47a993d
+    unit: kWh
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.NetCapacity"
+    type: "sensor"
+    description: "Total net capacity of the battery considering aging."
+    datatype: uint16
+    uuid: 9c68fe42cb81501eb6349f8c9b0b6899
+    unit: kWh
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.StateofHealth"
+    type: "sensor"
+    description: "Calculated battery state of health at standard conditions."
+    datatype: float
+    uuid: edd621adffa25e22a37a5eced3df2eea
+    min: 0
+    max: 100
+    unit: percent
 }
 ,
 {
     name: "Vehicle.Powertrain.TractionBattery.StateOfCharge.Current"
     type: "sensor"
-    description: "Physical state of charge of the high voltage battery. This is not necessarily the state of charge being displayed to the customer."
+    description: "Physical state of charge of the high voltage battery, relative to net capacity. This is not necessarily the state of charge being displayed to the customer."
     datatype: float
     uuid: 2e647ca3a1ff5e52af137aab240642da
     min: 0
@@ -1138,35 +1201,6 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.StateOfCharge.Target"
-    type: "actuator"
-    description: "Target state of charge set (eg. by customer). Shall never exceed Charging.ChargeLimit."
-    datatype: uint8
-    uuid: 6aca8e9650be5a7782ce34ec4f03b96b
-    min: 0
-    max: 100
-    unit: percent
-}
-,
-{
-    name: "Vehicle.Powertrain.TractionBattery.GrossCapacity"
-    type: "attribute"
-    description: "Gross capacity of the battery."
-    datatype: uint16
-    uuid: 5460530488435dc8bfa1298bf47a993d
-    unit: kWh
-}
-,
-{
-    name: "Vehicle.Powertrain.TractionBattery.NetCapacity"
-    type: "attribute"
-    description: "Net capacity of the battery."
-    datatype: uint16
-    uuid: 9c68fe42cb81501eb6349f8c9b0b6899
-    unit: kWh
-}
-,
-{
     name: "Vehicle.Powertrain.TractionBattery.NominalVoltage"
     type: "attribute"
     description: "Nominal Voltage of the battery."
@@ -1176,12 +1210,39 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.ReferentVoltage"
+    name: "Vehicle.Powertrain.TractionBattery.MaxVoltage"
     type: "attribute"
-    description: "Referent Voltage of the battery."
+    description: "Max allowed voltage of the battery, e.g. during charging."
     datatype: uint16
-    uuid: 51b5e378ccab5dd4905b552d1306cf7c
+    uuid: a81264a0ef0c55d288671cfc62c4add5
     unit: V
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.CurrentVoltage"
+    type: "sensor"
+    description: "Current Voltage of the battery."
+    datatype: float
+    uuid: 7b54ea22ee7d5f559da552aefcc07222
+    unit: V
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.CurrentCurrent"
+    type: "sensor"
+    description: "Current current flowing in/out of battery. Positive = Current flowing in to battery, e.g. during charging. Negative = Current flowing out of battery, e.g. during driving."
+    datatype: float
+    uuid: 7a1488e0c83f50a6b69d8ea85c5bb592
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.CurrentPower"
+    type: "sensor"
+    description: "Current electrical energy flowing in/out of battery. Positive = Energy flowing in to battery, e.g. during charging. Negative = Energy flowing out of battery, e.g. during driving."
+    datatype: float
+    uuid: 8859e1b0386a5eda880a9c30cd0dfa8e
+    unit: W
 }
 ,
 {
@@ -1203,6 +1264,33 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
+    name: "Vehicle.Powertrain.TractionBattery.AccumulatedChargedThroughput"
+    type: "sensor"
+    description: "The accumulated charge throughput delivered to the battery during charging over lifetime of the battery."
+    datatype: float
+    uuid: 6d038ccc313351fba3a9104c1158a207
+    unit: Ah
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.AccumulatedConsumedThroughput"
+    type: "sensor"
+    description: "The accumulated charge throughput leaving HV battery for propulsion and auxiliary loads over lifetime of the battery."
+    datatype: float
+    uuid: f3e2ca21f3b550288d494827c9a172dd
+    unit: Ah
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.PowerLoss"
+    type: "sensor"
+    description: "Electrical energy lost by power dissipation to heat inside the battery."
+    datatype: float
+    uuid: 880082aafe025cb3a5776b623f9a48b5
+    unit: W
+}
+,
+{
     name: "Vehicle.Powertrain.TractionBattery.Range"
     type: "sensor"
     description: "Remaining range in meters using only battery."
@@ -1214,7 +1302,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeLimit"
     type: "actuator"
-    description: "Maximum charge level for battery, can potentially be set manually."
+    description: "Target charge limit (state of charge) for battery."
     datatype: uint8
     uuid: 62360a4ed1095275a7052d65112aaef1
     min: 0
@@ -1223,11 +1311,38 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.DC"
     type: "sensor"
-    description: "Maximum charging current that can be accepted by the system."
+    description: "Maximum DC charging current at inlet that can be accepted by the system."
     datatype: float
-    uuid: e3f2e57e7a395d9ca9931d429e540a34
+    uuid: 5a70acfd3c8959898b43738151ab36e1
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.Phase1"
+    type: "sensor"
+    description: "Maximum AC charging current (rms) at inlet for Phase 1 that can be accepted by the system."
+    datatype: float
+    uuid: e3c1034e89cc55968ff51b990906db43
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.Phase2"
+    type: "sensor"
+    description: "Maximum AC charging current (rms) at inlet for Phase 2 that can be accepted by the system."
+    datatype: float
+    uuid: ab3514bc982e54f2b98698fb6c752368
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.MaximumChargingCurrent.Phase3"
+    type: "sensor"
+    description: "Maximum AC charging current (rms) at inlet for Phase 3 that can be accepted by the system."
+    datatype: float
+    uuid: 47dd5e99c30d562e9e2e1c58007846b6
     unit: A
 }
 ,
@@ -1243,16 +1358,24 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.IsChargingCableConnected"
     type: "sensor"
-    description: "Indicates if a charging cable is connected to the vehicle or not."
+    description: "Indicates if a charging cable is physically connected to the vehicle or not."
     datatype: boolean
     uuid: a1c8e2f662b95a54a9933a1b163fff84
 }
 ,
 {
+    name: "Vehicle.Powertrain.TractionBattery.Charging.IsChargingCableLocked"
+    type: "actuator"
+    description: "Is charging cable locked to prevent removal."
+    datatype: boolean
+    uuid: 7fa81693f3b8587f8d71e7b1619c8e21
+}
+,
+{
     name: "Vehicle.Powertrain.TractionBattery.Charging.ChargePlugType"
     type: "attribute"
-    description: "Type of charge plug (charging connector) available on the vehicle. IEC types refer to IEC 62196,  GBT refers to  GB/T 20234."
-    datatype: string
+    description: "Type of charge plug (charging inlet) available on the vehicle. IEC types refer to IEC 62196,  GBT refers to  GB/T 20234."
+    datatype: string[]
     uuid: 4c56357a6f1d586395215a9beeb26d91
     allowed: ['IEC_TYPE_1_AC', 'IEC_TYPE_2_AC', 'IEC_TYPE_3_AC', 'IEC_TYPE_4_DC', 'IEC_TYPE_1_CCS_DC', 'IEC_TYPE_2_CCS_DC', 'TESLA_ROADSTER', 'TESLA_HPWC', 'TESLA_SUPERCHARGER', 'GBT_AC', 'GBT_DC', 'OTHER']
 }
@@ -1260,10 +1383,10 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.Mode"
     type: "actuator"
-    description: "Control of the charge process - manually initiated (plug-in event, companion app, etc), timer-based or grid-controlled (eg ISO 15118)."
+    description: "Control of the charge process. MANUAL means manually initiated (plug-in event, companion app, etc). TIMER means timer-based. GRID means grid-controlled (eg ISO 15118). PROFILE means controlled by profile download to vehicle."
     datatype: string
     uuid: 1e4be3280b265873945531f6f6d0ec6b
-    allowed: ['MANUAL', 'TIMER', 'GRID']
+    allowed: ['MANUAL', 'TIMER', 'GRID', 'PROFILE']
 }
 ,
 {
@@ -1272,6 +1395,14 @@ const SignalSpec[] signal_spec = [
     description: "True if charging is ongoing. Charging is considered to be ongoing if energy is flowing from charger to vehicle."
     datatype: boolean
     uuid: d28244c9e3365899954bd3e38ef46bb9
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.IsDischarging"
+    type: "sensor"
+    description: "True if discharging (vehicle to grid) is ongoing. Discharging is considered to be ongoing if energy is flowing from vehicle to charger/grid."
+    datatype: boolean
+    uuid: 534d884fb36652688535543b52419529
 }
 ,
 {
@@ -1284,21 +1415,93 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.DC"
     type: "sensor"
-    description: "Current charging current."
+    description: "Current DC charging current at inlet. Negative if returning energy to grid."
     datatype: float
-    uuid: 94739cf563735b438878ac0f85601f27
+    uuid: 44204d7ae6fd5f8e954d0670a739bdf2
     unit: A
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage"
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.Phase1"
     type: "sensor"
-    description: "Current charging voltage."
+    description: "Current AC charging current (rms) at inlet for Phase 1. Negative if returning energy to grid."
     datatype: float
-    uuid: 7170151d653b52c6bb5e75cb0a14d1c5
+    uuid: 400dca50fcde52a6bb605d7e86f49776
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.Phase2"
+    type: "sensor"
+    description: "Current AC charging current (rms) at inlet for Phase 2. Negative if returning energy to grid."
+    datatype: float
+    uuid: 32cb24d1c495503a9087d6f55997cf57
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeCurrent.Phase3"
+    type: "sensor"
+    description: "Current AC charging current (rms) at inlet for Phase 3. Negative if returning energy to grid."
+    datatype: float
+    uuid: 55fb7fb7ff4a5df9b6a3af435eac868e
+    unit: A
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.DC"
+    type: "sensor"
+    description: "Current DC charging voltage at charging inlet."
+    datatype: float
+    uuid: 701c21d1a4815b35ba061415789ec911
     unit: V
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.Phase1"
+    type: "sensor"
+    description: "Current AC charging voltage (rms) at inlet for Phase 1."
+    datatype: float
+    uuid: 15991c8316585816815d6f4fb6b06776
+    unit: V
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.Phase2"
+    type: "sensor"
+    description: "Current AC charging voltage (rms) at inlet for Phase 2."
+    datatype: float
+    uuid: 6c0dcf98169d5a5190736a6dd81291a4
+    unit: V
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.ChargeVoltage.Phase3"
+    type: "sensor"
+    description: "Current AC charging voltage (rms) at inlet for Phase 3."
+    datatype: float
+    uuid: 1ab06b48231e54e2ac27e543508c84f0
+    unit: V
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.PowerLoss"
+    type: "sensor"
+    description: "Electrical energy lost by power dissipation to heat inside the AC/DC converter."
+    datatype: float
+    uuid: 88f40bbeb80b5dfb97ceba13269665c5
+    unit: W
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.Charging.Temperature"
+    type: "sensor"
+    description: "Current temperature of AC/DC converter converting grid voltage to battery voltage."
+    datatype: float
+    uuid: c3c0ef3a41db5df1bab659803adbc7ba
+    unit: celsius
 }
 ,
 {
@@ -1313,7 +1516,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.TimeToComplete"
     type: "sensor"
-    description: "The time needed for the current charging process to reach StateOfCharge.Target. 0 if charging is complete or no charging process is active or planned."
+    description: "The time needed for the current charging process to reach Charging.ChargeLimit. 0 if charging is complete or no charging process is active or planned."
     datatype: uint32
     uuid: c6439c2e068652b08383b9654e2e784a
     unit: s
@@ -1322,7 +1525,7 @@ const SignalSpec[] signal_spec = [
 {
     name: "Vehicle.Powertrain.TractionBattery.Charging.Timer.Mode"
     type: "actuator"
-    description: "Defines timer mode for charging: INACTIVE - no timer set, charging may start as soon as battery is connected to a charger. START_TIME - charging shall start at Charging.Timer.Time. END_TIME - charging shall be finished (reach StateOfCharge.Target) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to 'inactive' or set a new Charging.Timer.Time. Charging shall start immediately if mode is 'starttime' or 'endtime' and Charging.Timer.Time is a time in the past."
+    description: "Defines timer mode for charging: INACTIVE - no timer set, charging may start as soon as battery is connected to a charger. START_TIME - charging shall start at Charging.Timer.Time. END_TIME - charging shall be finished (reach Charging.ChargeLimit) at Charging.Timer.Time. When charging is completed the vehicle shall change mode to 'inactive' or set a new Charging.Timer.Time. Charging shall start immediately if mode is 'starttime' or 'endtime' and Charging.Timer.Time is a time in the past."
     datatype: string
     uuid: b09fb52261735977af275dda1904a7a1
     allowed: ['INACTIVE', 'START_TIME', 'END_TIME']
@@ -1334,6 +1537,24 @@ const SignalSpec[] signal_spec = [
     description: "Time for next charging-related action, formatted according to ISO 8601 with UTC time zone. Value has no significance if Charging.Timer.Mode is 'inactive'."
     datatype: string
     uuid: c08dcaeda02b5e26aacd7e2542f0fc90
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.DCDC.PowerLoss"
+    type: "sensor"
+    description: "Electrical energy lost by power dissipation to heat inside DC/DC converter."
+    datatype: float
+    uuid: f29e37087cdf57ca998188c7b945a77b
+    unit: W
+}
+,
+{
+    name: "Vehicle.Powertrain.TractionBattery.DCDC.Temperature"
+    type: "sensor"
+    description: "Current temperature of DC/DC converter converting battery high voltage to vehicle low voltage (typically 12 Volts)."
+    datatype: float
+    uuid: 4e587c3af2aa5fbb9205e42a64fc8d77
+    unit: celsius
 }
 ,
 {
