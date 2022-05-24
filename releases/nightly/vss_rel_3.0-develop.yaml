@@ -4407,6 +4407,17 @@ Vehicle.Chassis.Wheelbase:
   unit: mm
   uuid: 11677e0433935dc7aa9c1806c96a8a6b
 
+Vehicle.Connectivity:
+  description: Connectivity data.
+  type: branch
+  uuid: 89c267fccea35f3da9871cca2b4dc4df
+
+Vehicle.Connectivity.IsConnectivityAvailable:
+  datatype: boolean
+  description: Indicates if connectivity between vehicle and cloud is available. True = Connectivity is available. False = Connectivity is not available.
+  type: sensor
+  uuid: b6d11be2a6565996b68ffb07a96595a7
+
 Vehicle.CurbWeight:
   datatype: uint16
   default: 0

@@ -6958,5 +6958,13 @@ const SignalSpec[] signal_spec = [
     uuid: c968be91a5685fa9ae30b84a0f91934e
     unit: s
 }
+,
+{
+    name: "Vehicle.Connectivity.IsConnectivityAvailable"
+    type: "sensor"
+    description: "Indicates if connectivity between vehicle and cloud is available. True = Connectivity is available. False = Connectivity is not available."
+    datatype: boolean
+    uuid: b6d11be2a6565996b68ffb07a96595a7
+}
 
 ]
