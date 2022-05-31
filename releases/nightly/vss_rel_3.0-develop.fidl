@@ -1046,11 +1046,11 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.ElectricMotor.Rpm"
+    name: "Vehicle.Powertrain.ElectricMotor.Speed"
     type: "sensor"
     description: "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode."
     datatype: int32
-    uuid: b31746b142de52fea3f84d860a0b717e
+    uuid: ca961aa6ca435095a89f9d404a5d849d
     unit: rpm
 }
 ,

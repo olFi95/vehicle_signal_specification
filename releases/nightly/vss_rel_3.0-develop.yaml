@@ -6002,12 +6002,12 @@ Vehicle.Powertrain.ElectricMotor.Power:
   unit: kW
   uuid: 46b86286fba059349a733fed9a0e3232
 
-Vehicle.Powertrain.ElectricMotor.Rpm:
+Vehicle.Powertrain.ElectricMotor.Speed:
   datatype: int32
   description: Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.
   type: sensor
   unit: rpm
-  uuid: b31746b142de52fea3f84d860a0b717e
+  uuid: ca961aa6ca435095a89f9d404a5d849d
 
 Vehicle.Powertrain.ElectricMotor.Temperature:
   datatype: int16
