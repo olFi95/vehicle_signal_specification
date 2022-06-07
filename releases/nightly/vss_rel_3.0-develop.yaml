@@ -6548,14 +6548,14 @@ Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed:
   unit: percent
   uuid: 1bfcc228293b5512aafe2508ab0500d2
 
-Vehicle.Powertrain.TractionBattery.StateofHealth:
+Vehicle.Powertrain.TractionBattery.StateOfHealth:
   datatype: float
   description: Calculated battery state of health at standard conditions.
   max: 100
   min: 0
   type: sensor
   unit: percent
-  uuid: edd621adffa25e22a37a5eced3df2eea
+  uuid: 4d982c47f3245048bcfec1190973a3ed
 
 Vehicle.Powertrain.TractionBattery.Temperature:
   description: Temperature Information for the battery pack.

@@ -1168,11 +1168,11 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Powertrain.TractionBattery.StateofHealth"
+    name: "Vehicle.Powertrain.TractionBattery.StateOfHealth"
     type: "sensor"
     description: "Calculated battery state of health at standard conditions."
     datatype: float
-    uuid: edd621adffa25e22a37a5eced3df2eea
+    uuid: 4d982c47f3245048bcfec1190973a3ed
     min: 0
     max: 100
     unit: percent
