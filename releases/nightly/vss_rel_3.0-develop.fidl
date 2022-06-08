@@ -1743,12 +1743,129 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Body.Windshield.Front.Wiping.Status"
+    name: "Vehicle.Body.Windshield.Front.Wiping.Mode"
     type: "actuator"
-    description: "Wiper status."
+    description: "Wiper mode requested by user/driver. INTERVAL indicates intermittent wiping, with fixed time interval between each wipe. RAIN_SENSOR indicates intermittent wiping based on rain intensity."
     datatype: string
-    uuid: 2d5509513e4b52e0a337ade730166aec
+    uuid: 3ee6552c96e551c5b06b79ad30226767
     allowed: ['OFF', 'SLOW', 'MEDIUM', 'FAST', 'INTERVAL', 'RAIN_SENSOR']
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.Intensity"
+    type: "actuator"
+    description: "Relative intensity/sensitivity for interval and rain sensor mode as requested by user/driver. Has no significance if Windshield.Wiping.Mode is OFF/SLOW/MEDIUM/FAST 0 - wipers inactive. 1 - minimum intensity (lowest frequency/sensitivity, longest interval). 2/3/4/... - higher intensity (higher frequency/sensitivity, shorter interval). Maximum value supported is vehicle specific."
+    datatype: uint8
+    uuid: 7cdd36d1cc8f5f9a9f079f663190b588
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.Mode"
+    type: "actuator"
+    description: "Requested mode of wiper system. STOP_HOLD means that the wipers shall move to position given by TargetPosition and then hold the position. WIPE means that wipers shall move to the position given by TargetPosition and then hold the position if no new TargetPosition is requested. PLANT_MODE means that wiping is disabled. Exact behavior is vehicle specific. EMERGENCY_STOP means that wiping shall be immediately stopped without holding the position."
+    datatype: string
+    uuid: d15518f5d1bc54a38718f43ef749dd34
+    allowed: ['STOP_HOLD', 'WIPE', 'PLANT_MODE', 'EMERGENCY_STOP']
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.Frequency"
+    type: "actuator"
+    description: "Wiping frequency/speed, measured in cycles per minute. The signal concerns the actual speed of the wiper blades when moving. Intervals/pauses are excluded, i.e. the value corresponds to the number of cycles that would be completed in 1 minute if wiping permanently over default range."
+    datatype: uint8
+    uuid: 7394c8b8d20d52638881161ec1b41fc0
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.TargetPosition"
+    type: "actuator"
+    description: "Requested position of main wiper blade for the wiper system relative to reference position. Location of reference position (0 degrees) and direction of positive/negative degrees is vehicle specific. System behavior when receiving TargetPosition depends on Mode and IsEndingWipeCycle. Supported values are vehicle specific and might be dynamically corrected. If IsEndingWipeCycle=True then wipers will complete current movement before actuating new TargetPosition. If IsEndingWipeCycle=False then wipers will directly change destination if the TargetPosition is changed."
+    datatype: float
+    uuid: 7a4a3fdd2947596dbada6980c142f090
+    unit: degrees
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.ActualPosition"
+    type: "actuator"
+    description: "Actual position of main wiper blade for the wiper system relative to reference position. Location of reference position (0 degrees) and direction of positive/negative degrees is vehicle specific."
+    datatype: float
+    uuid: 026307b591465a8a99ffc0ebf262b393
+    unit: degrees
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.DriveCurrent"
+    type: "sensor"
+    description: "Actual current used by wiper drive."
+    datatype: float
+    uuid: 251e695821b758e7b7d459d5e2ab6ca4
+    unit: A
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.IsWiping"
+    type: "sensor"
+    description: "Indicates wiper movement. True if wiper blades are moving. Change of direction shall be considered as IsWiping if wipers will continue to move directly after the change of direction."
+    datatype: boolean
+    uuid: 2015a4610d7a5fbdbb63b260640838e6
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.IsEndingWipeCycle"
+    type: "sensor"
+    description: "Indicates if current wipe movement is completed or near completion. True = Movement is completed or near completion. Changes to RequestedPosition will be executed first after reaching previous RequestedPosition, if it has not already been reached. False = Movement is not near completion. Any change to RequestedPosition will be executed immediately. Change of direction may not be allowed."
+    datatype: boolean
+    uuid: 5000f7f0c39e5fed9a95413ae4166482
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.IsWiperError"
+    type: "sensor"
+    description: "Indicates system failure. True if wiping is disabled due to system failure."
+    datatype: boolean
+    uuid: 5276055d973f57998e1b8d6e536de735
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.IsPositionReached"
+    type: "sensor"
+    description: "Indicates if a requested position has been reached. IsPositionReached refers to the previous position in case the TargetPosition is updated while IsEndingWipeCycle=True. True = Current or Previous TargetPosition reached. False = Position not (yet) reached, or wipers have moved away from the reached position."
+    datatype: boolean
+    uuid: d42149fa8982593991aa5cd13a1cdee9
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.IsBlocked"
+    type: "sensor"
+    description: "Indicates if wiper movement is blocked. True = Movement blocked. False = Movement not blocked."
+    datatype: boolean
+    uuid: 4b526a2c781e56e386c82df226061f9e
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.System.IsOverheated"
+    type: "sensor"
+    description: "Indicates if wiper system is overheated. True = Wiper system overheated. False = Wiper system not overheated."
+    datatype: boolean
+    uuid: e05d376ec2525ba2b61039d55f93760f
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.WiperWear"
+    type: "sensor"
+    description: "Wiper wear as percent. 0 = No Wear. 100 = Worn. Replacement required. Method for calculating or estimating wiper wear is vehicle specific. For windshields with multiple wipers the wear reported shall correspond to the most worn wiper."
+    datatype: uint8
+    uuid: 92c879c11bc65e6da30d582a3928caac
+    max: 100
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Front.Wiping.IsWipersWorn"
+    type: "sensor"
+    description: "Wiper wear status. True = Worn, Replacement recommended or required. False = Not Worn."
+    datatype: boolean
+    uuid: b04ccc7daedb559c9bcdda6b00332be5
 }
 ,
 {
@@ -1778,12 +1895,129 @@ const SignalSpec[] signal_spec = [
 }
 ,
 {
-    name: "Vehicle.Body.Windshield.Rear.Wiping.Status"
+    name: "Vehicle.Body.Windshield.Rear.Wiping.Mode"
     type: "actuator"
-    description: "Wiper status."
+    description: "Wiper mode requested by user/driver. INTERVAL indicates intermittent wiping, with fixed time interval between each wipe. RAIN_SENSOR indicates intermittent wiping based on rain intensity."
     datatype: string
-    uuid: 1aca19889d375a699bc3750993777b08
+    uuid: 8cc0b88ac8b45f5fa30bb7755ce22648
     allowed: ['OFF', 'SLOW', 'MEDIUM', 'FAST', 'INTERVAL', 'RAIN_SENSOR']
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.Intensity"
+    type: "actuator"
+    description: "Relative intensity/sensitivity for interval and rain sensor mode as requested by user/driver. Has no significance if Windshield.Wiping.Mode is OFF/SLOW/MEDIUM/FAST 0 - wipers inactive. 1 - minimum intensity (lowest frequency/sensitivity, longest interval). 2/3/4/... - higher intensity (higher frequency/sensitivity, shorter interval). Maximum value supported is vehicle specific."
+    datatype: uint8
+    uuid: f18b13b9d96b51c492c031d3d86d22da
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.Mode"
+    type: "actuator"
+    description: "Requested mode of wiper system. STOP_HOLD means that the wipers shall move to position given by TargetPosition and then hold the position. WIPE means that wipers shall move to the position given by TargetPosition and then hold the position if no new TargetPosition is requested. PLANT_MODE means that wiping is disabled. Exact behavior is vehicle specific. EMERGENCY_STOP means that wiping shall be immediately stopped without holding the position."
+    datatype: string
+    uuid: f2f47522466d570baa7618fac5b0359c
+    allowed: ['STOP_HOLD', 'WIPE', 'PLANT_MODE', 'EMERGENCY_STOP']
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.Frequency"
+    type: "actuator"
+    description: "Wiping frequency/speed, measured in cycles per minute. The signal concerns the actual speed of the wiper blades when moving. Intervals/pauses are excluded, i.e. the value corresponds to the number of cycles that would be completed in 1 minute if wiping permanently over default range."
+    datatype: uint8
+    uuid: 371171d971995c999585b028e19be461
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.TargetPosition"
+    type: "actuator"
+    description: "Requested position of main wiper blade for the wiper system relative to reference position. Location of reference position (0 degrees) and direction of positive/negative degrees is vehicle specific. System behavior when receiving TargetPosition depends on Mode and IsEndingWipeCycle. Supported values are vehicle specific and might be dynamically corrected. If IsEndingWipeCycle=True then wipers will complete current movement before actuating new TargetPosition. If IsEndingWipeCycle=False then wipers will directly change destination if the TargetPosition is changed."
+    datatype: float
+    uuid: c39bef0760185555904a92a305392080
+    unit: degrees
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.ActualPosition"
+    type: "actuator"
+    description: "Actual position of main wiper blade for the wiper system relative to reference position. Location of reference position (0 degrees) and direction of positive/negative degrees is vehicle specific."
+    datatype: float
+    uuid: eddee2607a135582bbcf3d3afc845892
+    unit: degrees
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.DriveCurrent"
+    type: "sensor"
+    description: "Actual current used by wiper drive."
+    datatype: float
+    uuid: 7a254692329055dfb4089e2dcc1d4ef3
+    unit: A
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.IsWiping"
+    type: "sensor"
+    description: "Indicates wiper movement. True if wiper blades are moving. Change of direction shall be considered as IsWiping if wipers will continue to move directly after the change of direction."
+    datatype: boolean
+    uuid: 4e001bf679e85c9aa7319bafc3a86e75
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.IsEndingWipeCycle"
+    type: "sensor"
+    description: "Indicates if current wipe movement is completed or near completion. True = Movement is completed or near completion. Changes to RequestedPosition will be executed first after reaching previous RequestedPosition, if it has not already been reached. False = Movement is not near completion. Any change to RequestedPosition will be executed immediately. Change of direction may not be allowed."
+    datatype: boolean
+    uuid: c1357156d87c58f49d4c43c2a6e97c03
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.IsWiperError"
+    type: "sensor"
+    description: "Indicates system failure. True if wiping is disabled due to system failure."
+    datatype: boolean
+    uuid: ac5983deacbe59d7ba1312d44bfd9cd4
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.IsPositionReached"
+    type: "sensor"
+    description: "Indicates if a requested position has been reached. IsPositionReached refers to the previous position in case the TargetPosition is updated while IsEndingWipeCycle=True. True = Current or Previous TargetPosition reached. False = Position not (yet) reached, or wipers have moved away from the reached position."
+    datatype: boolean
+    uuid: ad35e8d17cd95273b1091dcef2104ea1
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.IsBlocked"
+    type: "sensor"
+    description: "Indicates if wiper movement is blocked. True = Movement blocked. False = Movement not blocked."
+    datatype: boolean
+    uuid: 046e818b4dd9595a8301503e9afe028b
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.System.IsOverheated"
+    type: "sensor"
+    description: "Indicates if wiper system is overheated. True = Wiper system overheated. False = Wiper system not overheated."
+    datatype: boolean
+    uuid: d30bc6f33b995ef491c252980a559ee2
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.WiperWear"
+    type: "sensor"
+    description: "Wiper wear as percent. 0 = No Wear. 100 = Worn. Replacement required. Method for calculating or estimating wiper wear is vehicle specific. For windshields with multiple wipers the wear reported shall correspond to the most worn wiper."
+    datatype: uint8
+    uuid: afd6a352230f5eeaa8ac5f1f188bfd33
+    max: 100
+}
+,
+{
+    name: "Vehicle.Body.Windshield.Rear.Wiping.IsWipersWorn"
+    type: "sensor"
+    description: "Wiper wear status. True = Worn, Replacement recommended or required. False = Not Worn."
+    datatype: boolean
+    uuid: 0e8d5f7cb6295b908be3a03e8792cca8
 }
 ,
 {
