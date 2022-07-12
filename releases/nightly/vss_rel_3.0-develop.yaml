@@ -6936,11 +6936,6 @@ Vehicle.Powertrain.Type:
   type: attribute
   uuid: 2a000da4204658a4a6e3ecd5176bdfba
 
-Vehicle.Private:
-  description: Uncontrolled branch where non-public signals can be defined.
-  type: branch
-  uuid: 4161866b048a5b76aa3124dec82e0260
-
 Vehicle.RoofLoad:
   datatype: int16
   description: The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.

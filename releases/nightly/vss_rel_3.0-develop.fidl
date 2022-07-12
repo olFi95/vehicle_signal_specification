@@ -444,11 +444,6 @@ const SignalSpec[] signal_spec = [
 	uuid: "a4d04e86518e5c5ab60e5e4face35756",
 	unit: "mm"
 },
-{	name: "Vehicle.Private",
-	type: "branch",
-	description: "Uncontrolled branch where non-public signals can be defined.",
-	uuid: "4161866b048a5b76aa3124dec82e0260"
-},
 {	name: "Vehicle.Powertrain",
 	type: "branch",
 	description: "Powertrain data for battery management, etc.",
