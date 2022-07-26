@@ -5755,6 +5755,14 @@ float value;
 };
 };
 
+struct Speed
+{
+string uuid;
+float value;
+//const string unit="km/h";
+//const string type ="sensor";
+//const string description="Rotational speed of a vehicle's wheel.";
+};
 };
 
 module Right
@@ -5820,6 +5828,14 @@ float value;
 };
 };
 
+struct Speed
+{
+string uuid;
+float value;
+//const string unit="km/h";
+//const string type ="sensor";
+//const string description="Rotational speed of a vehicle's wheel.";
+};
 };
 
 };
@@ -5940,6 +5956,14 @@ float value;
 };
 };
 
+struct Speed
+{
+string uuid;
+float value;
+//const string unit="km/h";
+//const string type ="sensor";
+//const string description="Rotational speed of a vehicle's wheel.";
+};
 };
 
 module Right
@@ -6005,6 +6029,14 @@ float value;
 };
 };
 
+struct Speed
+{
+string uuid;
+float value;
+//const string unit="km/h";
+//const string type ="sensor";
+//const string description="Rotational speed of a vehicle's wheel.";
+};
 };
 
 };

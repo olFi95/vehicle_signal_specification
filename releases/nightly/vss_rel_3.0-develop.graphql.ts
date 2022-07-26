@@ -12514,6 +12514,9 @@ type Vehicle_Chassis_Axle_Row1_Wheel_Left {
 
   """Tire signals for wheel."""
   tire: Vehicle_Chassis_Axle_Row1_Wheel_Left_Tire
+
+  """Rotational speed of a vehicle's wheel."""
+  speed: Vehicle_Chassis_Axle_Row1_Wheel_Left_Speed
 }
 
 """Brake signals for wheel"""
@@ -12634,6 +12637,18 @@ type Vehicle_Chassis_Axle_Row1_Wheel_Left_Tire_Temperature {
   unit: String
 }
 
+"""Rotational speed of a vehicle's wheel."""
+type Vehicle_Chassis_Axle_Row1_Wheel_Left_Speed {
+  """Value: Rotational speed of a vehicle's wheel."""
+  value: Float
+
+  """Timestamp: Rotational speed of a vehicle's wheel."""
+  timestamp: String
+
+  """Unit of Rotational speed of a vehicle's wheel."""
+  unit: String
+}
+
 """Wheel signals for axle"""
 type Vehicle_Chassis_Axle_Row1_Wheel_Right {
   """Brake signals for wheel"""
@@ -12641,6 +12656,9 @@ type Vehicle_Chassis_Axle_Row1_Wheel_Right {
 
   """Tire signals for wheel."""
   tire: Vehicle_Chassis_Axle_Row1_Wheel_Right_Tire
+
+  """Rotational speed of a vehicle's wheel."""
+  speed: Vehicle_Chassis_Axle_Row1_Wheel_Right_Speed
 }
 
 """Brake signals for wheel"""
@@ -12758,6 +12776,18 @@ type Vehicle_Chassis_Axle_Row1_Wheel_Right_Tire_Temperature {
   timestamp: String
 
   """Unit of Tire temperature in Celsius."""
+  unit: String
+}
+
+"""Rotational speed of a vehicle's wheel."""
+type Vehicle_Chassis_Axle_Row1_Wheel_Right_Speed {
+  """Value: Rotational speed of a vehicle's wheel."""
+  value: Float
+
+  """Timestamp: Rotational speed of a vehicle's wheel."""
+  timestamp: String
+
+  """Unit of Rotational speed of a vehicle's wheel."""
   unit: String
 }
 
@@ -12912,6 +12942,9 @@ type Vehicle_Chassis_Axle_Row2_Wheel_Left {
 
   """Tire signals for wheel."""
   tire: Vehicle_Chassis_Axle_Row2_Wheel_Left_Tire
+
+  """Rotational speed of a vehicle's wheel."""
+  speed: Vehicle_Chassis_Axle_Row2_Wheel_Left_Speed
 }
 
 """Brake signals for wheel"""
@@ -13032,6 +13065,18 @@ type Vehicle_Chassis_Axle_Row2_Wheel_Left_Tire_Temperature {
   unit: String
 }
 
+"""Rotational speed of a vehicle's wheel."""
+type Vehicle_Chassis_Axle_Row2_Wheel_Left_Speed {
+  """Value: Rotational speed of a vehicle's wheel."""
+  value: Float
+
+  """Timestamp: Rotational speed of a vehicle's wheel."""
+  timestamp: String
+
+  """Unit of Rotational speed of a vehicle's wheel."""
+  unit: String
+}
+
 """Wheel signals for axle"""
 type Vehicle_Chassis_Axle_Row2_Wheel_Right {
   """Brake signals for wheel"""
@@ -13039,6 +13084,9 @@ type Vehicle_Chassis_Axle_Row2_Wheel_Right {
 
   """Tire signals for wheel."""
   tire: Vehicle_Chassis_Axle_Row2_Wheel_Right_Tire
+
+  """Rotational speed of a vehicle's wheel."""
+  speed: Vehicle_Chassis_Axle_Row2_Wheel_Right_Speed
 }
 
 """Brake signals for wheel"""
@@ -13156,6 +13204,18 @@ type Vehicle_Chassis_Axle_Row2_Wheel_Right_Tire_Temperature {
   timestamp: String
 
   """Unit of Tire temperature in Celsius."""
+  unit: String
+}
+
+"""Rotational speed of a vehicle's wheel."""
+type Vehicle_Chassis_Axle_Row2_Wheel_Right_Speed {
+  """Value: Rotational speed of a vehicle's wheel."""
+  value: Float
+
+  """Timestamp: Rotational speed of a vehicle's wheel."""
+  timestamp: String
+
+  """Unit of Rotational speed of a vehicle's wheel."""
   unit: String
 }
 

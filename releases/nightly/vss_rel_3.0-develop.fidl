@@ -5378,6 +5378,13 @@ const SignalSpec[] signal_spec = [
 	uuid: "093d8fb119755f6bafa979e4eae201a0",
 	unit: "celsius"
 },
+{	name: "Vehicle.Chassis.Axle.Row1.Wheel.Left.Speed",
+	type: "sensor",
+	description: "Rotational speed of a vehicle's wheel.",
+	datatype: "float",
+	uuid: "47897f20b2745b6aa2d0f76f1ecf824a",
+	unit: "km/h"
+},
 {	name: "Vehicle.Chassis.Axle.Row1.Wheel.Right",
 	type: "branch",
 	description: "Wheel signals for axle",
@@ -5440,6 +5447,13 @@ const SignalSpec[] signal_spec = [
 	datatype: "float",
 	uuid: "58d4cee188d353d7996e855d48bb92df",
 	unit: "celsius"
+},
+{	name: "Vehicle.Chassis.Axle.Row1.Wheel.Right.Speed",
+	type: "sensor",
+	description: "Rotational speed of a vehicle's wheel.",
+	datatype: "float",
+	uuid: "c288d064d56e53bfb94cef8670872587",
+	unit: "km/h"
 },
 {	name: "Vehicle.Chassis.Axle.Row2",
 	type: "branch",
@@ -5555,6 +5569,13 @@ const SignalSpec[] signal_spec = [
 	uuid: "06ab6b3fe7bb5f7c9e2e104ee0e7cfd5",
 	unit: "celsius"
 },
+{	name: "Vehicle.Chassis.Axle.Row2.Wheel.Left.Speed",
+	type: "sensor",
+	description: "Rotational speed of a vehicle's wheel.",
+	datatype: "float",
+	uuid: "427abdd04fc355769697d998a47d3f58",
+	unit: "km/h"
+},
 {	name: "Vehicle.Chassis.Axle.Row2.Wheel.Right",
 	type: "branch",
 	description: "Wheel signals for axle",
@@ -5617,6 +5638,13 @@ const SignalSpec[] signal_spec = [
 	datatype: "float",
 	uuid: "7c08b5778bc05265bb8d4e08fdca29cf",
 	unit: "celsius"
+},
+{	name: "Vehicle.Chassis.Axle.Row2.Wheel.Right.Speed",
+	type: "sensor",
+	description: "Rotational speed of a vehicle's wheel.",
+	datatype: "float",
+	uuid: "85b41a82f4775fcea57dcc6218fb6d7b",
+	unit: "km/h"
 },
 {	name: "Vehicle.Chassis.AxleCount",
 	type: "attribute",

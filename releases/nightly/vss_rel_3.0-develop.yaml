@@ -4248,6 +4248,13 @@ Vehicle.Chassis.Axle.Row1.Wheel.Left.Brake.PadWear:
   unit: percent
   uuid: b4ed36f8143d512fadaca3e641739ee2
 
+Vehicle.Chassis.Axle.Row1.Wheel.Left.Speed:
+  datatype: float
+  description: Rotational speed of a vehicle's wheel.
+  type: sensor
+  unit: km/h
+  uuid: 47897f20b2745b6aa2d0f76f1ecf824a
+
 Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire:
   description: Tire signals for wheel.
   type: branch
@@ -4310,6 +4317,13 @@ Vehicle.Chassis.Axle.Row1.Wheel.Right.Brake.PadWear:
   type: sensor
   unit: percent
   uuid: f3c53c8c5628527a8501e12778dae6c7
+
+Vehicle.Chassis.Axle.Row1.Wheel.Right.Speed:
+  datatype: float
+  description: Rotational speed of a vehicle's wheel.
+  type: sensor
+  unit: km/h
+  uuid: c288d064d56e53bfb94cef8670872587
 
 Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire:
   description: Tire signals for wheel.
@@ -4425,6 +4439,13 @@ Vehicle.Chassis.Axle.Row2.Wheel.Left.Brake.PadWear:
   unit: percent
   uuid: 8eff72d583015e1e94eab98bf8f0497e
 
+Vehicle.Chassis.Axle.Row2.Wheel.Left.Speed:
+  datatype: float
+  description: Rotational speed of a vehicle's wheel.
+  type: sensor
+  unit: km/h
+  uuid: 427abdd04fc355769697d998a47d3f58
+
 Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire:
   description: Tire signals for wheel.
   type: branch
@@ -4487,6 +4508,13 @@ Vehicle.Chassis.Axle.Row2.Wheel.Right.Brake.PadWear:
   type: sensor
   unit: percent
   uuid: 63a564bca18a5b1fabd7d3cff1af0e6d
+
+Vehicle.Chassis.Axle.Row2.Wheel.Right.Speed:
+  datatype: float
+  description: Rotational speed of a vehicle's wheel.
+  type: sensor
+  unit: km/h
+  uuid: 85b41a82f4775fcea57dcc6218fb6d7b
 
 Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire:
   description: Tire signals for wheel.
