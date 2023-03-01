@@ -35,7 +35,7 @@ VersionVSS.Minor:
 VersionVSS.Patch:
   datatype: uint32
   type: attribute
-  default: 0
+  default: 1
   description: Supported Version of VSS - Patch version.
 
 VersionVSS.Label:

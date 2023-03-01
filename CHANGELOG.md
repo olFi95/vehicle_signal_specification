@@ -107,7 +107,7 @@ Warning: Attribute(s) enum in element Position not a core or known extended attr
 The signals in `Vehicle.Cabin.Seat` have been significantly refactored.
 The background is that the old representation included limitations and ambiguities.
 
-## VSS 3.1 (Latest Release)
+## VSS 3.1
 
 ### Struct Support (Experimental)
 
@@ -150,6 +150,11 @@ Warning: Attribute(s) sensor in element Temperature not a core or known extended
   Reason is that `TimeSinceStart` is not powertrain-related and other signals related to current trip are located on top-level.
   After discussion it was agreed that it is better to have a signal for start time rather than duration.
 * Refactoring of signals in `Vehicle.Body.Lights` branch performed, some signals have new names.
+
+## VSS 3.1.1
+
+Patch to add description to "Vehicle.Body.Lights.Brake", required according to VSS syntax.
+Apart from that identical to VSS 3.1.
 
 ## Planned Changes VSS 4.0
 
