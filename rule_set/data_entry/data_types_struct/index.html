@@ -12,21 +12,21 @@
     <title>Struct Types :: Vehicle Signal Specification</title>
 
     
-    <link href="/vehicle_signal_specification/css/nucleus.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/fontawesome-all.min.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/hybrid.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/featherlight.min.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/perfect-scrollbar.min.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/auto-complete.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/atom-one-dark-reasonable.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/theme.css?1677688663" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/hugo-theme.css?1677688663" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/nucleus.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/fontawesome-all.min.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/hybrid.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/featherlight.min.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/perfect-scrollbar.min.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/auto-complete.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/atom-one-dark-reasonable.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/theme.css?1678090560" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/hugo-theme.css?1678090560" rel="stylesheet">
     
-    <link href="/vehicle_signal_specification/css/theme-blue.css?1677688663" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/theme-blue.css?1678090560" rel="stylesheet">
     
     
 
-    <script src="/vehicle_signal_specification/js/jquery-3.3.1.min.js?1677688663"></script>
+    <script src="/vehicle_signal_specification/js/jquery-3.3.1.min.js?1678090560"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/vehicle_signal_specification/js/lunr.min.js?1677688663"></script>
-<script type="text/javascript" src="/vehicle_signal_specification/js/auto-complete.js?1677688663"></script>
+<script type="text/javascript" src="/vehicle_signal_specification/js/lunr.min.js?1678090560"></script>
+<script type="text/javascript" src="/vehicle_signal_specification/js/auto-complete.js?1678090560"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/vehicle_signal_specification\/";
     
 </script>
-<script type="text/javascript" src="/vehicle_signal_specification/js/search.js?1677688663"></script>
+<script type="text/javascript" src="/vehicle_signal_specification/js/search.js?1678090560"></script>
 
     
   </div>
@@ -846,9 +846,16 @@ Types.Powertrain:
 #include Powertrain/Powertrain.vspec Types.Powertrain
 </code></pre><h2 id="name-resolution">Name resolution</h2>
 <p>Two ways of referring to a type shall be considered correct:</p>
+<p>In Type Tree:</p>
 <ul>
-<li>Reference by (leaf) name to a struct definition within a branch with the same name in the type tree.</li>
 <li>Reference by absolute path</li>
+<li>Reference by (leaf) name to a struct definition within the same branch</li>
+</ul>
+<p>In Signal Tree:</p>
+<ul>
+<li>Reference by absolute path</li>
+<li>Reference by (leaf) name to a struct definition within a branch with the same name in the type tree.<br>
+<strong>Note that the experimental feature supports only absolute path name resolution in the signal tree.</strong></li>
 </ul>
 <p>Relative paths (e.g. <code>../Powertrain.SomeStruct</code>) shall not be supported.
 Structs in parent branches will not be visible, in those cases absolute path needs to be used instead.</p>
@@ -859,7 +866,8 @@ Structs in parent branches will not be visible, in those cases absolute path nee
   datatype: Types.D
   type: sensor
 </code></pre><p>The parser shall first check if a type <code>A.B.Types.D</code> exist in the type tree, and if so use it.
-If not found it shall search for the type <code>Types.D</code> in the type tree.</p>
+If not found it shall search for the type <code>Types.D</code> in the type tree.<br>
+<strong>Note that the experimental feature supports only exact name resolution in the signal tree.</strong></p>
 <h2 id="expectations-on-vss-implementations-eg-viss-kuksaval">Expectations on VSS implementations (e.g. VISS, KUKSA.val)</h2>
 <p>It is expected of implementations to support atomic read/write/subscribe of complete signals defined with struct datatype.
 They may support read of parts of signal, e.g. <code>DeliveryList.Receiver</code></p>
@@ -1386,19 +1394,19 @@ Using <code>allowed</code> for signals and items of struct type or array of stru
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vehicle_signal_specification/js/clipboard.min.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/perfect-scrollbar.min.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/perfect-scrollbar.jquery.min.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/jquery.sticky.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/featherlight.min.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/highlight.pack.js?1677688663"></script>
+    <script src="/vehicle_signal_specification/js/clipboard.min.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/perfect-scrollbar.min.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/perfect-scrollbar.jquery.min.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/jquery.sticky.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/featherlight.min.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/highlight.pack.js?1678090560"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vehicle_signal_specification/js/modernizr.custom-3.6.0.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/learn.js?1677688663"></script>
-    <script src="/vehicle_signal_specification/js/hugo-learn.js?1677688663"></script>
+    <script src="/vehicle_signal_specification/js/modernizr.custom-3.6.0.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/learn.js?1678090560"></script>
+    <script src="/vehicle_signal_specification/js/hugo-learn.js?1678090560"></script>
     
         
-            <script src="/vehicle_signal_specification/mermaid/mermaid.js?1677688663"></script>
+            <script src="/vehicle_signal_specification/mermaid/mermaid.js?1678090560"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
