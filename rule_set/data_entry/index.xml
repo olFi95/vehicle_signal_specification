@@ -58,7 +58,7 @@ Actuators are used to control the desired value of a property. Some properties i
     </item>
     
     <item>
-      <title>Value restrictions</title>
+      <title>Value Restrictions</title>
       <link>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/allowed/</link>
       <pubDate>Sun, 04 Aug 2019 12:37:12 +0200</pubDate>
       
