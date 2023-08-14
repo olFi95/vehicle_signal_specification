@@ -12,7 +12,7 @@ A branch entry example is given below:
 ```YAML
 Trunk:
   type: branch
-  description: All signals related to the rear trunk
+  description: All signals related to the rear trunk.
   aggregate: false
 ```
 
